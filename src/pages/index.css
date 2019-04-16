@@ -1,3 +1,7 @@
+/* IMPORTS */
+@import url("https://fonts.googleapis.com/css?family=Abel|Hind");
+@import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css");
+
 /* ======= */
 /* GENERAL */
 /* ======= */
@@ -7,8 +11,8 @@
 }
 
 body {
+  background-color: darkslateblue;
   background-image: url("https://utemplates.net/wp-content/uploads/2017/07/White-Textured-Background.jpg");
-  background-color: #4992b5;
   color: white;
   /* overflow: scroll; */
 }
@@ -104,6 +108,7 @@ li {
 
 .groupHeaders {
   background-color: black;
+  color: white;
   text-align: left;
   font-family: "Abel", sans-serif;
 }
@@ -165,6 +170,7 @@ img.repoImages {
 
 .repoUrlLinks:hover {
   color: #4992b5;
+  text-decoration: none;
   transition: all 0.2s ease;
 }
 

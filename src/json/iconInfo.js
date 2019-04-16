@@ -10,12 +10,12 @@ export default [
     linkName: `GitHub`,
   },
   {
-    docLink: `../docs/Matt-Zuckermann_Résumé.pdf#zoom=115`,
+    docLink: `/docs/resume`,
     iconTag: `fas fa-file-pdf linkNav`,
     linkName: `Resume`,
   },
   {
-    docLink: `../docs/Matt-Zuckermann_Business-Card.pdf#zoom=325`,
+    docLink: `/docs/business+card`,
     iconTag: `fas fa-id-card linkNav idCard`,
     linkName: `Business Card`,
   },

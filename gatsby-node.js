@@ -1,7 +1,16 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require("path")
 
-// You can delete this file if you're not using it
+exports.createPages = ({ actions }) => {
+  const { createPage } = actions
+  return new Promise((resolve, reject) => {
+    createPage({
+      path: `/docs/resume`,
+      component: path.resolve("./src/components/docs/Resume.js"),
+    })
+    createPage({
+      path: `/docs/business+card`,
+      component: path.resolve("./src/components/docs/BusinessCard.js"),
+    })
+    resolve()
+  })
+}
