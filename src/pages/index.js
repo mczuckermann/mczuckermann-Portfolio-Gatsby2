@@ -1,14 +1,13 @@
 import React from "react"
-
+// import Image from "../components/image"
 import SEO from "../components/seo"
 import Footer from "../components/footer"
-
 import imageInfo from "../json/imageInfo"
 import iconInfo from "../json/iconInfo"
 import Images from "../images"
-
 import "./index.css"
 import "bootstrap/dist/css/bootstrap.css"
+import "bootstrap/dist/js/bootstrap.js"
 
 const images = [
   Images.image1,
@@ -43,7 +42,7 @@ class Index extends React.Component {
 
   render() {
     return (
-      <>
+      <div>
         <SEO
           title="Zuckermann"
           keywords={[`Programming`, `Full Stack`, `Matt Zuckermann`]}
@@ -99,51 +98,51 @@ class Index extends React.Component {
         <br />
         <br />
         <div
-          className="row aboutBody rounded overflowRow"
+          className="container aboutBody rounded overflowRow"
           ref={this.aboutSection}
         >
           <h1 className="groupHeaders col-12">About Me</h1>
-          <div className="row aboutBody rounded" />
-          <div className="col-lg-12 col-md-5">
-            <img
-              className="col-12"
-              id="headShotImage"
-              src={images[6]}
-              alt="Head-Shot"
-            />
-          </div>
-          <div className="col-lg-12 col-md-7">
-            <br />
-            <p className="portfolioBio">
-              Full Stack Web Developer specializing in React, Gatsby, and Node.
-              Experienced Technical Director with a history in audiovisual
-              engineering and two Bachelor of Arts degrees in Music and
-              Communication-Media Studies. Passion for tech platforms and the
-              communities they create.
-            </p>
-          </div>
-          {iconInfo.map((icon, index) => (
-            <div key={index}>
-              <div className="col-3">
-                <div className="documentsBody">
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={icon.docLink}
-                  >
-                    <i className={icon.iconTag} title={icon.linkName} />
-                  </a>
-                </div>
-              </div>
+          <div className="row aboutMeSet">
+            <div className="col-lg-12 col-md-5">
+              <img
+                className="col-12"
+                id="headShotImage"
+                src={images[6]}
+                alt="Head-Shot"
+              />
             </div>
-          ))}
+            <div className="col-lg-12 col-md-7">
+              <br />
+              <p className="portfolioBio">
+                Full Stack Web Developer specializing in React, Gatsby, and
+                Node. Experienced Technical Director with a history in
+                audiovisual engineering and two Bachelor of Arts degrees in
+                Music and Communication-Media Studies. Passion for tech
+                platforms and the communities they create.
+              </p>
+            </div>
+          </div>
+          <div className="row centerBody">
+            {iconInfo.map((icon, index) => (
+              <div key={index} className="col-3 documentsBody">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={icon.docLink}
+                >
+                  <i className={icon.iconTag} title={icon.linkName} />
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
         <br />
         <br />
         <div
-          className="row projectsBody rounded overflowRow"
+          className="container projectsBody rounded overflowRow"
           ref={this.projectSection}
         >
+          <div />
           <h1
             className="groupHeaders col-12"
             style={{ backgroundColor: "gray", color: "black" }}
@@ -179,7 +178,7 @@ class Index extends React.Component {
                       className="repoUrlLinks"
                       target="_blank"
                       rel="noopener noreferrer"
-                      href="{image.repoLink}"
+                      href={image.repoLink}
                     >
                       <i className="fab fa-github" />
                     </a>
@@ -197,7 +196,7 @@ class Index extends React.Component {
         <br />
         <br />
         <Footer />
-      </>
+      </div>
     )
   }
 }

@@ -15,7 +15,7 @@ export default [
     linkName: `Resume`,
   },
   {
-    docLink: `/docs/business+card`,
+    docLink: `/docs/business_card`,
     iconTag: `fas fa-id-card linkNav idCard`,
     linkName: `Business Card`,
   },

@@ -11,10 +11,10 @@
 }
 
 body {
-  background-color: darkslateblue;
+  background-color: #4992b5;
   background-image: url("https://utemplates.net/wp-content/uploads/2017/07/White-Textured-Background.jpg");
   color: white;
-  /* overflow: scroll; */
+  overflow-x: hidden;
 }
 
 /* === */
@@ -113,10 +113,14 @@ li {
   font-family: "Abel", sans-serif;
 }
 
+.aboutMeSet {
+  margin-bottom: 6px;
+}
+
 .aboutBody {
   margin-bottom: 20px;
   background-image: url("https://img.freepik.com/free-photo/grey-wall-texture_24972-158.jpg?size=338&ext=jpg");
-  padding: 20px 0;
+  padding: 20px 2px;
 }
 
 .projectsBody {
@@ -130,6 +134,7 @@ li {
   font-size: 20px;
   text-align: center;
   font-family: "Hind", sans-serif;
+  padding: 0 5px;
 }
 
 img.repoImages {
@@ -138,6 +143,11 @@ img.repoImages {
   margin: 40px auto 0px auto;
   box-shadow: 8px 8px 3px 0px rgba(0, 0, 0, 0.75);
   overflow: hidden;
+}
+
+.centerBody {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .documentsBody {

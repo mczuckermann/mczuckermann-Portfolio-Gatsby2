@@ -8,7 +8,7 @@ exports.createPages = ({ actions }) => {
       component: path.resolve("./src/components/docs/Resume.js"),
     })
     createPage({
-      path: `/docs/business+card`,
+      path: `/docs/business_card`,
       component: path.resolve("./src/components/docs/BusinessCard.js"),
     })
     resolve()
