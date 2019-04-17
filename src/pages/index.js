@@ -6,8 +6,9 @@ import imageInfo from "../json/imageInfo"
 import iconInfo from "../json/iconInfo"
 import Images from "../images"
 import "./index.css"
-import "bootstrap/dist/css/bootstrap.css"
-import "bootstrap/dist/js/bootstrap.js"
+import "../../node_modules/bootstrap/dist/css/bootstrap.css"
+import "../../node_modules/bootstrap/dist/js/bootstrap.js"
+import "react-bootstrap"
 
 const images = [
   Images.image1,
@@ -149,7 +150,7 @@ class Index extends React.Component {
           >
             Apps/Projects
           </h1>
-          <div className="container projectsBody rounded">
+          <div className="container projectsBody rounded" id="projectsBodyPad">
             <div className="row">
               {imageInfo.map((image, index) => (
                 <div className="col-xl-4 col-lg-6 col-md-6" key={index}>
@@ -173,7 +174,7 @@ class Index extends React.Component {
                     >
                       {image.appName}
                     </a>
-                    |
+                    <span id="paddingDivider">|</span>
                     <a
                       className="repoUrlLinks"
                       target="_blank"
