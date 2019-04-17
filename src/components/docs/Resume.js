@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import { Document, Page } from "react-pdf"
 import mattResume from "./Matt-Zuckermann_Résumé.pdf"
-import "ngx-extended-pdf-viewer"
 import "bootstrap/dist/css/bootstrap.css"
 
 class Resume extends Component {

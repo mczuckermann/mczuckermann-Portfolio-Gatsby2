@@ -149,10 +149,10 @@ class Index extends React.Component {
           >
             Apps/Projects
           </h1>
-          <div className="row projectsBody rounded">
-            {imageInfo.map((image, index) => (
-              <div key={index}>
-                <div className="col-xl-4 col-lg-6 col-md-6">
+          <div className="container projectsBody rounded">
+            <div className="row">
+              {imageInfo.map((image, index) => (
+                <div className="col-xl-4 col-lg-6 col-md-6" key={index}>
                   <a
                     href={image.deployLink}
                     target="_blank"
@@ -186,10 +186,8 @@ class Index extends React.Component {
                     <div className="shortBio">{image.shortBio}</div>
                   </div>
                 </div>
-                <br />
-                <br />
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
         <br />
