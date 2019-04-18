@@ -29,9 +29,11 @@ body {
 
 #headerBackground {
   background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/04/10/37/3058174f1cf2465.jpg");
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-#header {
+.header {
   font-family: "Abel", sans-serif;
   color: white;
   padding: 15px 0;
@@ -107,6 +109,7 @@ li {
 }
 
 .groupHeaders {
+  font-size: 30px;
   background-color: black;
   color: white;
   text-align: left;

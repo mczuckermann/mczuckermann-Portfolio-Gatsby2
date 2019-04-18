@@ -6,12 +6,8 @@ import imageInfo from "../json/imageInfo"
 import iconInfo from "../json/iconInfo"
 import Images from "../images"
 import "./index.css"
-import "popper.js"
-import "jquery"
-import "bootstrap"
 import "../../node_modules/bootstrap/dist/css/bootstrap.css"
-// import "../../node_modules/bootstrap/dist/js/bootstrap.min.js"
-// import "react-bootstrap"
+import { Navbar, Nav } from "react-bootstrap"
 
 const images = [
   Images.image1,
@@ -51,52 +47,36 @@ class Index extends React.Component {
           title="Zuckermann"
           keywords={[`Programming`, `Full Stack`, `Matt Zuckermann`]}
         />
-        <div className="container-full" id="headerBackground">
-          <div className="container-full footerEdging" />
-          <nav className="container navbar navbar-expand-sm navbar-light">
-            <div className="navbar-brand" id="header">
-              <span id="nameNav" className="responsiveText rounded">
-                Matt Zuckermann
-              </span>
-            </div>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon" />
-            </button>
-
-            <div
-              className="collapse navbar-collapse"
-              id="navbarSupportedContent"
-            >
-              <ul className="navbar-nav mr-auto" id="header">
-                <li className="nav-item" id="aboutNav">
-                  <span
-                    className="navSubObjects rounded"
-                    onClick={this.scrollToAboutSection}
-                  >
-                    About Me
-                  </span>
-                </li>
-                <li className="nav-item" id="projectsNav">
-                  <span
-                    className="navSubObjects rounded"
-                    onClick={this.scrollToProjectSection}
-                  >
-                    Apps/Projects
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </nav>
-          <div className="container-full footerEdging" />
-        </div>
+        <div className="container-full footerEdging" />
+        <Navbar className="header" id="headerBackground" bg="light" expand="sm">
+          <Navbar.Brand
+            style={{ color: "white" }}
+            id="nameNav"
+            className="header responsiveText rounded"
+          >
+            Matt Zuckermann
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav navbar-toggler" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link
+                style={{ color: "white" }}
+                className="navSubObjects rounded"
+                onClick={this.scrollToAboutSection}
+              >
+                About Me
+              </Nav.Link>
+              <Nav.Link
+                style={{ color: "white" }}
+                className="navSubObjects rounded"
+                onClick={this.scrollToProjectSection}
+              >
+                Apps/Projects
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+        <div className="container-full footerEdging" />
         <br />
         <br />
         <br />
@@ -177,7 +157,9 @@ class Index extends React.Component {
                     >
                       {image.appName}
                     </a>
-                    <span id="paddingDivider">|</span>
+                    <span style={{ color: "white" }} id="paddingDivider">
+                      |
+                    </span>
                     <a
                       className="repoUrlLinks"
                       target="_blank"
