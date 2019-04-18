@@ -7,7 +7,7 @@ import iconInfo from "../json/iconInfo"
 import Images from "../images"
 import "./index.css"
 import "../../node_modules/bootstrap/dist/css/bootstrap.css"
-import "../../node_modules/bootstrap/dist/js/bootstrap.js"
+import "../../node_modules/bootstrap/dist/js/bootstrap.min.js"
 // import "react-bootstrap"
 
 const images = [
