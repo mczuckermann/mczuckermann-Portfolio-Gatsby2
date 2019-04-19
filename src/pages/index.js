@@ -6,7 +6,7 @@ import imageInfo from "../json/imageInfo"
 import iconInfo from "../json/iconInfo"
 import Images from "../images"
 import "./index.css"
-// import "../../node_modules/bootstrap/dist/css/bootstrap.css"
+import "../../node_modules/bootstrap/dist/css/bootstrap.css"
 import { Navbar, Nav } from "react-bootstrap"
 
 const images = [
