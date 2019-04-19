@@ -40,6 +40,16 @@ class Index extends React.Component {
       behavior: `smooth`,
     })
 
+  fix = () => {
+    const el = this
+    const par = el.parentNode
+    const next = el.nextSibling
+    par.removeChild(el)
+    setTimeout(function() {
+      par.insertBefore(el, next)
+    }, 0)
+  }
+
   render() {
     return (
       <div>
@@ -56,7 +66,13 @@ class Index extends React.Component {
           >
             Matt Zuckermann
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav navbar-toggler" />
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav navbar-toggler"
+            style={{
+              backgroundColor: "#cbe3ef",
+              borderColor: "#2e2e2c",
+            }}
+          />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link
@@ -112,6 +128,7 @@ class Index extends React.Component {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
+                  ontouchend={this.fix}
                   href={icon.docLink}
                 >
                   <i className={icon.iconTag} title={icon.linkName} />
