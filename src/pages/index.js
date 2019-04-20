@@ -40,16 +40,6 @@ class Index extends React.Component {
       behavior: `smooth`,
     })
 
-  fix = () => {
-    const el = this
-    const par = el.parentNode
-    const next = el.nextSibling
-    par.removeChild(el)
-    setTimeout(function() {
-      par.insertBefore(el, next)
-    }, 0)
-  }
-
   render() {
     return (
       <div>
@@ -124,11 +114,13 @@ class Index extends React.Component {
           </div>
           <div className="row centerBody">
             {iconInfo.map((icon, index) => (
-              <div key={index} className="col-3 documentsBody">
+              <div
+                key={index}
+                className="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 documentsBody"
+              >
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  ontouchend={this.fix}
                   href={icon.docLink}
                 >
                   <i className={icon.iconTag} title={icon.linkName} />
@@ -153,7 +145,10 @@ class Index extends React.Component {
           <div className="container projectsBody rounded" id="projectsBodyPad">
             <div className="row">
               {imageInfo.map((image, index) => (
-                <div className="col-xl-4 col-lg-6 col-md-6" key={index}>
+                <div
+                  className="col-xl-4 col-lg-6 col-md-6 hiddenImage"
+                  key={index}
+                >
                   <a
                     href={image.deployLink}
                     target="_blank"
