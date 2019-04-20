@@ -68,6 +68,7 @@ class Index extends React.Component {
               <Nav.Link
                 style={{ color: "white" }}
                 className="navSubObjects rounded"
+                tabindex="0"
                 onClick={this.scrollToAboutSection}
               >
                 About Me
@@ -75,6 +76,7 @@ class Index extends React.Component {
               <Nav.Link
                 style={{ color: "white" }}
                 className="navSubObjects rounded"
+                tabindex="0"
                 onClick={this.scrollToProjectSection}
               >
                 Apps/Projects
