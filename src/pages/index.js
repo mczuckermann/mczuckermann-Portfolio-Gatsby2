@@ -93,16 +93,10 @@ class Index extends React.Component {
         >
           <h1 className="groupHeaders col-12">About Me</h1>
           <div className="row aboutMeSet">
-            <div className="col-lg-12 col-md-5">
-              {/* <img
-                className="col-12"
-                id="headShotImage"
-                src={images[6]}
-                alt="Head-Shot"
-              /> */}
+            <div className="col-lg-12 col-md-7">
               <Img className="headShotImage" alt="Head-Shot" />
             </div>
-            <div className="col-lg-12 col-md-7">
+            <div className="col-lg-12 col-md-5">
               <br />
               <p className="portfolioBio">
                 Full Stack Web Developer specializing in React, Gatsby, and

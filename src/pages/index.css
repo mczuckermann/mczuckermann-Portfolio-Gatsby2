@@ -176,6 +176,7 @@ img.repoImages {
 
 .documentsBody {
   text-align: center;
+  margin-bottom: 25px;
 }
 
 .repoUrlDiv {
@@ -243,13 +244,17 @@ footer {
 /* MEDIA QUERIES */
 /* ============= */
 
-@media screen and (max-width: 466px) {
-  .navLink {
-    font-size: 10px;
+@media screen and (max-width: 381px) {
+  .headShotImage {
+    width: 100%;
   }
-  @media (hover: none) {
-    a:hover {
-      color: inherit;
-    }
+  .repoImages {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .navSubObjects {
+    font-size: 18px;
   }
 }
