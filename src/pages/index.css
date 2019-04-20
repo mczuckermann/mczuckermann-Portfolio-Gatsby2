@@ -248,6 +248,9 @@ footer {
   .headShotImage {
     width: 100%;
   }
+  img.repoImages {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 575px) {

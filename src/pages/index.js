@@ -52,7 +52,7 @@ class Index extends React.Component {
           <Navbar.Brand
             style={{ color: "white" }}
             id="nameNav"
-            className="header responsiveText rounded"
+            className="header rounded"
           >
             Matt Zuckermann
           </Navbar.Brand>
