@@ -1,5 +1,5 @@
 import React from "react"
-// import Image from "../components/image"
+import Img from "../components/image"
 import SEO from "../components/seo"
 import Footer from "../components/footer"
 import imageInfo from "../json/imageInfo"
@@ -94,12 +94,13 @@ class Index extends React.Component {
           <h1 className="groupHeaders col-12">About Me</h1>
           <div className="row aboutMeSet">
             <div className="col-lg-12 col-md-5">
-              <img
+              {/* <img
                 className="col-12"
                 id="headShotImage"
                 src={images[6]}
                 alt="Head-Shot"
-              />
+              /> */}
+              <Img className="headShotImage" alt="Head-Shot" />
             </div>
             <div className="col-lg-12 col-md-7">
               <br />

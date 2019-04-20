@@ -11,14 +11,21 @@ const Image = props => (
       query {
         placeholderImage: file(relativePath: { eq: "zuckermannHeadShot.png" }) {
           childImageSharp {
-            fluid(maxWidth: 100) {
+            fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
       }
     `}
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
+    render={data => (
+      <Img
+        className={props.className}
+        alt={props.alt}
+        title={props.title}
+        fluid={data.placeholderImage.childImageSharp.fluid}
+      />
+    )}
   />
 )
 export default Image

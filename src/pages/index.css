@@ -109,6 +109,15 @@ li {
   border-radius: 100%;
 }
 
+.headShotImage {
+  width: 350px;
+  display: block;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 100%;
+}
+
 .groupHeaders {
   font-size: 28px;
   background-color: black;
