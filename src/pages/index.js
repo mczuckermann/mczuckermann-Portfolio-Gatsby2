@@ -9,6 +9,7 @@ import "./index.css"
 import "../../node_modules/bootstrap/dist/css/bootstrap.css"
 import { Navbar, Nav } from "react-bootstrap"
 import classNames from "classnames"
+import navigator from "./../navigator"
 
 const images = [
   Images.image1,
@@ -41,24 +42,6 @@ class Index extends React.Component {
       behavior: `smooth`,
     })
 
-  userAgentIsMobile = () => {
-    if (typeof window !== "undefined") {
-      if (
-        navigator &&
-        (navigator.userAgent.match(/Android/i) ||
-          navigator.userAgent.match(/webOS/i) ||
-          navigator.userAgent.match(/iPhone/i) ||
-          navigator.userAgent.match(/iPad/i) ||
-          navigator.userAgent.match(/iPod/i) ||
-          navigator.userAgent.match(/BlackBerry/i) ||
-          navigator.userAgent.match(/Windows Phone/i))
-      ) {
-        return true
-      }
-      return false
-    }
-  }
-
   render() {
     return (
       <div>
@@ -87,7 +70,7 @@ class Index extends React.Component {
               <Nav.Link
                 style={{ color: "white" }}
                 className={classNames("navSubObjects", "rounded", {
-                  navSubObjectsHover: !this.userAgentIsMobile(),
+                  navSubObjectsHover: !navigator(),
                 })}
                 tabindex="0"
                 onClick={this.scrollToAboutSection}
@@ -97,7 +80,7 @@ class Index extends React.Component {
               <Nav.Link
                 style={{ color: "white" }}
                 className={classNames("navSubObjects", "rounded", {
-                  navSubObjectsHover: !this.userAgentIsMobile(),
+                  navSubObjectsHover: !navigator(),
                 })}
                 tabindex="0"
                 onClick={this.scrollToProjectSection}
