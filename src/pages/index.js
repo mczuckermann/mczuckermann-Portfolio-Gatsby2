@@ -72,7 +72,7 @@ class Index extends React.Component {
                 className={classNames("navSubObjects", "rounded", {
                   navSubObjectsHover: !navigator(),
                 })}
-                tabindex="0"
+                tabIndex="0"
                 onClick={this.scrollToAboutSection}
               >
                 About Me
@@ -82,7 +82,7 @@ class Index extends React.Component {
                 className={classNames("navSubObjects", "rounded", {
                   navSubObjectsHover: !navigator(),
                 })}
-                tabindex="0"
+                tabIndex="0"
                 onClick={this.scrollToProjectSection}
               >
                 Apps/Projects
@@ -170,23 +170,37 @@ class Index extends React.Component {
                   </a>
                   <div className="repoUrlDiv">
                     <a
-                      className="repoUrlLinks deployUrlLinks"
                       target="_blank"
                       rel="noopener noreferrer"
                       href={image.deployLink}
                     >
-                      {image.appName}
+                      <span
+                        className={classNames(
+                          "repoUrlLinks",
+                          "deployUrlLinks",
+                          {
+                            repoUrlLinksHover: !navigator(),
+                          }
+                        )}
+                      >
+                        {image.appName}
+                      </span>
                     </a>
                     <span style={{ color: "white" }} id="paddingDivider">
                       |
                     </span>
                     <a
-                      className="repoUrlLinks"
                       target="_blank"
                       rel="noopener noreferrer"
                       href={image.repoLink}
                     >
-                      <i className="fab fa-github" />
+                      <span
+                        className={classNames("repoUrlLinks", {
+                          repoUrlLinksHover: !navigator(),
+                        })}
+                      >
+                        <i className="fab fa-github" />
+                      </span>
                     </a>
                     <div className="projectRole">{image.projectRole}</div>
                     <div className="shortBio">{image.shortBio}</div>

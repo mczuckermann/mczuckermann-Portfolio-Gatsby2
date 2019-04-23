@@ -190,21 +190,22 @@ img.repoImages {
   background-color: rgb(200, 200, 200, 0.25);
 }
 
+.deployUrlLinks {
+  border-radius: 4%;
+  text-decoration: none;
+}
+
+.repoUrlLinksHover:hover {
+  color: #4992b5;
+  text-decoration: none;
+}
+
 .repoUrlLinks {
   text-decoration: none;
   color: white;
   border-radius: 11%;
   padding: 0 3px;
   font-size: 25px;
-}
-
-.deployUrlLinks {
-  border-radius: 4%;
-}
-
-.repoUrlLinksHover:hover {
-  color: #4992b5;
-  text-decoration: none;
 }
 
 .projectRole {
@@ -218,7 +219,7 @@ img.repoImages {
   -webkit-text-stroke: 0.5px white;
 }
 
-a:hover {
+a > span:hover {
   text-decoration: none;
 }
 

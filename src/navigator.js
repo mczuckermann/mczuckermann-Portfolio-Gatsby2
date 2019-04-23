@@ -1,7 +1,4 @@
 export default function userAgentIsMobile() {
-  if (typeof window !== `undefined`) {
-    console.log(navigator.userAgent)
-  }
   if (
     typeof window !== `undefined` &&
     navigator &&
