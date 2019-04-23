@@ -126,7 +126,12 @@ class Index extends React.Component {
                   rel="noopener noreferrer"
                   href={icon.docLink}
                 >
-                  <i className={icon.iconTag} title={icon.linkName} />
+                  <i
+                    className={classNames(icon.iconTag, {
+                      linkNavHover: !navigator(),
+                    })}
+                    title={icon.linkName}
+                  />
                 </a>
               </div>
             ))}
