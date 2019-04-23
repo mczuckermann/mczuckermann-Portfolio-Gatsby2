@@ -170,6 +170,7 @@ class Index extends React.Component {
                   </a>
                   <div className="repoUrlDiv">
                     <a
+                      id="noDecoration"
                       target="_blank"
                       rel="noopener noreferrer"
                       href={image.deployLink}

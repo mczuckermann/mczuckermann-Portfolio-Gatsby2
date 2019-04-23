@@ -208,6 +208,10 @@ img.repoImages {
   font-size: 25px;
 }
 
+a#noDecoration {
+  text-decoration: none;
+}
+
 .projectRole {
   font-size: 17px;
   color: lightgray;
