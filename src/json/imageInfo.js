@@ -2,7 +2,7 @@ export default [
   {
     appName: `Best Seller Searcher`,
     imageLink: `bestSellerSearcher.jpg`,
-    deployLink: `https://dry-wave-20540.herokuapp.com/`,
+    deployLink: `https://searcher-mczuckermann.herokuapp.com/`,
     repoLink: `https://github.com/mczuckermann/BestSellerSearcher`,
     shortBio: `React, Node.js, Express.js, Passport.js, MongoDB, Mongoose`,
     projectRole: `Authentication // API // Back-End Developer`,
