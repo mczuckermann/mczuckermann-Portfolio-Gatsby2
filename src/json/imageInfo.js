@@ -1,19 +1,19 @@
 export default [
   {
-    appName: `Snippets`,
-    imageLink: `codesnippetsScreenShot.jpg`,
-    deployLink: `https://morning-harbor-79094.herokuapp.com/home`,
-    repoLink: `https://github.com/mczuckermann/CodeSnippets`,
-    shortBio: `Handlebars, Javascript, Node.js, Express.js, Passport.js, MySQL, Sequelize`,
-    projectRole: `Authentication // Front-End Developer`,
-  },
-  {
     appName: `Best Seller Searcher`,
     imageLink: `bestSellerSearcher.jpg`,
     deployLink: `https://dry-wave-20540.herokuapp.com/`,
     repoLink: `https://github.com/mczuckermann/BestSellerSearcher`,
     shortBio: `React, Node.js, Express.js, Passport.js, MongoDB, Mongoose`,
     projectRole: `Authentication // API // Back-End Developer`,
+  },
+  {
+    appName: `Snippets`,
+    imageLink: `codesnippetsScreenShot.jpg`,
+    deployLink: `https://morning-harbor-79094.herokuapp.com/home`,
+    repoLink: `https://github.com/mczuckermann/CodeSnippets`,
+    shortBio: `Handlebars, Javascript, Node.js, Express.js, Passport.js, MySQL, Sequelize`,
+    projectRole: `Authentication // Front-End Developer`,
   },
   {
     appName: `Music Portfolio`,
