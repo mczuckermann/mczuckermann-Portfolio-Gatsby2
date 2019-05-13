@@ -1,8 +1,8 @@
 export default [
   {
-    appName: `Music Artist Portfolio`,
+    appName: `Music Portfolio`,
     deployLink: `https://joshzuckermann.netlify.com/`,
-    repoLink: `https://github.com/mczuckermann/jzMusicPortfolio`,
+    repoLink: `https://github.com/mczuckermann/MusicPortfolioPlayer`,
     shortBio: `React, Material-UI, Gatsby, GraphQL, Typescript, Jest`,
     projectRole: `Sole Developer`,
   },
@@ -21,7 +21,7 @@ export default [
     projectRole: `Authentication // Front-End Developer`,
   },
   {
-    appName: `Store Stock Item Grabber`,
+    appName: `Store Stock`,
     deployLink: `https://www.youtube.com/watch?v=uQq6YGy_8hs`,
     repoLink: `https://github.com/mczuckermann/StoreStockItemGrabber`,
     shortBio: `Javascript, Node, MySQL`,
