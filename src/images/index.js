@@ -1,6 +1,6 @@
 export default {
   image1: require("./jzMusicPortfolio.jpg"),
-  image2: require("./bestsellerSearcher.jpg"),
+  image2: require("./bestSellerSearcher.jpg"),
   image3: require("./codeSnippetsScreenShot.jpg"),
   image4: require("./storestockScreenShot.jpg"),
   image5: require("./liribotScreenShot.jpg"),
