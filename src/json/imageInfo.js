@@ -1,5 +1,12 @@
 export default [
   {
+    appName: `Music Portfolio`,
+    deployLink: `https://jz-development.netlify.com/`,
+    repoLink: `https://github.com/mczuckermann/jz-music-portfolio`,
+    shortBio: `React, Gatsby, GraphQL, Cloudinary, Typescript, Jest`,
+    projectRole: `Sole Developer`,
+  },
+  {
     appName: `Best Seller Searcher`,
     imageLink: `bestSellerSearcher.jpg`,
     deployLink: `https://searcher-mczuckermann.herokuapp.com/`,
@@ -16,13 +23,6 @@ export default [
     projectRole: `Authentication // Front-End Developer`,
   },
   {
-    appName: `Music Portfolio`,
-    deployLink: `https://jz-development.netlify.com/`,
-    repoLink: `https://github.com/mczuckermann/jz-music-portfolio`,
-    shortBio: `React, Gatsby, GraphQL, Cloudinary, Typescript, Jest`,
-    projectRole: `Sole Developer`,
-  },
-  {
     appName: `Store Stock`,
     imageLink: `storestockScreenShot.jpg`,
     deployLink: `https://www.youtube.com/watch?v=uQq6YGy_8hs`,
@@ -31,19 +31,19 @@ export default [
     projectRole: `Sole Developer`,
   },
   {
-    appName: `Friend Finder`,
-    imageLink: `friendScreenShot.jpg`,
-    deployLink: `https://friend-finder-zuckermann.herokuapp.com/`,
-    repoLink: `https://github.com/mczuckermann/Friend-Finder_Express-Node-Javascript`,
-    shortBio: `JavaScript`,
-    projectRole: `Sole Developer`,
-  },
-  {
     appName: `Liri Bot`,
     imageLink: `liribotScreenShot.jpg`,
     deployLink: `https://www.youtube.com/watch?v=8cOBg6EDE40`,
     repoLink: `https://github.com/mczuckermann/Liri-Bot_Node-Javascript-RestAPIs`,
     shortBio: `JavaScript, Node.js`,
+    projectRole: `Sole Developer`,
+  },
+  {
+    appName: `Friend Finder`,
+    imageLink: `friendScreenShot.jpg`,
+    deployLink: `https://friend-finder-zuckermann.herokuapp.com/`,
+    repoLink: `https://github.com/mczuckermann/Friend-Finder_Express-Node-Javascript`,
+    shortBio: `JavaScript`,
     projectRole: `Sole Developer`,
   },
 ]
