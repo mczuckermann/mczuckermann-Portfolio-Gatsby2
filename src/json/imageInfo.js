@@ -1,9 +1,9 @@
 export default [
   {
     appName: `Music Portfolio`,
-    deployLink: `https://jz-development.netlify.com/`,
+    deployLink: `https://joshzuckermann.netlify.com/`,
     repoLink: `https://github.com/mczuckermann/jz-music-portfolio`,
-    shortBio: `React, Gatsby, GraphQL, Cloudinary, Typescript, Jest`,
+    shortBio: `React, Material-UI, Gatsby, GraphQL, Typescript, Jest`,
     projectRole: `Sole Developer`,
   },
   {
@@ -11,15 +11,15 @@ export default [
     imageLink: `bestSellerSearcher.jpg`,
     deployLink: `https://searcher-mczuckermann.herokuapp.com/`,
     repoLink: `https://github.com/mczuckermann/BestSellerSearcher`,
-    shortBio: `React, Node.js, Express.js, Passport.js, MongoDB, Mongoose`,
+    shortBio: `React, Node, Express, Passport, MongoDB, Mongoose`,
     projectRole: `Authentication // API // Back-End Developer`,
   },
   {
     appName: `Snippets`,
     imageLink: `codesnippetsScreenShot.jpg`,
-    deployLink: `https://morning-harbor-79094.herokuapp.com/home`,
+    deployLink: `https://snippets-mczuckermann.herokuapp.com/home`,
     repoLink: `https://github.com/mczuckermann/CodeSnippets`,
-    shortBio: `Handlebars, Javascript, Node.js, Express.js, Passport.js, MySQL, Sequelize`,
+    shortBio: `Javascript, Handlebars, Node, Express, Passport, MySQL, Sequelize`,
     projectRole: `Authentication // Front-End Developer`,
   },
   {
@@ -27,7 +27,7 @@ export default [
     imageLink: `storestockScreenShot.jpg`,
     deployLink: `https://www.youtube.com/watch?v=uQq6YGy_8hs`,
     repoLink: `https://github.com/mczuckermann/Store-Stock-Item-Grabber_MySQL-Node`,
-    shortBio: `Javascript, Node.js, MySQL`,
+    shortBio: `Javascript, Node, MySQL`,
     projectRole: `Sole Developer`,
   },
   {
@@ -35,7 +35,7 @@ export default [
     imageLink: `liribotScreenShot.jpg`,
     deployLink: `https://www.youtube.com/watch?v=8cOBg6EDE40`,
     repoLink: `https://github.com/mczuckermann/Liri-Bot_Node-Javascript-RestAPIs`,
-    shortBio: `JavaScript, Node.js`,
+    shortBio: `JavaScript, Node`,
     projectRole: `Sole Developer`,
   },
   {
