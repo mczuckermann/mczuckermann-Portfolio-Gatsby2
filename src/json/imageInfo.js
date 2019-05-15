@@ -11,7 +11,7 @@ export default [
     deployLink: `https://searcher-mczuckermann.herokuapp.com/`,
     repoLink: `https://github.com/mczuckermann/BestSellerSearcher`,
     shortBio: `React, Node, Express, Passport, MongoDB, Mongoose`,
-    projectRole: `Authentication // API // Back-End Developer`,
+    projectRole: `Authentication // Server // Back-End Developer`,
   },
   {
     appName: `Snippets.`,
@@ -22,7 +22,7 @@ export default [
   },
   {
     appName: `Store Stock`,
-    deployLink: `https://www.youtube.com/watch?v=uQq6YGy_8hs`,
+    deployLink: `https://www.youtube.com/watch?v=Vufq5RRxQYA`,
     repoLink: `https://github.com/mczuckermann/StoreStockItemGrabber`,
     shortBio: `Javascript, Node, MySQL`,
     projectRole: `Sole Developer`,
