@@ -29,7 +29,7 @@ export default [
   },
   {
     appName: `Liri Bot`,
-    deployLink: `https://www.youtube.com/watch?v=8cOBg6EDE40`,
+    deployLink: `https://www.youtube.com/watch?v=boK_bb6fKoA`,
     repoLink: `https://github.com/mczuckermann/LiriBot`,
     shortBio: `JavaScript, Node`,
     projectRole: `Sole Developer`,
