@@ -174,7 +174,7 @@ class Index extends React.Component {
                     style={{ color: "darkgrey" }}
                     href="https://snippets-mczuckermann.herokuapp.com/"
                   >
-                    Snippets
+                    Snippets.
                   </a>
                 </i>
                 , use the username "<u>demo@demo.com</u>" with the password "
