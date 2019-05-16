@@ -177,7 +177,7 @@ class Index extends React.Component {
                     Snippets
                   </a>
                 </i>
-                , use the username "<u>demo@demo.com</u>"" with the password "
+                , use the username "<u>demo@demo.com</u>" with the password "
                 <u>demo</u>"
               </div>
             </div>
