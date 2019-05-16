@@ -152,6 +152,36 @@ class Index extends React.Component {
           </h1>
           <div className="container projectsBody rounded" id="projectsBodyPad">
             <div className="row">
+              <div style={{ color: "white", fontSize: "12px" }}>
+                *For a demo login version of{" "}
+                <i>
+                  <a
+                    target="_blank"
+                    noopener
+                    noreferrer
+                    style={{ color: "darkgrey" }}
+                    href="https://searcher-mczuckermann.herokuapp.com/"
+                  >
+                    Best Seller Searcher
+                  </a>
+                </i>{" "}
+                or{" "}
+                <i>
+                  <a
+                    target="_blank"
+                    noopener
+                    noreferrer
+                    style={{ color: "darkgrey" }}
+                    href="https://snippets-mczuckermann.herokuapp.com/"
+                  >
+                    Snippets
+                  </a>
+                </i>
+                , use the username "<u>demo@demo.com</u>"" with the password "
+                <u>demo</u>"
+              </div>
+            </div>
+            <div className="row">
               {imageInfo.map((image, index) => (
                 <div
                   className="col-xl-4 col-lg-6 col-md-6 hiddenImage"
