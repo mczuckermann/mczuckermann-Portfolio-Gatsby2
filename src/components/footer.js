@@ -3,12 +3,12 @@ import React from "react"
 import arrow from "../images/white-arrow.png"
 
 const Footer = props => (
-  <div className="container-full centerBody footerBackground">
+  <div refcontact={props.ref} className="container-full footerFormat">
     <div className="contactMe">Contact Me</div>
     <div>Let's work together!</div>
     <br />
     <div>
-      <span className="noFooterLink">+1-217-722-4952</span> ||{" "}
+      <span className="footerNoLink">+1-217-722-4952</span> ||{" "}
       <a className="noDecoration" href="mailto: mczuckermann@gmail.com">
         mczuckermann@gmail.com
       </a>{" "}
@@ -50,11 +50,28 @@ const Footer = props => (
         GitHub
       </a>{" "}
     </div>
+    <div>
+      <a
+        className="noDecoration"
+        href="https://mczuckermann.herokuapp.com/docs/Matt-Zuckermann_Business-Card.pdf#zoom=325"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Business Card
+      </a>
+    </div>
     <footer className="container-full">
-      <div className="col-12 noFooterLink copyrightDiv">
+      <div className="col-12 footerNoLink copyrightDiv">
         <div className="arrowImage">
-          <img onClick={props.onClick} src={arrow} alt="arrow" />
+          <img
+            onClick={props.onClick}
+            onSubmit={props.onClick}
+            tabIndex="0"
+            src={arrow}
+            alt="arrow"
+          />
         </div>
+        <div className="noDecoration">Back To Top</div>
         <br />
         <div> © 2019 mczuckermann. All Rights Reserved</div>
       </div>

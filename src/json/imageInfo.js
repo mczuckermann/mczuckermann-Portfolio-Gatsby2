@@ -11,7 +11,7 @@ export default [
     deployLink: `https://searcher-mczuckermann.herokuapp.com/`,
     repoLink: `https://github.com/mczuckermann/BestSellerSearcher`,
     shortBio: `React, Node, Express, Passport, MongoDB, Mongoose`,
-    projectRole: `Authentication // Server // Back-End Developer`,
+    projectRole: `Authentication // Back-End Developer`,
   },
   {
     appName: `Snippets.`,
