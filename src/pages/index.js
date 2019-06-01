@@ -3,13 +3,14 @@ import Img from "../components/image"
 import SEO from "../components/seo"
 import Footer from "../components/footer"
 import imageInfo from "../json/imageInfo"
-import iconInfo from "../json/iconInfo"
+// import iconInfo from "../json/iconInfo"
 import Images from "../images"
 import "./index.css"
 import "../../node_modules/bootstrap/dist/css/bootstrap.css"
 import { Navbar, Nav } from "react-bootstrap"
 import classNames from "classnames"
 import navigator from "./../navigator"
+// import ToggleMenu from "../components/ToggleMenu"
 
 const images = [
   Images.image1,
@@ -26,6 +27,7 @@ class Index extends React.Component {
   constructor(props) {
     super(props)
     this.checkScrollHeight = this.checkScrollHeight.bind(this)
+    this.top = React.createRef()
     this.homeSection = React.createRef()
     this.aboutSection = React.createRef()
     this.projectSection = React.createRef()
@@ -73,9 +75,16 @@ class Index extends React.Component {
       behavior: `smooth`,
     })
 
+  scrollToTop = () =>
+    window.scrollTo({
+      left: 0,
+      top: this.top.current.offsetTop,
+      behavior: `smooth`,
+    })
+
   render() {
     return (
-      <div>
+      <div ref={this.top}>
         <SEO
           title="Zuckermann"
           keywords={[`Programming`, `Full Stack`, `Matt Zuckermann`]}
@@ -105,17 +114,7 @@ class Index extends React.Component {
                     className={classNames("navSubObjects", "rounded", {
                       navSubObjectsHover: !navigator(),
                       navSubObjectsMoved: window.scrollY !== 0,
-                    })}
-                    style={{ color: "lightgrey" }}
-                    tabIndex="0"
-                    onClick={this.scrollToAboutSection}
-                  >
-                    Home
-                  </Nav.Link>
-                  <Nav.Link
-                    className={classNames("navSubObjects", "rounded", {
-                      navSubObjectsHover: !navigator(),
-                      navSubObjectsMoved: window.scrollY !== 0,
+                      navSubObjectsMovedHover: window.scrollY !== 0,
                     })}
                     style={{ color: "lightgrey" }}
                     tabIndex="0"
@@ -127,6 +126,7 @@ class Index extends React.Component {
                     className={classNames("navSubObjects", "rounded", {
                       navSubObjectsHover: !navigator(),
                       navSubObjectsMoved: window.scrollY !== 0,
+                      navSubObjectsMovedHover: window.scrollY !== 0,
                     })}
                     style={{ color: "lightgrey" }}
                     tabIndex="0"
@@ -134,39 +134,6 @@ class Index extends React.Component {
                   >
                     Portfolio
                   </Nav.Link>
-                  <Nav.Link
-                    className={classNames("navSubObjects", "rounded", {
-                      navSubObjectsHover: !navigator(),
-                      navSubObjectsMoved: window.scrollY !== 0,
-                    })}
-                    style={{ color: "lightgrey" }}
-                    tabIndex="0"
-                    onClick={this.scrollToProjectSection}
-                  >
-                    Contact
-                  </Nav.Link>
-                  {iconInfo.map((icon, index) => (
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={icon.docLink}
-                    >
-                      <div
-                        key={index}
-                        className={classNames("", {
-                          navSubObjectsHover: !navigator(),
-                        })}
-                      >
-                        <i
-                          className={classNames(icon.iconTag, {
-                            linkNavMoved: window.scrollY !== 0,
-                            linkNavHover: !navigator(),
-                          })}
-                          title={icon.linkName}
-                        />
-                      </div>
-                    </a>
-                  ))}
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
@@ -178,12 +145,11 @@ class Index extends React.Component {
           >
             <h1 className="groupHeaders col-12">About Me</h1>
             <div className="row aboutMeSet">
-              <div className="col-lg-12 col-md-7">
+              <div className="col-lg-12 col-md-12">
                 <Img className="headShotImage" alt="Head-Shot" />
               </div>
-              <div className="col-lg-4" />
-              <div className="col-lg-4 col-md-5">
-                <br />
+              <div className="col-lg-3 col-md-3 col-sm-3" />
+              <div className="col-lg-6 col-md-12 col-sm-12 bioBackground">
                 <br />
                 <p className="portfolioBio">
                   Full Stack Web Developer specializing in React, Gatsby, and
@@ -193,7 +159,7 @@ class Index extends React.Component {
                   platforms and the communities they create.
                 </p>
               </div>
-              <div className="col-lg-4" />
+              <div className="col-lg-3 col-md-3 col-sm-3" />
             </div>
           </div>
           <br />
@@ -296,9 +262,7 @@ class Index extends React.Component {
           </div>
         </div>
         <br />
-        <br />
-        <br />
-        <Footer />
+        <Footer onClick={this.scrollToTop} />
       </div>
     )
   }

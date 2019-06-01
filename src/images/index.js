@@ -6,5 +6,4 @@ export default {
   image5: require("./liribotCodeScreenShot.jpg"),
   image6: require("./friendRepoScreenShot.jpg"),
   image7: require("./zuckermannHeadShot.png"),
-  image8: require("./background.jpg"),
 }
