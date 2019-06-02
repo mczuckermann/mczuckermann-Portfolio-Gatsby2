@@ -3,7 +3,7 @@ import React from "react"
 import arrow from "../images/white-arrow.png"
 
 const Footer = props => (
-  <div refcontact={props.ref} className="container-full footerFormat">
+  <div ref={props.refcontact} className="container-full footerFormat">
     <div className="contactMe">Contact Me</div>
     <div>Let's work together!</div>
     <br />

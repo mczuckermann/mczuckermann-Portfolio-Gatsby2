@@ -17,7 +17,7 @@ const images = [
 
 const Projects = props => (
   <div
-    refprojects={props.ref}
+    ref={props.refprojects}
     className="container-full projectsBody rounded overflowRow"
   >
     <div />

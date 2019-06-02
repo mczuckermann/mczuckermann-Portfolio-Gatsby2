@@ -2,7 +2,7 @@ import React from "react"
 import Img from "../components/image"
 
 const About = props => (
-  <div refabout={props.ref} className="container-full aboutBody rounded">
+  <div ref={props.refabout} className="container-full aboutBody rounded">
     <h1 className="groupHeaders col-12">About Me</h1>
     <div className="row aboutMeSet">
       <div className="col-lg-12 col-md-12">

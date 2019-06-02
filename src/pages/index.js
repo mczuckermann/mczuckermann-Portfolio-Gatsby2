@@ -72,7 +72,7 @@ class Index extends React.Component {
           onClickContactSection={this.scrollToContactSection}
         />
         <About refabout={this.aboutSection} />
-        <Projects refprojects={this.projectsSection} />
+        <Projects refprojects={this.projectSection} />
         <Footer refcontact={this.contactSection} onClick={this.scrollToTop} />
       </div>
     )
