@@ -31,24 +31,33 @@ class Index extends React.Component {
     })
   }
 
+  // scrollToRef = () => {
+  //   let { value } = event.target;
+  //   window.scrollTo({
+  //     left: 0,
+  //     top: value.current.offsetTop - 74,
+  //     behavior: `smooth`,
+  //   })
+  // }
+
   scrollToAboutSection = () =>
     window.scrollTo({
       left: 0,
-      top: this.aboutSection.current.offsetTop - 81,
+      top: this.aboutSection.current.offsetTop - 74,
       behavior: `smooth`,
     })
 
   scrollToProjectSection = () =>
     window.scrollTo({
       left: 0,
-      top: this.projectSection.current.offsetTop - 81,
+      top: this.projectSection.current.offsetTop - 74,
       behavior: `smooth`,
     })
 
   scrollToContactSection = () =>
     window.scrollTo({
       left: 0,
-      top: this.contactSection.current.offsetTop - 81,
+      top: this.contactSection.current.offsetTop - 74,
       behavior: `smooth`,
     })
 
@@ -67,6 +76,7 @@ class Index extends React.Component {
           keywords={[`Programming`, `Full Stack`, `Matt Zuckermann`]}
         />
         <Header
+          state={this.state}
           onClickAboutSection={this.scrollToAboutSection}
           onClickProjectSection={this.scrollToProjectSection}
           onClickContactSection={this.scrollToContactSection}

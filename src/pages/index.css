@@ -198,7 +198,9 @@
 .projectOpaqueBackground {
   padding: 30px 0px;
   margin: 15px 0px;
-  background-color: rgba(0, 0, 0, 0.81);
+  height: 100%;
+  background: linear-gradient(to right, rgba(206, 222, 232, 0), rgb(17, 7, 29)),
+    linear-gradient(to bottom, rgb(191, 194, 196, 0), rgb(75, 71, 80));
   opacity: 0.8;
 }
 
@@ -293,8 +295,12 @@ a > span:hover {
   font-weight: bold;
 }
 
-.arrowImage {
+.arrowButton {
   transform: rotate(180deg);
+}
+
+.arrowButton:hover + #backToTopText {
+  color: #40394a;
 }
 
 .copyrightDiv {

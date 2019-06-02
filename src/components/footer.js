@@ -62,16 +62,16 @@ const Footer = props => (
     </div>
     <footer className="container-full">
       <div className="col-12 footerNoLink copyrightDiv">
-        <div className="arrowImage">
-          <img
-            onClick={props.onClick}
-            onSubmit={props.onClick}
-            tabIndex="0"
-            src={arrow}
-            alt="arrow"
-          />
+        <img
+          className="arrowButton"
+          onClick={props.onClick}
+          tabIndex="0"
+          src={arrow}
+          alt="arrow"
+        />
+        <div id="backToTopText" className="noDecoration">
+          Back To Top
         </div>
-        <div className="noDecoration">Back To Top</div>
         <br />
         <div> © 2019 mczuckermann. All Rights Reserved</div>
       </div>

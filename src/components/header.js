@@ -8,7 +8,7 @@ const Header = props => (
     <div className="container-full headerEdging" />
     <Navbar
       className={classNames("header", {
-        changedHeaderColor: window.scrollY !== 0,
+        changedHeaderColor: props.state.scrollHeight !== 0,
       })}
       bg="light"
       expand="md"
@@ -16,7 +16,7 @@ const Header = props => (
       <Navbar.Brand
         id="nameNav"
         className={classNames("rounded", {
-          nameNavMoved: window.scrollY !== 0,
+          nameNavMoved: props.state.scrollHeight !== 0,
         })}
       >
         Matt Zuckermann
@@ -30,20 +30,21 @@ const Header = props => (
           <Nav.Link
             className={classNames("navSubObjects", "rounded", {
               navSubObjectsHover: !navigator(),
-              navSubObjectsMoved: window.scrollY !== 0,
-              navSubObjectsMovedHover: window.scrollY !== 0,
+              navSubObjectsMoved: props.state.scrollHeight !== 0,
+              navSubObjectsMovedHover: props.state.scrollHeight !== 0,
             })}
             style={{ color: "lightgrey" }}
             tabIndex="0"
             onClick={props.onClickAboutSection}
+            value="this.aboutSection"
           >
             About
           </Nav.Link>
           <Nav.Link
             className={classNames("navSubObjects", "rounded", {
               navSubObjectsHover: !navigator(),
-              navSubObjectsMoved: window.scrollY !== 0,
-              navSubObjectsMovedHover: window.scrollY !== 0,
+              navSubObjectsMoved: props.state.scrollHeight !== 0,
+              navSubObjectsMovedHover: props.state.scrollHeight !== 0,
             })}
             style={{ color: "lightgrey" }}
             tabIndex="0"
@@ -54,8 +55,8 @@ const Header = props => (
           <Nav.Link
             className={classNames("navSubObjects", "rounded", {
               navSubObjectsHover: !navigator(),
-              navSubObjectsMoved: window.scrollY !== 0,
-              navSubObjectsMovedHover: window.scrollY !== 0,
+              navSubObjectsMoved: props.state.scrollHeight !== 0,
+              navSubObjectsMovedHover: props.state.scrollHeight !== 0,
             })}
             style={{ color: "lightgrey" }}
             tabIndex="0"
