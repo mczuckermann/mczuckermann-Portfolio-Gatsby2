@@ -1,5 +1,5 @@
 {
-  "name": "Matt Zuckermann",
+  "name": "gatsby-starter-default",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
@@ -30,7 +30,8 @@
     "react-dom": "^16.8.6",
     "react-fontawesome": "^1.6.1",
     "react-helmet": "^5.2.0",
-    "react-pdf": "^4.0.5"
+    "react-pdf": "^4.0.5",
+    "react-transformicons": "^1.0.3"
   },
   "devDependencies": {
     "css-loader": "^2.1.1",
