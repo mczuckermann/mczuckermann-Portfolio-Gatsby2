@@ -48,36 +48,6 @@ const Header = props => {
         >
           Matt Zuckermann
         </Navbar.Brand>
-        <Navbar
-          aria-controls="basic-navbar-nav navbar-toggler"
-          style={{ paddingRight: "15px" }}
-        >
-          <Button
-            id="navbar-toggler-button"
-            aria-owns={anchorEl ? "simple-menu" : undefined}
-            aria-haspopup="true"
-            onClick={handleClick}
-          >
-            <button
-              type="button"
-              className="tcon tcon-menu--xbutterfly"
-              aria-label="toggle menu"
-            >
-              <span class="tcon-menu__lines" aria-hidden="true" />
-              <span class="tcon-visuallyhidden">toggle menu</span>
-            </button>
-          </Button>
-          <Menu
-            id="simple-menu"
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-          >
-            <MenuItem onClick={handleCloseAndAbout}>About</MenuItem>
-            <MenuItem onClick={handleCloseAndProjects}>Portfolio</MenuItem>
-            <MenuItem onClick={handleCloseAndContact}>Contact</MenuItem>
-          </Menu>
-        </Navbar>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav style={{ float: "right" }} className="mr-auto">
             <Nav.Link
@@ -119,6 +89,36 @@ const Header = props => {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
+        <Navbar
+          aria-controls="basic-navbar-nav navbar-toggler"
+          style={{ paddingRight: "15px" }}
+        >
+          <Button
+            id="navbar-toggler-button"
+            aria-owns={anchorEl ? "simple-menu" : undefined}
+            aria-haspopup="true"
+            onClick={handleClick}
+          >
+            <button
+              type="button"
+              className="tcon tcon-menu--xbutterfly"
+              aria-label="toggle menu"
+            >
+              <span class="tcon-menu__lines" aria-hidden="true" />
+              <span class="tcon-visuallyhidden">toggle menu</span>
+            </button>
+          </Button>
+          <Menu
+            id="simple-menu"
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+          >
+            <MenuItem onClick={handleCloseAndAbout}>About</MenuItem>
+            <MenuItem onClick={handleCloseAndProjects}>Portfolio</MenuItem>
+            <MenuItem onClick={handleCloseAndContact}>Contact</MenuItem>
+          </Menu>
+        </Navbar>
       </Navbar>
       <div className="container-full headerEdging" />
     </div>
