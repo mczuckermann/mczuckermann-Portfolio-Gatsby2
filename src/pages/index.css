@@ -469,8 +469,8 @@ footer {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 767px) {
   #navbar-toggler-button {
-    display: none;
+    display: block;
   }
 }
