@@ -12,7 +12,7 @@ const Image = props => (
         placeholderImage: file(relativePath: { eq: "zuckermannHeadShot.png" }) {
           childImageSharp {
             fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
