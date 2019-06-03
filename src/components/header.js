@@ -95,7 +95,7 @@ const Header = props => {
         >
           <Button
             id="navbar-toggler-button"
-            style={{ display: none }}
+            style={{ display: "none" }}
             aria-owns={anchorEl ? "simple-menu" : undefined}
             aria-haspopup="true"
             onClick={handleClick}
