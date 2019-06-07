@@ -17,6 +17,10 @@ const Header = props => {
     setAnchorEl(null)
   }
 
+  function handleCloseAndHome() {
+    handleClose()
+    props.onClickHomeSection()
+  }
   function handleCloseAndAbout() {
     handleClose()
     props.onClickAboutSection()
@@ -38,7 +42,7 @@ const Header = props => {
           changedHeaderColor: props.state.scrollHeight !== 0,
         })}
         bg="light"
-        expand="md"
+        expand="lg"
       >
         <Navbar.Brand
           id="nameNav"
@@ -50,6 +54,19 @@ const Header = props => {
         </Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav style={{ float: "right" }} className="mr-auto">
+            <Nav.Link
+              className={classNames("navSubObjects", "rounded", {
+                navSubObjectsHover: !navigator(),
+                navSubObjectsMoved: props.state.scrollHeight !== 0,
+                navSubObjectsMovedHover: props.state.scrollHeight !== 0,
+              })}
+              style={{ color: "lightgrey" }}
+              tabIndex="0"
+              onClick={props.onClickHomeSection}
+              value="this.aboutSection"
+            >
+              Home
+            </Nav.Link>
             <Nav.Link
               className={classNames("navSubObjects", "rounded", {
                 navSubObjectsHover: !navigator(),
@@ -105,8 +122,13 @@ const Header = props => {
               className="tcon tcon-menu--xbutterfly"
               aria-label="toggle menu"
             >
-              <span class="tcon-menu__lines" aria-hidden="true" />
-              <span class="tcon-visuallyhidden">toggle menu</span>
+              <span
+                className={classNames({
+                  changedTogglerColor: props.state.scrollHeight !== 0,
+                })}
+              />
+              <span className="tcon-menu__lines" aria-hidden="true" />
+              <span className="tcon-visuallyhidden">toggle menu</span>
             </button>
           </Button>
           <Menu
@@ -115,6 +137,7 @@ const Header = props => {
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
+            <MenuItem onClick={handleCloseAndHome}>Home</MenuItem>
             <MenuItem onClick={handleCloseAndAbout}>About</MenuItem>
             <MenuItem onClick={handleCloseAndProjects}>Portfolio</MenuItem>
             <MenuItem onClick={handleCloseAndContact}>Contact</MenuItem>

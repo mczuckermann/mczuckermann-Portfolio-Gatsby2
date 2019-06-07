@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useState } from "react"
 import SEO from "../components/seo"
 import Header from "../components/header"
+import Home from "../components/home"
 import About from "../components/about"
 import Projects from "../components/projects"
 import Footer from "../components/footer"
@@ -13,6 +14,7 @@ class Index extends React.Component {
     super(props)
     this.checkScrollHeight = this.checkScrollHeight.bind(this)
     this.top = React.createRef()
+    this.homeSection = React.createRef()
     this.aboutSection = React.createRef()
     this.projectSection = React.createRef()
     this.contactSection = React.createRef()
@@ -31,14 +33,12 @@ class Index extends React.Component {
     })
   }
 
-  // scrollToRef = () => {
-  //   let { value } = event.target;
-  //   window.scrollTo({
-  //     left: 0,
-  //     top: value.current.offsetTop - 74,
-  //     behavior: `smooth`,
-  //   })
-  // }
+  scrollToHomeSection = () =>
+    window.scrollTo({
+      left: 0,
+      top: this.homeSection.current.offsetTop - 74,
+      behavior: `smooth`,
+    })
 
   scrollToAboutSection = () =>
     window.scrollTo({
@@ -61,13 +61,6 @@ class Index extends React.Component {
       behavior: `smooth`,
     })
 
-  scrollToTop = () =>
-    window.scrollTo({
-      left: 0,
-      top: this.top.current.offsetTop,
-      behavior: `smooth`,
-    })
-
   render() {
     return (
       <div ref={this.top}>
@@ -77,13 +70,18 @@ class Index extends React.Component {
         />
         <Header
           state={this.state}
+          onClickHomeSection={this.scrollToHomeSection}
           onClickAboutSection={this.scrollToAboutSection}
           onClickProjectSection={this.scrollToProjectSection}
           onClickContactSection={this.scrollToContactSection}
         />
+        <Home refhome={this.homeSection} />
         <About refabout={this.aboutSection} />
         <Projects refprojects={this.projectSection} />
-        <Footer refcontact={this.contactSection} onClick={this.scrollToTop} />
+        <Footer
+          refcontact={this.contactSection}
+          onClick={this.scrollToHomeSection}
+        />
       </div>
     )
   }

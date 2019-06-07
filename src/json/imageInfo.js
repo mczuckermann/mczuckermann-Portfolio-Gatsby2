@@ -27,18 +27,4 @@ export default [
     shortBio: `Javascript, Node, MySQL`,
     projectRole: `Sole Developer`,
   },
-  {
-    appName: `Liri Bot`,
-    deployLink: `https://www.youtube.com/watch?v=boK_bb6fKoA`,
-    repoLink: `https://github.com/mczuckermann/LiriBot`,
-    shortBio: `JavaScript, Node`,
-    projectRole: `Sole Developer`,
-  },
-  {
-    appName: `Friend Finder`,
-    deployLink: `https://friend-finder-zuckermann.herokuapp.com/`,
-    repoLink: `https://github.com/mczuckermann/FriendFinder`,
-    shortBio: `JavaScript`,
-    projectRole: `Sole Developer`,
-  },
 ]

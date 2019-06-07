@@ -16,10 +16,11 @@
 
 .arrow {
   position: absolute;
-  top: 96%;
+  top: 85%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .arrow span {
   display: block;
   width: 15px;
@@ -202,9 +203,9 @@
 }
 
 .header {
-  background: url("../images/background.jpg");
+  background-image: url("../images/deskPhoto.jpg");
+  background-size: cover;
   font-family: "Abel", sans-serif;
-  padding: 15px 0;
   transition: all 1s ease !important;
 }
 
@@ -226,7 +227,7 @@
 .changedHeaderColor {
   background: linear-gradient(to right, rgb(191, 194, 196, 0), rgb(78, 67, 92)),
     linear-gradient(to bottom, rgba(68, 133, 123, 0.708), rgb(94, 109, 86, 0.1));
-  filter: drop-shadow(16px 16px 20px black);
+  /* filter: drop-shadow(16px 16px 20px black); */
   transition: all 1s ease !important;
   opacity: 0.98;
 }
@@ -255,6 +256,38 @@
 .navbar-toggler {
   font-size: 8px;
   font-weight: bold;
+}
+
+.changedTogglerColor + .tcon-menu__lines {
+  color: black !important;
+}
+
+/* ==== */
+/* HOME */
+/* ==== */
+
+.homeBody {
+  background-image: url("../images/deskPhoto.jpg");
+  background-position: 0px -70px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 1000px;
+  margin-bottom: -70px;
+}
+
+.home-title {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  /* margin-left: -23.229vw; */
+  margin-left: -391.5px;
+  color: white;
+  /* font-size: 4.45vw; */
+  font-size: 75px;
+  text-transform: uppercase;
+  padding: 2.37333333vw 2.37333333vw;
+  background-color: rgb(0, 0, 0, 0.8);
+  border-radius: 2%;
 }
 
 /* ===== */
@@ -291,7 +324,6 @@
 
 .aboutBody {
   background-image: url("../images/background.jpg") !important;
-  background-position: 0px -70px;
   width: 100%;
   overflow: hidden;
   padding: 20px 2px;
@@ -452,14 +484,23 @@ footer {
 /* MEDIA QUERIES */
 /* ============= */
 
-@media screen and (max-width: 503px) {
-  .headShotImage {
-    width: 100%;
+@media screen and (max-width: 1333px) {
+  .header {
+    background-size: 1333px;
   }
 }
-@media screen and (max-width: 381px) {
-  img.repoImages {
-    width: 100%;
+
+@media screen and (max-width: 991px) {
+  #navbar-toggler-button {
+    display: block !important;
+  }
+}
+
+@media screen and (max-width: 925px) {
+  .home-title {
+    top: 40%;
+    left: 58%;
+    font-size: 65px;
   }
 }
 
@@ -467,10 +508,22 @@ footer {
   .navSubObjects {
     font-size: 18px;
   }
+  .home-title {
+    top: 40%;
+    left: 85%;
+    margin-left: -75vw;
+    font-size: 8vw;
+  }
 }
 
-@media screen and (max-width: 767px) {
-  #navbar-toggler-button {
-    display: block !important;
+@media screen and (max-width: 503px) {
+  .headShotImage {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 381px) {
+  img.repoImages {
+    width: 100%;
   }
 }
