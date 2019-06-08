@@ -1,7 +1,7 @@
 import React from "react"
 import classNames from "classnames"
 import navigator from "../../js/navigator"
-import imageInfo from "../../json/imageInfo"
+import imageInfo from "../../json/imageInfo.json"
 import Images from "../../images"
 import "./projects.css"
 
