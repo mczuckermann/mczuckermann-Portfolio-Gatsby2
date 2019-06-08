@@ -13,18 +13,21 @@ const images = [
   Images.image3,
   Images.image4,
   Images.image5,
-  Images.image6,
-  Images.image7,
-  Images.image8,
 ]
 
 const Projects = props => {
   const [on, toggle] = useState(false)
   const [trail, set, stop] = useTrail(4, () => ({
+    transform: "scale(0.8, 0.8), translate3d(-8%,0,0)",
     opacity: 0,
-    transform: "scale(0.4, 0.4)",
   }))
-  set({ opacity: on ? 1 : 0, transform: on ? "scale(1, 1)" : "scale(0.4,0.4)" })
+  set({
+    opacity: on ? 1 : 0,
+    transform: on
+      ? "scale(1, 1), translate3d(0,0,0,)"
+      : "scale(0.8,0.8), translate3d(-8%,0,0)",
+    config: { duration: 1500 / 4 },
+  })
   stop()
   return (
     <div
