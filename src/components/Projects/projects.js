@@ -71,60 +71,58 @@ const Projects = props => {
           </div>
         </div>
         <div className="row">
-          {trail.map(props => {
-            return imageInfo.map((image, index) => (
-              <animated.div
-                style={props}
-                className="col-xl-6 col-lg-6 col-md-6 hiddenImage"
-                key={index}
-              >
-                <div className="projectOpaqueBackground rounded">
+          {trail.map((props, index) => (
+            <animated.div
+              style={props}
+              className="col-xl-6 col-lg-6 col-md-6 hiddenImage"
+              key={index}
+            >
+              <div className="projectOpaqueBackground rounded">
+                <a
+                  href={imageInfo[index].deployLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    className="repoImages rounded"
+                    src={images[index]}
+                    alt={imageInfo[index].appName}
+                  />
+                </a>
+                <div className="repoUrlDiv">
                   <a
-                    href={image.deployLink}
+                    id="noDecoration"
                     target="_blank"
                     rel="noopener noreferrer"
+                    href={imageInfo[index].deployLink}
                   >
-                    <img
-                      className="repoImages rounded"
-                      src={images[index]}
-                      alt={image.appName}
-                    />
+                    <span
+                      className={classNames("repoUrlLinks", {
+                        repoUrlLinksHover: !navigator(),
+                      })}
+                    >
+                      {imageInfo[index].appName}
+                    </span>
                   </a>
-                  <div className="repoUrlDiv">
-                    <a
-                      id="noDecoration"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={image.deployLink}
+                  <span id="paddingDivider">|</span>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={imageInfo[index].repoLink}
+                  >
+                    <span
+                      className={classNames("repoUrlLinks", {
+                        repoUrlLinksHover: !navigator(),
+                      })}
                     >
-                      <span
-                        className={classNames("repoUrlLinks", {
-                          repoUrlLinksHover: !navigator(),
-                        })}
-                      >
-                        {image.appName}
-                      </span>
-                    </a>
-                    <span id="paddingDivider">|</span>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={image.repoLink}
-                    >
-                      <span
-                        className={classNames("repoUrlLinks", {
-                          repoUrlLinksHover: !navigator(),
-                        })}
-                      >
-                        <i className="fab fa-github" />
-                      </span>
-                    </a>
-                    <div className="shortBio">{image.shortBio}</div>
-                  </div>
+                      <i className="fab fa-github" />
+                    </span>
+                  </a>
+                  <div className="shortBio">{imageInfo[index].shortBio}</div>
                 </div>
-              </animated.div>
-            ))
-          })}
+              </div>
+            </animated.div>
+          ))}
         </div>
       </div>
     </div>
