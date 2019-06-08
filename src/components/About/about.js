@@ -8,26 +8,31 @@ const About = props => {
   const [on, toggle] = useState(false)
 
   const slideRef = useRef()
-  const animationSlide = useSpring({
+  const textSlide = useSpring({
     transform: on ? "translate3d(0,0,0,)" : "translate3d(-149%,0,0)",
     ref: slideRef,
   })
 
-  const fadeRef = useRef()
-  const animationFade = useSpring({
+  const textFadeRef = useRef()
+  const imageFade = useSpring({
+    opacity: on ? 1 : 0.7,
+    ref: textFadeRef,
+  })
+  const imageFadeRef = useRef()
+  const textFade = useSpring({
     opacity: on ? 1 : 0,
-    ref: fadeRef,
+    ref: imageFadeRef,
   })
 
-  useChain([slideRef, fadeRef])
+  useChain([imageFadeRef, slideRef, textFadeRef])
 
   return (
     <div ref={props.refabout} className="container-full aboutBody">
       <h1 className="groupHeaders col-12">About Me</h1>
       <div className="row aboutMeSet">
-        <div className="col-lg-12 col-md-12">
+        <animated.div className="col-lg-12 col-md-12" style={imageFade}>
           <Img className="headShotImage" alt="Head-Shot" />
-        </div>
+        </animated.div>
         <div className="col-lg-3 col-md-3 col-sm-3" />
         <Waypoint
           bottomOffset="26%"
@@ -37,10 +42,10 @@ const About = props => {
         />
         <animated.div
           className="col-lg-6 col-md-12 col-sm-12 bioBackground"
-          style={animationSlide}
+          style={textSlide}
         >
           <br />
-          <animated.p className="portfolioBio" style={animationFade}>
+          <animated.p className="portfolioBio" style={textFade}>
             Full Stack Web Developer specializing in React, Gatsby, and Node.
             Experienced Technical Director with a history in audiovisual
             engineering and two Bachelor of Arts degrees in Music and
