@@ -35,7 +35,7 @@ const Projects = props => {
       className="container-full projectsBody rounded overflowRow"
     >
       <Waypoint
-        bottomOffset="89%"
+        bottomOffset="82%"
         onEnter={() => {
           if (!on) toggle(true)
         }}

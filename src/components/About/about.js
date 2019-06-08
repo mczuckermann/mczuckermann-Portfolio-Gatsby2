@@ -35,7 +35,7 @@ const About = props => {
         </animated.div>
         <div className="col-lg-3 col-md-3 col-sm-3" />
         <Waypoint
-          bottomOffset="26%"
+          bottomOffset="20%"
           onEnter={() => {
             if (!on) toggle(true)
           }}

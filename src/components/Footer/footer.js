@@ -15,7 +15,7 @@ const Footer = props => {
   return (
     <div ref={props.refcontact} className="container-full footerFormat">
       <Waypoint
-        bottomOffset="37%"
+        bottomOffset="32%"
         onEnter={() => {
           if (!on) toggle(true)
         }}
