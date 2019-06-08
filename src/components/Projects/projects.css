@@ -8,7 +8,7 @@
 
 .projectOpaqueBackground {
   padding: 30px 0px;
-  margin: 15px 0px;
+  margin: 30px 0px;
   height: 100%;
   background: linear-gradient(to right, rgba(206, 222, 232, 0), rgb(17, 7, 29)),
     linear-gradient(to bottom, rgb(191, 194, 196, 0), rgb(75, 71, 80));
@@ -50,6 +50,20 @@ img.repoImages {
 
 a#noDecoration {
   text-decoration: none;
+}
+
+.projectsBody {
+  padding: 20px 0px 30px 0px;
+  background-color: rgb(243, 243, 243);
+}
+
+#projectsBodyPad {
+  padding: 0px 15px;
+}
+
+#paddingDivider {
+  padding: 0px 4px;
+  color: black;
 }
 
 .shortBio {

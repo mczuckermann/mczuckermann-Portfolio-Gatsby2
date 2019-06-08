@@ -37,20 +37,6 @@
   padding: 20px 2px;
 }
 
-.projectsBody {
-  padding: 10px 0px;
-  background-color: rgb(243, 243, 243);
-}
-
-#projectsBodyPad {
-  padding: 0px 15px;
-}
-
-#paddingDivider {
-  padding: 0px 4px;
-  color: black;
-}
-
 .bioBackground {
   background-color: black;
   border-radius: 10px;
