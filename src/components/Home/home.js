@@ -1,5 +1,6 @@
 import React from "react"
 import { useSpring, animated } from "react-spring"
+import "./home.css"
 
 const Home = props => {
   const fade = useSpring({ from: { opacity: 0 }, opacity: 1 })

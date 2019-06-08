@@ -1,8 +1,9 @@
 import React from "react"
 import classNames from "classnames"
-import navigator from "./../navigator"
-import imageInfo from "../json/imageInfo"
-import Images from "../images"
+import navigator from "../../navigator"
+import imageInfo from "../../json/imageInfo"
+import Images from "../../images"
+import "./projects.css"
 
 const images = [
   Images.image1,

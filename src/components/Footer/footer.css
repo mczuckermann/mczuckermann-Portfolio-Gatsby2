@@ -1,0 +1,45 @@
+/* ====== */
+/* FOOTER */
+/* ====== */
+
+.footerFormat {
+  padding: 60px 0px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.noDecoration,
+.noDecoration:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.footerNoLink {
+  color: grey;
+}
+
+.contactMe {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.arrowButton {
+  transform: rotate(180deg);
+}
+
+.arrowButton:hover + #backToTopText {
+  color: #40394a;
+}
+
+.copyrightDiv {
+  margin-top: 50px;
+}
+
+footer {
+  font-size: 15px;
+  padding: 3px 0;
+  text-align: center;
+}

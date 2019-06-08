@@ -1,5 +1,6 @@
 import React from "react"
-import Img from "../components/image"
+import Img from "../Image/image"
+import "./about.css"
 
 const About = props => (
   <div ref={props.refabout} className="container-full aboutBody">

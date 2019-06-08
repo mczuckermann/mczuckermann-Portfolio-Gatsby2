@@ -1,6 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
-import arrow from "../images/white-arrow.png"
+import arrow from "../../images/white-arrow.png"
+import "./footer.css"
 
 const Footer = props => (
   <div ref={props.refcontact} className="container-full footerFormat">

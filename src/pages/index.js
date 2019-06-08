@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from "react"
-import SEO from "../components/seo"
-import Header from "../components/header"
-import Home from "../components/home"
-import About from "../components/about"
-import Projects from "../components/projects"
-import Footer from "../components/footer"
+import SEO from "../components/SEO/seo"
+import Header from "../components/Header/header"
+import Home from "../components/Home/home"
+import About from "../components/About/about"
+import Projects from "../components/Projects/projects"
+import Footer from "../components/Footer/footer"
 import "./index.css"
 import "../../node_modules/bootstrap/dist/css/bootstrap.css"
 
@@ -17,6 +17,7 @@ const Index = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", checkScrollHeight)
+    checkScrollHeight()
   }, [])
 
   const checkScrollHeight = () => {

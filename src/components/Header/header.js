@@ -1,11 +1,12 @@
 import React from "react"
 import classNames from "classnames"
-import navigator from "./../navigator"
+import navigator from "../../navigator"
 import { Navbar, Nav } from "react-bootstrap"
 import Button from "@material-ui/core/Button"
 import Menu from "@material-ui/core/Menu"
 import MenuItem from "@material-ui/core/MenuItem"
 import { useSpring, animated } from "react-spring"
+import "./header.css"
 
 const Header = props => {
   const [anchorEl, setAnchorEl] = React.useState(null)
