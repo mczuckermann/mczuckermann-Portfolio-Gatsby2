@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import SEO from "../components/seo"
 import Header from "../components/header"
 import Home from "../components/home"
@@ -7,84 +7,69 @@ import Projects from "../components/projects"
 import Footer from "../components/footer"
 import "./index.css"
 import "../../node_modules/bootstrap/dist/css/bootstrap.css"
-// import iconInfo from "../json/iconInfo"
 
-class Index extends React.Component {
-  constructor(props) {
-    super(props)
-    this.checkScrollHeight = this.checkScrollHeight.bind(this)
-    this.top = React.createRef()
-    this.homeSection = React.createRef()
-    this.aboutSection = React.createRef()
-    this.projectSection = React.createRef()
-    this.contactSection = React.createRef()
-    this.state = {
-      scrollHeight: 0,
-    }
+const Index = () => {
+  const [scrollHeight, setScrollHeight] = useState(0)
+  const homeSection = useRef(null)
+  const aboutSection = useRef(null)
+  const projectSection = useRef(null)
+  const contactSection = useRef(null)
+
+  useEffect(() => {
+    window.addEventListener("scroll", checkScrollHeight)
+  }, [])
+
+  const checkScrollHeight = () => {
+    setScrollHeight(window.scrollY)
   }
 
-  componentDidMount = () => {
-    window.addEventListener("scroll", this.checkScrollHeight)
-  }
-
-  checkScrollHeight = () => {
-    this.setState({
-      scrollHeight: window.scrollY,
-    })
-  }
-
-  scrollToHomeSection = () =>
+  const scrollToHomeSection = () =>
     window.scrollTo({
       left: 0,
-      top: this.homeSection.current.offsetTop - 74,
+      top: homeSection.current.offsetTop - 74,
       behavior: `smooth`,
     })
 
-  scrollToAboutSection = () =>
+  const scrollToAboutSection = () =>
     window.scrollTo({
       left: 0,
-      top: this.aboutSection.current.offsetTop - 74,
+      top: aboutSection.current.offsetTop - 74,
       behavior: `smooth`,
     })
 
-  scrollToProjectSection = () =>
+  const scrollToProjectSection = () =>
     window.scrollTo({
       left: 0,
-      top: this.projectSection.current.offsetTop - 74,
+      top: projectSection.current.offsetTop - 74,
       behavior: `smooth`,
     })
 
-  scrollToContactSection = () =>
+  const scrollToContactSection = () =>
     window.scrollTo({
       left: 0,
-      top: this.contactSection.current.offsetTop - 74,
+      top: contactSection.current.offsetTop - 74,
       behavior: `smooth`,
     })
 
-  render() {
-    return (
-      <div ref={this.top}>
-        <SEO
-          title="Zuckermann"
-          keywords={[`Programming`, `Full Stack`, `Matt Zuckermann`]}
-        />
-        <Header
-          state={this.state}
-          onClickHomeSection={this.scrollToHomeSection}
-          onClickAboutSection={this.scrollToAboutSection}
-          onClickProjectSection={this.scrollToProjectSection}
-          onClickContactSection={this.scrollToContactSection}
-        />
-        <Home refhome={this.homeSection} />
-        <About refabout={this.aboutSection} />
-        <Projects refprojects={this.projectSection} />
-        <Footer
-          refcontact={this.contactSection}
-          onClick={this.scrollToHomeSection}
-        />
-      </div>
-    )
-  }
+  return (
+    <div>
+      <SEO
+        title="Zuckermann"
+        keywords={[`Programming`, `Full Stack`, `Matt Zuckermann`]}
+      />
+      <Header
+        scrollHeight={scrollHeight}
+        onClickHomeSection={scrollToHomeSection}
+        onClickAboutSection={scrollToAboutSection}
+        onClickProjectSection={scrollToProjectSection}
+        onClickContactSection={scrollToContactSection}
+      />
+      <Home refhome={homeSection} />
+      <About refabout={aboutSection} />
+      <Projects refprojects={projectSection} />
+      <Footer refcontact={contactSection} onClick={scrollToHomeSection} />
+    </div>
+  )
 }
 
 export default Index

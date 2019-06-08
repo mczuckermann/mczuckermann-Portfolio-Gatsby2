@@ -97,7 +97,6 @@ const Projects = props => (
                     <i className="fab fa-github" />
                   </span>
                 </a>
-                <div className="projectRole">{image.projectRole}</div>
                 <div className="shortBio">{image.shortBio}</div>
               </div>
             </div>

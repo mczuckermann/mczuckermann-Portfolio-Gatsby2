@@ -5,9 +5,12 @@ import { Navbar, Nav } from "react-bootstrap"
 import Button from "@material-ui/core/Button"
 import Menu from "@material-ui/core/Menu"
 import MenuItem from "@material-ui/core/MenuItem"
+import { useSpring, animated } from "react-spring"
 
 const Header = props => {
   const [anchorEl, setAnchorEl] = React.useState(null)
+
+  const fade = useSpring({ from: { opacity: 0 }, opacity: 1 })
 
   function handleClick(event) {
     setAnchorEl(event.currentTarget)
@@ -35,11 +38,11 @@ const Header = props => {
   }
 
   return (
-    <div id="headerWithEdging">
+    <animated.div style={fade} id="headerWithEdging">
       <div className="container-full headerEdging" />
       <Navbar
         className={classNames("header", {
-          changedHeaderColor: props.state.scrollHeight !== 0,
+          changedHeaderColor: props.scrollHeight !== 0,
         })}
         bg="light"
         expand="lg"
@@ -47,7 +50,7 @@ const Header = props => {
         <Navbar.Brand
           id="nameNav"
           className={classNames("rounded", {
-            nameNavMoved: props.state.scrollHeight !== 0,
+            nameNavMoved: props.scrollHeight !== 0,
           })}
         >
           Matt Zuckermann
@@ -57,34 +60,32 @@ const Header = props => {
             <Nav.Link
               className={classNames("navSubObjects", "rounded", {
                 navSubObjectsHover: !navigator(),
-                navSubObjectsMoved: props.state.scrollHeight !== 0,
-                navSubObjectsMovedHover: props.state.scrollHeight !== 0,
+                navSubObjectsMoved: props.scrollHeight !== 0,
+                navSubObjectsMovedHover: props.scrollHeight !== 0,
               })}
               style={{ color: "lightgrey" }}
               tabIndex="0"
               onClick={props.onClickHomeSection}
-              value="this.aboutSection"
             >
               Home
             </Nav.Link>
             <Nav.Link
               className={classNames("navSubObjects", "rounded", {
                 navSubObjectsHover: !navigator(),
-                navSubObjectsMoved: props.state.scrollHeight !== 0,
-                navSubObjectsMovedHover: props.state.scrollHeight !== 0,
+                navSubObjectsMoved: props.scrollHeight !== 0,
+                navSubObjectsMovedHover: props.scrollHeight !== 0,
               })}
               style={{ color: "lightgrey" }}
               tabIndex="0"
               onClick={props.onClickAboutSection}
-              value="this.aboutSection"
             >
               About
             </Nav.Link>
             <Nav.Link
               className={classNames("navSubObjects", "rounded", {
                 navSubObjectsHover: !navigator(),
-                navSubObjectsMoved: props.state.scrollHeight !== 0,
-                navSubObjectsMovedHover: props.state.scrollHeight !== 0,
+                navSubObjectsMoved: props.scrollHeight !== 0,
+                navSubObjectsMovedHover: props.scrollHeight !== 0,
               })}
               style={{ color: "lightgrey" }}
               tabIndex="0"
@@ -95,8 +96,8 @@ const Header = props => {
             <Nav.Link
               className={classNames("navSubObjects", "rounded", {
                 navSubObjectsHover: !navigator(),
-                navSubObjectsMoved: props.state.scrollHeight !== 0,
-                navSubObjectsMovedHover: props.state.scrollHeight !== 0,
+                navSubObjectsMoved: props.scrollHeight !== 0,
+                navSubObjectsMovedHover: props.scrollHeight !== 0,
               })}
               style={{ color: "lightgrey" }}
               tabIndex="0"
@@ -124,7 +125,7 @@ const Header = props => {
             >
               <span
                 className={classNames({
-                  changedTogglerColor: props.state.scrollHeight !== 0,
+                  changedTogglerColor: props.scrollHeight !== 0,
                 })}
               />
               <span className="tcon-menu__lines" aria-hidden="true" />
@@ -145,7 +146,7 @@ const Header = props => {
         </Navbar>
       </Navbar>
       <div className="container-full headerEdging" />
-    </div>
+    </animated.div>
   )
 }
 
