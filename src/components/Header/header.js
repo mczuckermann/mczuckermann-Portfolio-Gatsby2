@@ -1,6 +1,6 @@
 import React from "react"
 import classNames from "classnames"
-import navigator from "../../navigator"
+import navigator from "../../js/navigator"
 import { Navbar, Nav } from "react-bootstrap"
 import Button from "@material-ui/core/Button"
 import Menu from "@material-ui/core/Menu"

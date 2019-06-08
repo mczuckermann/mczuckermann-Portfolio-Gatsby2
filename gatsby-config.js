@@ -25,7 +25,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-favicon`,
       options: {
-        logo: `./src/images/zuckermannHeadShot.png`,
+        logo: `./src/images/font-awesome_user-circle.png`,
       },
     },
     {
@@ -34,10 +34,10 @@ module.exports = {
         name: `Portfolio`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#effffc`,
+        theme_color: `#9e94a8`,
         display: `minimal-ui`,
-        icon: `src/images/zuckermannHeadShot.png`,
+        icon: `src/images/font-awesome_user-circle.png`,
       },
     },
   ],
