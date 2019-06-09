@@ -6,44 +6,47 @@ import Button from "@material-ui/core/Button"
 import Menu from "@material-ui/core/Menu"
 import MenuItem from "@material-ui/core/MenuItem"
 import { useSpring, animated } from "react-spring"
+import styled from "styled-components"
 import "./header.css"
 
 const Header = props => {
+  const HeaderEdging = styled.div`
+    background-color: #151515;
+    height: 3px;
+    width: 100%;
+  `
+
   const [anchorEl, setAnchorEl] = React.useState(null)
-
   const fade = useSpring({ from: { opacity: 0 }, opacity: 1 })
-
-  function handleClick(event) {
+  const handleClick = event => {
     setAnchorEl(event.currentTarget)
   }
-
-  function handleClose() {
+  const handleClose = () => {
     setAnchorEl(null)
   }
-
-  function handleCloseAndHome() {
+  const handleCloseAndHome = () => {
     handleClose()
     props.onClickHomeSection()
   }
-  function handleCloseAndAbout() {
+  const handleCloseAndAbout = () => {
     handleClose()
     props.onClickAboutSection()
   }
-  function handleCloseAndProjects() {
+  const handleCloseAndProjects = () => {
     handleClose()
     props.onClickProjectSection()
   }
-  function handleCloseAndContact() {
+  const handleCloseAndContact = () => {
     handleClose()
     props.onClickContactSection()
   }
 
   return (
     <animated.div style={fade} id="headerWithEdging">
-      <div className="container-full headerEdging" />
+      <HeaderEdging className="container-full" />
       <Navbar
         className={classNames("header", {
-          changedHeaderColor: props.scrollHeight !== 0,
+          headerMoved: props.scrollHeight !== 0,
         })}
         bg="light"
         expand="lg"
@@ -124,11 +127,11 @@ const Header = props => {
               className="tcon tcon-menu--xbutterfly"
               aria-label="toggle menu"
             >
-              <span
+              {/* <span
                 className={classNames({
                   changedTogglerColor: props.scrollHeight !== 0,
                 })}
-              />
+              /> */}
               <span className="tcon-menu__lines" aria-hidden="true" />
               <span className="tcon-visuallyhidden">toggle menu</span>
             </button>
@@ -146,7 +149,7 @@ const Header = props => {
           </Menu>
         </Navbar>
       </Navbar>
-      <div className="container-full headerEdging" />
+      <HeaderEdging className="container-full" />
     </animated.div>
   )
 }

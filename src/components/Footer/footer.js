@@ -3,9 +3,49 @@ import React, { useState } from "react"
 import { useSpring, animated, config } from "react-spring"
 import { Waypoint } from "react-waypoint"
 import arrow from "../../images/white-arrow.png"
-import "./footer.css"
+import styled from "styled-components"
 
 const Footer = props => {
+  const FooterFormat = styled.div`
+    padding: 60px 0px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  `
+  const NoDecoration = styled.a`
+    color: white;
+    text-decoration: none;
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+  `
+  const FooterNoLinkDiv = styled.div`
+    color: grey;
+    margin-top: 50px;
+  `
+
+  const FooterNoLinkSpan = styled.span`
+    color: grey;
+  `
+  const ContactMe = styled.div`
+    font-size: 40px;
+    font-weight: bold;
+  `
+  const ArrowButton = styled.img`
+    transform: rotate(180deg);
+    &:hover {
+      color: #40394a;
+    }
+  `
+  const Footer = styled.footer`
+    font-size: 15px;
+    padding: 3px 0;
+    text-align: center;
+  `
+
   const [on, toggle] = useState(false)
   const fadeIn = useSpring({
     opacity: on ? 1 : 0,
@@ -13,7 +53,7 @@ const Footer = props => {
   })
 
   return (
-    <div ref={props.refcontact} className="container-full footerFormat">
+    <FooterFormat ref={props.refcontact} className="container-full">
       <Waypoint
         bottomOffset="32%"
         onEnter={() => {
@@ -21,82 +61,74 @@ const Footer = props => {
         }}
       />
       <animated.div style={fadeIn}>
-        <div className="contactMe">Contact Me</div>
+        <ContactMe>Contact Me</ContactMe>
         <div>Let's work together!</div>
         <br />
         <div>
-          <span className="footerNoLink">+1-217-722-4952</span> ||{" "}
-          <a className="noDecoration" href="mailto: mczuckermann@gmail.com">
+          <FooterNoLinkSpan>+1-217-722-4952</FooterNoLinkSpan> ||{" "}
+          <NoDecoration href="mailto: mczuckermann@gmail.com">
             mczuckermann@gmail.com
-          </a>{" "}
+          </NoDecoration>{" "}
           ||{" "}
-          <a
-            className="noDecoration"
+          <NoDecoration
             href="https://twitter.com/mczuckermann"
             rel="noopener noreferrer"
             target="_blank"
           >
             @mczuckermann
-          </a>
+          </NoDecoration>
         </div>
         <div>
-          <a
-            className="noDecoration"
+          <NoDecoration
             href="https://www.linkedin.com/in/mczuckermann/"
             rel="noopener noreferrer"
             target="_blank"
           >
             LinkedIn
-          </a>{" "}
+          </NoDecoration>{" "}
           ||{" "}
-          <a
-            className="noDecoration"
+          <NoDecoration
             href="https://mczuckermann.herokuapp.com/docs/Matt-Zuckermann_R%C3%A9sum%C3%A9.pdf#zoom=115"
             rel="noopener noreferrer"
             target="_blank"
           >
             Resume
-          </a>{" "}
+          </NoDecoration>{" "}
           ||{" "}
-          <a
-            className="noDecoration"
+          <NoDecoration
             href="https://github.com/mczuckermann"
             rel="noopener noreferrer"
             target="_blank"
           >
             GitHub
-          </a>{" "}
+          </NoDecoration>{" "}
         </div>
         <div>
-          <a
-            className="noDecoration"
+          <NoDecoration
             href="https://mczuckermann.herokuapp.com/docs/Matt-Zuckermann_Business-Card.pdf#zoom=325"
             rel="noopener noreferrer"
             target="_blank"
           >
             Business Card
-          </a>
+          </NoDecoration>
         </div>
       </animated.div>
-      <footer className="container-full">
-        <div className="col-12 footerNoLink copyrightDiv">
+      <Footer className="container-full">
+        <FooterNoLinkDiv className="col-12">
           <animated.div style={fadeIn}>
-            <img
-              className="arrowButton"
+            <ArrowButton
               onClick={props.onClick}
               tabIndex="0"
               src={arrow}
               alt="arrow"
             />
-            <div id="backToTopText" className="noDecoration">
-              Back To Top
-            </div>
+            <div id="backToTopText">Back To Top</div>
           </animated.div>
           <br />
           <div> © 2019 mczuckermann. All Rights Reserved</div>
-        </div>
-      </footer>
-    </div>
+        </FooterNoLinkDiv>
+      </Footer>
+    </FooterFormat>
   )
 }
 
