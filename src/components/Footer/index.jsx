@@ -3,49 +3,50 @@ import React, { useState } from "react"
 import { useSpring, animated, config } from "react-spring"
 import { Waypoint } from "react-waypoint"
 import arrow from "../../images/white-arrow.png"
-import styled from "styled-components"
+import { makeStyles } from "@material-ui/styles"
 
+const useStyles = makeStyles({
+  footerFormat: {
+    padding: "60px 0px",
+    backgroundColor: "black",
+    color: "white",
+    textAlign: "center",
+    marginLeft: "auto",
+    marginRight: "auto",
+  },
+  noDecoration: {
+    color: "white",
+    textDecoration: "none",
+    "&:hover": {
+      color: "white",
+      textDecoration: "none",
+    },
+  },
+  footerNoLinkDiv: {
+    color: "grey",
+    marginTop: "50px",
+  },
+  footerNoLinkSpan: {
+    color: "grey",
+  },
+  contactMe: {
+    fontSize: "40px",
+    fontWeight: "bold",
+  },
+  arrowButton: {
+    transform: "rotate(180deg)",
+    "&:hover": {
+      color: "#40394a",
+    },
+  },
+  footer: {
+    fontSize: "15px",
+    padding: "3px 0",
+    textAlign: "center",
+  },
+})
 const Footer = props => {
-  const FooterFormat = styled.div`
-    padding: 60px 0px;
-    background-color: black;
-    color: white;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  `
-  const NoDecoration = styled.a`
-    color: white;
-    text-decoration: none;
-    &:hover {
-      color: white;
-      text-decoration: none;
-    }
-  `
-  const FooterNoLinkDiv = styled.div`
-    color: grey;
-    margin-top: 50px;
-  `
-
-  const FooterNoLinkSpan = styled.span`
-    color: grey;
-  `
-  const ContactMe = styled.div`
-    font-size: 40px;
-    font-weight: bold;
-  `
-  const ArrowButton = styled.img`
-    transform: rotate(180deg);
-    &:hover {
-      color: #40394a;
-    }
-  `
-  const Footer = styled.footer`
-    font-size: 15px;
-    padding: 3px 0;
-    text-align: center;
-  `
-
+  const classes = useStyles()
   const [on, toggle] = useState(false)
   const fadeIn = useSpring({
     opacity: on ? 1 : 0,
@@ -53,7 +54,10 @@ const Footer = props => {
   })
 
   return (
-    <FooterFormat ref={props.refcontact} className="container-full">
+    <div
+      ref={props.refcontact}
+      className={`${classes.footerFormat} container-full`}
+    >
       <Waypoint
         bottomOffset="32%"
         onEnter={() => {
@@ -61,62 +65,71 @@ const Footer = props => {
         }}
       />
       <animated.div style={fadeIn}>
-        <ContactMe>Contact Me</ContactMe>
+        <div className={classes.contactMe}>Contact Me</div>
         <div>Let's work together!</div>
         <br />
         <div>
-          <FooterNoLinkSpan>+1-217-722-4952</FooterNoLinkSpan> ||{" "}
-          <NoDecoration href="mailto: mczuckermann@gmail.com">
+          <span className={classes.footerNoLinkSpan}>+1-217-722-4952</span> ||{" "}
+          <a
+            className={classes.noDecoration}
+            href="mailto: mczuckermann@gmail.com"
+          >
             mczuckermann@gmail.com
-          </NoDecoration>{" "}
+          </a>{" "}
           ||{" "}
-          <NoDecoration
+          <a
+            className={classes.noDecoration}
             href="https://twitter.com/mczuckermann"
             rel="noopener noreferrer"
             target="_blank"
           >
             @mczuckermann
-          </NoDecoration>
+          </a>
         </div>
         <div>
-          <NoDecoration
+          <a
+            className={classes.noDecoration}
             href="https://www.linkedin.com/in/mczuckermann/"
             rel="noopener noreferrer"
             target="_blank"
           >
             LinkedIn
-          </NoDecoration>{" "}
+          </a>{" "}
           ||{" "}
-          <NoDecoration
+          <a
+            className={classes.noDecoration}
             href="https://mczuckermann.herokuapp.com/docs/Matt-Zuckermann_R%C3%A9sum%C3%A9.pdf#zoom=115"
             rel="noopener noreferrer"
             target="_blank"
           >
             Resume
-          </NoDecoration>{" "}
+          </a>{" "}
           ||{" "}
-          <NoDecoration
+          <a
+            className={classes.noDecoration}
             href="https://github.com/mczuckermann"
             rel="noopener noreferrer"
             target="_blank"
           >
             GitHub
-          </NoDecoration>{" "}
+          </a>{" "}
         </div>
         <div>
-          <NoDecoration
+          <a
+            className={classes.noDecoration}
             href="https://mczuckermann.herokuapp.com/docs/Matt-Zuckermann_Business-Card.pdf#zoom=325"
             rel="noopener noreferrer"
             target="_blank"
           >
             Business Card
-          </NoDecoration>
+          </a>
         </div>
       </animated.div>
-      <Footer className="container-full">
-        <FooterNoLinkDiv className="col-12">
+      <div className={`${classes.footer} container-full`}>
+        <div className={`${classes.footerNoLinkDiv} "col-12"`}>
           <animated.div style={fadeIn}>
-            <ArrowButton
+            <img
+              className={classes.arrowButton}
               onClick={props.onClick}
               tabIndex="0"
               src={arrow}
@@ -126,9 +139,9 @@ const Footer = props => {
           </animated.div>
           <br />
           <div> © 2019 mczuckermann. All Rights Reserved</div>
-        </FooterNoLinkDiv>
-      </Footer>
-    </FooterFormat>
+        </div>
+      </div>
+    </div>
   )
 }
 

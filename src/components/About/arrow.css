@@ -1,21 +1,5 @@
-.headShotImage {
-  width: 500px;
-  display: block;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 100%;
-}
-
-@media screen and (max-width: 503px) {
-  .headShotImage {
-    width: 85%;
-  }
-}
-
 /* =============== */
-/* Arrow Animation */
+/* ARROW ANIMATION */
 /* =============== */
 
 .arrow {
