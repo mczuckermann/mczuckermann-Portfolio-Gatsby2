@@ -5,6 +5,7 @@ import { Navbar, Nav } from "react-bootstrap"
 import Button from "@material-ui/core/Button"
 import Menu from "@material-ui/core/Menu"
 import MenuItem from "@material-ui/core/MenuItem"
+import HamburgerButton from "../../images/hamburgerButton.png"
 import { useSpring, animated } from "react-spring"
 import "./header.css"
 
@@ -119,19 +120,11 @@ const Header = props => {
             aria-haspopup="true"
             onClick={handleClick}
           >
-            <button
-              type="button"
-              className="tcon tcon-menu--xbutterfly"
-              aria-label="toggle menu"
-            >
-              <span
-                className={classNames({
-                  changedTogglerColor: props.scrollHeight !== 0,
-                })}
-              />
-              <span className="tcon-menu__lines" aria-hidden="true" />
-              <span className="tcon-visuallyhidden">toggle menu</span>
-            </button>
+            <img
+              src={HamburgerButton}
+              alt="menu button"
+              style={{ width: "35px" }}
+            />
           </Button>
           <Menu
             id="simple-menu"
