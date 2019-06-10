@@ -16,6 +16,7 @@ const Index = () => {
   const contactSection = useRef(null)
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     window.addEventListener("scroll", checkScrollHeight)
     checkScrollHeight()
   }, [])
