@@ -123,7 +123,10 @@ const Header = props => {
             <img
               src={HamburgerButton}
               alt="menu button"
-              style={{ width: "35px" }}
+              style={{
+                width: "25px",
+                height: "22px",
+              }}
             />
           </Button>
           <Menu
