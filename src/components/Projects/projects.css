@@ -16,7 +16,7 @@
 }
 
 u {
-  color: black;
+  color: darkgrey;
   font-weight: bold;
 }
 
@@ -76,9 +76,54 @@ a > span:hover {
   text-decoration: none;
 }
 
+.slideInDesc {
+  background-color: black;
+  color: white;
+  position: absolute;
+  bottom: 50%;
+  left: 17%;
+  width: 66%;
+  padding: 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.demoNYT,
+.demoSnippets {
+  padding: 0px 130px;
+  text-align: center;
+}
+
 /* ============= */
 /* MEDIA QUERIES */
 /* ============= */
+
+@media screen and (max-width: 1650px) {
+  .demoNYT,
+  .demoSnippets {
+    padding: 0px 100px 0px 100px;
+  }
+}
+
+@media screen and (max-width: 1599px) {
+  .demoNYT,
+  .demoSnippets {
+    padding: 0px 80px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .demoNYT,
+  .demoSnippets {
+    padding: 0px 45px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .slideInDesc {
+    font-size: 15px;
+  }
+}
 
 @media screen and (max-width: 381px) {
   img.repoImages {
