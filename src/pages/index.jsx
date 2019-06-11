@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react"
 import SEO from "../components/SEO"
 import Header from "../components/Header"
-import Menu from "../components/Menu"
 import Home from "../components/Home"
 import About from "../components/About"
 import Projects from "../components/Projects"
