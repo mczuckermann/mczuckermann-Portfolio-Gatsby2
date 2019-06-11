@@ -66,7 +66,6 @@ const Index = () => {
         onClickProjectSection={scrollToProjectSection}
         onClickContactSection={scrollToContactSection}
       />
-      <Menu />
       <Home refhome={homeSection} />
       <About refabout={aboutSection} />
       <Projects refprojects={projectSection} />
