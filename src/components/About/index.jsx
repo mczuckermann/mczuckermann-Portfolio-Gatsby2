@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react"
-import Img from "../Image/image"
+import Img from "../Image"
 import "./about.css"
 import { Waypoint } from "react-waypoint"
 import { useChain, useSpring, animated } from "react-spring"
@@ -46,10 +46,11 @@ const About = props => {
         >
           <br />
           <animated.p className="portfolioBio" style={textFade}>
-            Full Stack Web Developer specializing in React, Gatsby, and Node.
-            Experienced Technical Director with a history in audiovisual
-            engineering and two Bachelor of Arts degrees in Music and
-            Communication-Media Studies. Passion for tech platforms and the
+            Full stack web developer specializing in React, Gatsby, and Node.
+            Recent UC Berkeley Extension coding boot camp grad in full stack web
+            development. Experienced AV technical director with a history in
+            audio engineering and two Bachelor of Arts degrees in music and
+            communication-media studies. Passion for tech platforms and the
             communities they create.
           </animated.p>
         </animated.div>

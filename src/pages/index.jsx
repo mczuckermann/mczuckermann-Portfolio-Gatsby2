@@ -1,10 +1,11 @@
 import React, { useState, useRef, useEffect } from "react"
-import SEO from "../components/SEO/seo"
-import Header from "../components/Header/header"
-import Home from "../components/Home/home"
-import About from "../components/About/about"
-import Projects from "../components/Projects/projects"
-import Footer from "../components/Footer/footer"
+import SEO from "../components/SEO"
+import Header from "../components/Header"
+import Menu from "../components/Menu"
+import Home from "../components/Home"
+import About from "../components/About"
+import Projects from "../components/Projects"
+import Footer from "../components/Footer"
 import "./index.css"
 import "../../node_modules/bootstrap/dist/css/bootstrap.css"
 
@@ -66,6 +67,7 @@ const Index = () => {
         onClickProjectSection={scrollToProjectSection}
         onClickContactSection={scrollToContactSection}
       />
+      <Menu />
       <Home refhome={homeSection} />
       <About refabout={aboutSection} />
       <Projects refprojects={projectSection} />
