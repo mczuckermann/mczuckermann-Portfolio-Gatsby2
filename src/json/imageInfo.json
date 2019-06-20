@@ -11,7 +11,7 @@
     "deployLink": "https://searcher-mczuckermann.herokuapp.com/",
     "repoLink": "https://github.com/mczuckermann/BestSellerSearcher",
     "shortBio": "React, Node, Express, Passport, MongoDB, Mongoose",
-    "desc": "Website that parses a New York Times articles API and allows users to openly share their favorites with others"
+    "desc": "Website that parses The New York Times articles API and allows users to openly share their favorites with others"
   },
   {
     "appName": "Snippets.",
@@ -25,6 +25,6 @@
     "deployLink": "https://www.youtube.com/watch?v=Vufq5RRxQYA",
     "repoLink": "https://github.com/mczuckermann/StoreStockItemGrabber",
     "shortBio": "Javascript, Node, MySQL",
-    "desc": "Store Stock is a Node app that imitates online shopping websites and tracks shoppers' purchases."
+    "desc": "Store Stock is a Node CLI app that prompts users to make a purchase and keeps track of such purchases on the back end."
   }
 ]
