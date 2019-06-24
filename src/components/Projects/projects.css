@@ -7,7 +7,7 @@
 }
 
 .projectOpaqueBackground {
-  padding: 30px 0px;
+  padding: 70px 0px 30px 0px;
   margin: 30px 0px;
   height: 100%;
   background: linear-gradient(to right, rgba(206, 222, 232, 0), rgb(17, 7, 29)),
@@ -24,7 +24,7 @@ img.repoImages {
   width: 68%;
   height: auto;
   display: block;
-  margin: 40px auto 0px auto;
+  margin: auto;
   box-shadow: 8px 8px 3px 0px rgba(0, 0, 0, 0.75);
 }
 
@@ -77,8 +77,10 @@ a > span:hover {
 }
 
 .slideInDesc {
-  background-color: black;
-  color: white;
+  background-color: white;
+  border: black solid 2px;
+  color: silver;
+  -webkit-text-stroke: black 1px;
   position: absolute;
   bottom: 50%;
   left: 17%;
@@ -86,6 +88,13 @@ a > span:hover {
   padding: 15px;
   font-size: 20px;
   text-align: center;
+}
+
+.slideInDesc:hover {
+  -webkit-text-stroke: black 0px;
+  background-color: black;
+  border: white solid 2px;
+  color: white;
 }
 
 .demoNYT,

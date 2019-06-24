@@ -60,13 +60,19 @@ const Projects = props => {
                 key={index}
               >
                 <div className="projectOpaqueBackground rounded">
-                  <img
-                    onMouseEnter={() => hoverChange(true)}
-                    onMouseLeave={() => hoverChange(false)}
-                    className="repoImages rounded"
-                    src={images[index]}
-                    alt={imageInfo[index].appName}
-                  />
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={imageInfo[index].deployLink}
+                  >
+                    <img
+                      onMouseEnter={() => hoverChange(true)}
+                      onMouseLeave={() => hoverChange(false)}
+                      className="repoImages rounded"
+                      src={images[index]}
+                      alt={imageInfo[index].appName}
+                    />
+                  </a>
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
