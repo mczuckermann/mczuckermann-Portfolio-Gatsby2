@@ -67,14 +67,20 @@ const Projects = props => {
                     src={images[index]}
                     alt={imageInfo[index].appName}
                   />
-                  <animated.div
-                    onMouseEnter={() => hoverChange(true)}
-                    onMouseLeave={() => hoverChange(false)}
-                    className={`class-${index} slideInDesc rounded`}
-                    style={hoverAnimation}
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={imageInfo[index].deployLink}
                   >
-                    {imageInfo[index].desc}
-                  </animated.div>
+                    <animated.div
+                      onMouseEnter={() => hoverChange(true)}
+                      onMouseLeave={() => hoverChange(false)}
+                      className={`class-${index} slideInDesc rounded`}
+                      style={hoverAnimation}
+                    >
+                      {imageInfo[index].desc}
+                    </animated.div>
+                  </a>
                   <div className="repoUrlDiv">
                     <a
                       id="noDecoration"
