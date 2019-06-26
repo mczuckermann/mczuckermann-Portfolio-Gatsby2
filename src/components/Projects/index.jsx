@@ -6,6 +6,7 @@ import navigator from "../../js/navigator"
 import imageInfo from "../../json/imageInfo.json"
 import DemoLineNYT from "../DemoLineNYT"
 import DemoLineSnippets from "../DemoLineSnippets"
+import SlideAnimation from "../SlideAnimation"
 import Images from "../../images"
 import "./projects.css"
 
@@ -73,20 +74,12 @@ const Projects = props => {
                         src={images[index]}
                         alt={imageInfo[index].appName}
                       />
-                      {() => {
-                        !navigator() ? (
-                          <animated.div
-                            onMouseEnter={() => hoverChange(true)}
-                            onMouseLeave={() => hoverChange(false)}
-                            className={`class-${index} slideInDesc rounded`}
-                            style={hoverAnimation}
-                          >
-                            {imageInfo[index].desc}
-                          </animated.div>
-                        ) : (
-                          {}
-                        )
-                      }}
+                      <SlideAnimation
+                        index={index}
+                        imageInfo={imageInfo}
+                        hoverAnimation={hoverAnimation}
+                        animated={animated}
+                      />
                     </a>
                   </div>
                   <div className="repoUrlDiv">
