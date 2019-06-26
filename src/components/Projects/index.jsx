@@ -60,33 +60,35 @@ const Projects = props => {
                 key={index}
               >
                 <div className="projectOpaqueBackground rounded">
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={imageInfo[index].deployLink}
-                  >
-                    <img
-                      onMouseEnter={() => hoverChange(true)}
-                      onMouseLeave={() => hoverChange(false)}
-                      className="repoImages rounded"
-                      src={images[index]}
-                      alt={imageInfo[index].appName}
-                    />
-                  </a>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={imageInfo[index].deployLink}
-                  >
-                    <animated.div
-                      onMouseEnter={() => hoverChange(true)}
-                      onMouseLeave={() => hoverChange(false)}
-                      className={`class-${index} slideInDesc rounded`}
-                      style={hoverAnimation}
+                  <div className="repoImageWrapper">
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={imageInfo[index].deployLink}
                     >
-                      {imageInfo[index].desc}
-                    </animated.div>
-                  </a>
+                      <img
+                        onMouseEnter={() => hoverChange(true)}
+                        onMouseLeave={() => hoverChange(false)}
+                        className="repoImages rounded"
+                        src={images[index]}
+                        alt={imageInfo[index].appName}
+                      />
+                      {() => {
+                        !navigator() ? (
+                          <animated.div
+                            onMouseEnter={() => hoverChange(true)}
+                            onMouseLeave={() => hoverChange(false)}
+                            className={`class-${index} slideInDesc rounded`}
+                            style={hoverAnimation}
+                          >
+                            {imageInfo[index].desc}
+                          </animated.div>
+                        ) : (
+                          {}
+                        )
+                      }}
+                    </a>
+                  </div>
                   <div className="repoUrlDiv">
                     <a
                       id="noDecoration"

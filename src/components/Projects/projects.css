@@ -20,11 +20,14 @@ u {
   font-weight: bold;
 }
 
+.repoImageWrapper {
+  margin: 0px 12%;
+}
+
 img.repoImages {
-  width: 68%;
+  width: 100%;
   height: auto;
   display: block;
-  margin: auto;
   box-shadow: 8px 8px 3px 0px rgba(0, 0, 0, 0.75);
 }
 
@@ -77,20 +80,13 @@ a > span:hover {
 }
 
 .slideInDesc {
-  background-color: white;
-  border: black solid 2px;
-  color: silver;
-  -webkit-text-stroke: black 1px;
   position: absolute;
   bottom: 50%;
-  left: 17%;
-  width: 66%;
+  left: 13%;
+  width: 74%;
+  text-align: center;
   padding: 15px;
   font-size: 20px;
-  text-align: center;
-}
-
-.slideInDesc:hover {
   -webkit-text-stroke: black 0px;
   background-color: black;
   border: white solid 2px;
