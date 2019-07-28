@@ -74,12 +74,17 @@ const Projects = props => {
                         src={images[index]}
                         alt={imageInfo[index].appName}
                       />
-                      <SlideAnimation
-                        index={index}
-                        imageInfo={imageInfo}
-                        hoverAnimation={hoverAnimation}
-                        animated={animated}
-                      />
+                      {!navigator() ? (
+                        <SlideAnimation
+                          index={index}
+                          imageInfo={imageInfo}
+                          hoverChange={hoverChange}
+                          hoverAnimation={hoverAnimation}
+                          animated={animated}
+                        />
+                      ) : (
+                        <div />
+                      )}
                     </a>
                   </div>
                   <div className="repoUrlDiv">
