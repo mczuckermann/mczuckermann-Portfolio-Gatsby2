@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "matt-zuckermann-web-portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Showcase of Accomplishments and Projects by Matt Zuckermann",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Matt Zuckermann <mczuckermann@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
     "@fortawesome/free-solid-svg-icons": "^5.8.1",

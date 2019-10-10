@@ -25,12 +25,13 @@ const Index = () => {
     setScrollHeight(window.scrollY)
   }
 
-  const scrollToHomeSection = () =>
+  const scrollToHomeSection = () => {
     window.scrollTo({
       left: 0,
       top: homeSection.current.offsetTop - 74,
       behavior: `smooth`,
     })
+  }
 
   const scrollToAboutSection = () =>
     window.scrollTo({
@@ -57,19 +58,29 @@ const Index = () => {
     <div>
       <SEO
         title="Zuckermann"
-        keywords={[`Programming`, `Full Stack`, `Matt Zuckermann`]}
+        description="Showcase of Accomplishments and Projects by Matt Zuckermann"
+        keywords={[
+          `Programming`,
+          `Full Stack`,
+          `Matt Zuckermann`,
+          `Front End`,
+          `Back End`,
+          `Web Development`,
+        ]}
       />
       <Header
         scrollHeight={scrollHeight}
-        onClickHomeSection={scrollToHomeSection}
-        onClickAboutSection={scrollToAboutSection}
-        onClickProjectSection={scrollToProjectSection}
-        onClickContactSection={scrollToContactSection}
+        onClickFunctions={{
+          scrollToHomeSection,
+          scrollToAboutSection,
+          scrollToProjectSection,
+          scrollToContactSection,
+        }}
       />
-      <Home refhome={homeSection} />
-      <About refabout={aboutSection} />
-      <Projects refprojects={projectSection} />
-      <Footer refcontact={contactSection} onClick={scrollToHomeSection} />
+      <Home refHome={homeSection} />
+      <About refAbout={aboutSection} />
+      <Projects refProjects={projectSection} />
+      <Footer refContact={contactSection} onClick={scrollToHomeSection} />
     </div>
   )
 }
