@@ -42,7 +42,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           property: `og:image`,
-          content: `https://media.licdn.com/dms/image/C4E03AQECnHtBedEWvw/profile-displayphoto-shrink_200_200/0?e=1576108800&v=beta&t=d8kwanNGn1uORcsIEQ2zt1vXaOnqPHPo-XG6PNB7fVY`,
+          content: `https://res.cloudinary.com/mczuckermann/image/upload/v1570704844/SEO-Image.png`,
         },
         {
           property: `og:type`,
