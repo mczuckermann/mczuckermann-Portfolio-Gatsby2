@@ -1,16 +1,23 @@
 import React from "react"
 import classNames from "classnames"
-import navigator from "../../js/navigator"
 import { Navbar, Nav } from "react-bootstrap"
 import Button from "@material-ui/core/Button"
 import Menu from "@material-ui/core/Menu"
 import MenuItem from "@material-ui/core/MenuItem"
 import HamburgerButton from "../../images/hamburgerButton.png"
 import { useSpring, animated } from "react-spring"
+import NavButton from "../NavButton"
 import "./header.css"
 
-const Header = props => {
+const Header = ({ scrollHeight, onClickFunctions }) => {
   const [anchorEl, setAnchorEl] = React.useState(null)
+
+  const {
+    scrollToHomeSection,
+    scrollToAboutSection,
+    scrollToProjectSection,
+    scrollToContactSection,
+  } = onClickFunctions
 
   const fade = useSpring({ from: { opacity: 0 }, opacity: 1 })
 
@@ -24,19 +31,19 @@ const Header = props => {
 
   function handleCloseAndHome() {
     handleClose()
-    props.onClickHomeSection()
+    scrollToHomeSection()
   }
   function handleCloseAndAbout() {
     handleClose()
-    props.onClickAboutSection()
+    scrollToAboutSection()
   }
   function handleCloseAndProjects() {
     handleClose()
-    props.onClickProjectSection()
+    scrollToProjectSection()
   }
   function handleCloseAndContact() {
     handleClose()
-    props.onClickContactSection()
+    scrollToContactSection()
   }
 
   return (
@@ -44,7 +51,7 @@ const Header = props => {
       <div className="container-full headerEdging" />
       <Navbar
         className={classNames("header", {
-          changedHeaderColor: props.scrollHeight !== 0,
+          changedHeaderColor: scrollHeight !== 0,
         })}
         bg="light"
         expand="lg"
@@ -52,61 +59,33 @@ const Header = props => {
         <Navbar.Brand
           id="nameNav"
           className={classNames("rounded", {
-            nameNavMoved: props.scrollHeight !== 0,
+            nameNavMoved: scrollHeight !== 0,
           })}
         >
           Matt Zuckermann
         </Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav style={{ float: "right" }} className="mr-auto">
-            <Nav.Link
-              className={classNames("navSubObjects", "rounded", {
-                navSubObjectsHover: !navigator(),
-                navSubObjectsMoved: props.scrollHeight !== 0,
-                navSubObjectsMovedHover: props.scrollHeight !== 0,
-              })}
-              style={{ color: "lightgrey" }}
-              tabIndex="0"
-              onClick={props.onClickHomeSection}
-            >
-              Home
-            </Nav.Link>
-            <Nav.Link
-              className={classNames("navSubObjects", "rounded", {
-                navSubObjectsHover: !navigator(),
-                navSubObjectsMoved: props.scrollHeight !== 0,
-                navSubObjectsMovedHover: props.scrollHeight !== 0,
-              })}
-              style={{ color: "lightgrey" }}
-              tabIndex="0"
-              onClick={props.onClickAboutSection}
-            >
-              About
-            </Nav.Link>
-            <Nav.Link
-              className={classNames("navSubObjects", "rounded", {
-                navSubObjectsHover: !navigator(),
-                navSubObjectsMoved: props.scrollHeight !== 0,
-                navSubObjectsMovedHover: props.scrollHeight !== 0,
-              })}
-              style={{ color: "lightgrey" }}
-              tabIndex="0"
-              onClick={props.onClickProjectSection}
-            >
-              Portfolio
-            </Nav.Link>
-            <Nav.Link
-              className={classNames("navSubObjects", "rounded", {
-                navSubObjectsHover: !navigator(),
-                navSubObjectsMoved: props.scrollHeight !== 0,
-                navSubObjectsMovedHover: props.scrollHeight !== 0,
-              })}
-              style={{ color: "lightgrey" }}
-              tabIndex="0"
-              onClick={props.onClickContactSection}
-            >
-              Contact
-            </Nav.Link>
+            <NavButton
+              name="Home"
+              scrollFunction={scrollToHomeSection}
+              scrollHeight={scrollHeight}
+            />
+            <NavButton
+              name="About"
+              scrollFunction={scrollToAboutSection}
+              scrollHeight={scrollHeight}
+            />
+            <NavButton
+              name="Portfolio"
+              scrollFunction={scrollToProjectSection}
+              scrollHeight={scrollHeight}
+            />
+            <NavButton
+              name="Contact"
+              scrollFunction={scrollToContactSection}
+              scrollHeight={scrollHeight}
+            />
           </Nav>
         </Navbar.Collapse>
         <Navbar
@@ -135,6 +114,19 @@ const Header = props => {
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
+            {/* <MenuItem onClick={closeAndScroll(scrollToHomeSection())}>
+              Home
+            </MenuItem>
+            <MenuItem onClick={closeAndScroll(scrollToAboutSection())}>
+              About
+            </MenuItem>
+            <MenuItem onClick={closeAndScroll(scrollToProjectSection())}>
+              Portfolio
+            </MenuItem>
+            <MenuItem onClick={closeAndScroll(scrollToContactSection())}>
+              Contact
+            </MenuItem> */}
+
             <MenuItem onClick={handleCloseAndHome}>Home</MenuItem>
             <MenuItem onClick={handleCloseAndAbout}>About</MenuItem>
             <MenuItem onClick={handleCloseAndProjects}>Portfolio</MenuItem>
