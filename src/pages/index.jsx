@@ -57,8 +57,9 @@ const Index = () => {
   return (
     <div>
       <SEO
-        title="Zuckermann"
-        description="Showcase of Accomplishments and Projects by Matt Zuckermann"
+        title="Zuckermann | Portfolio"
+        description="Showcase of accomplishments and projects by Matt Zuckermann"
+        image=""
         keywords={[
           `Programming`,
           `Full Stack`,
