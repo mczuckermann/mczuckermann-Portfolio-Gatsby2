@@ -27,7 +27,7 @@ const About = props => {
   useChain([imageFadeRef, slideRef, textFadeRef])
 
   return (
-    <div ref={props.refabout} className="container-full aboutBody">
+    <div ref={props.refAbout} className="container-full aboutBody">
       <h1 className="groupHeaders col-12">About Me</h1>
       <div className="row aboutMeSet">
         <animated.div className="col-lg-12 col-md-12" style={imageFade}>

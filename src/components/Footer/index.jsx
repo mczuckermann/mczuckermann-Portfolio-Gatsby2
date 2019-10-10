@@ -9,11 +9,11 @@ const Footer = props => {
   const [on, toggle] = useState(false)
   const fadeIn = useSpring({
     opacity: on ? 1 : 0,
-    config: config.mollasses,
+    config: config.molasses,
   })
 
   return (
-    <div ref={props.refcontact} className="container-full footerFormat">
+    <div ref={props.refContact} className="container-full footerFormat">
       <Waypoint
         bottomOffset="32%"
         onEnter={() => {

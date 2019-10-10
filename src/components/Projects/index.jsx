@@ -35,7 +35,7 @@ const Projects = props => {
 
   return (
     <div
-      ref={props.refprojects}
+      ref={props.refProjects}
       className="container-full projectsBody rounded overflowRow"
     >
       <Waypoint
