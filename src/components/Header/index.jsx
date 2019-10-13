@@ -37,7 +37,7 @@ const Header = ({ scrollHeight, onClickFunctions }) => {
     handleClose()
     scrollToAboutSection()
   }
-  function handleCloseAndProjects() {
+  function handleCloseAndPortfolio() {
     handleClose()
     scrollToProjectSection()
   }
@@ -111,25 +111,12 @@ const Header = ({ scrollHeight, onClickFunctions }) => {
           <Menu
             id="simple-menu"
             anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
+            open={anchorEl}
             onClose={handleClose}
           >
-            {/* <MenuItem onClick={closeAndScroll(scrollToHomeSection())}>
-              Home
-            </MenuItem>
-            <MenuItem onClick={closeAndScroll(scrollToAboutSection())}>
-              About
-            </MenuItem>
-            <MenuItem onClick={closeAndScroll(scrollToProjectSection())}>
-              Portfolio
-            </MenuItem>
-            <MenuItem onClick={closeAndScroll(scrollToContactSection())}>
-              Contact
-            </MenuItem> */}
-
             <MenuItem onClick={handleCloseAndHome}>Home</MenuItem>
             <MenuItem onClick={handleCloseAndAbout}>About</MenuItem>
-            <MenuItem onClick={handleCloseAndProjects}>Portfolio</MenuItem>
+            <MenuItem onClick={handleCloseAndPortfolio}>Portfolio</MenuItem>
             <MenuItem onClick={handleCloseAndContact}>Contact</MenuItem>
           </Menu>
         </Navbar>
