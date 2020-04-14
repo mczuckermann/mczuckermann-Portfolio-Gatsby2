@@ -4,7 +4,7 @@ import "./about.css"
 import { Waypoint } from "react-waypoint"
 import { useChain, useSpring, animated } from "react-spring"
 
-const About = props => {
+const About = (props) => {
   const [on, toggle] = useState(false)
 
   const slideRef = useRef()
@@ -46,12 +46,11 @@ const About = props => {
         >
           <br />
           <animated.p className="portfolioBio" style={textFade}>
-            Full stack web developer specializing in React, Gatsby, and Node.
-            Recent UC Berkeley Extension coding boot camp grad in full stack web
-            development. Experienced AV technical director with a history in
-            audio engineering and two Bachelor of Arts degrees in music and
-            communication-media studies. Passion for tech platforms and the
-            communities they create.
+            Software Engineer specializing in JavaScript, Python, Java, and
+            SQL/NoSQL databases. UC Berkeley Extension coding program grad in
+            MERN stack. Experienced Linux network support engineer, AV technical
+            director, and a history in audio engineering with two Bachelor of
+            Arts degrees in music and communication-media studies.
           </animated.p>
         </animated.div>
         <div className="col-lg-3 col-md-3 col-sm-3" />
