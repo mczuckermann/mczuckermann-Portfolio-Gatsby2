@@ -5,7 +5,7 @@ import { Waypoint } from "react-waypoint"
 import arrow from "../../images/white-arrow.png"
 import "./footer.css"
 
-const Footer = props => {
+const Footer = (props) => {
   const [on, toggle] = useState(false)
   const fadeIn = useSpring({
     opacity: on ? 1 : 0,
@@ -51,7 +51,7 @@ const Footer = props => {
           ||{" "}
           <a
             className="noDecoration"
-            href="https://mczuckermann.herokuapp.com/docs/Matt-Zuckermann_R%C3%A9sum%C3%A9.pdf#zoom=115"
+            href="https://mczuckermann.herokuapp.com/docs/Matt_Zuckermann_Resume.pdf#zoom=115"
             rel="noopener noreferrer"
             target="_blank"
           >
