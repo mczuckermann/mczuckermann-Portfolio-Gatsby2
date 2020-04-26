@@ -4,7 +4,7 @@ import { Waypoint } from "react-waypoint"
 import Project from "../Project"
 import "./projects.css"
 
-const Projects = props => {
+const Projects = (props) => {
   const [on, toggle] = useState(false)
   const [trail, set, stop] = useTrail(4, () => ({
     transform: "scale(0.8, 0.8), translate3d(-8%,0,0)",
@@ -31,7 +31,7 @@ const Projects = props => {
         }}
       />
       <div />
-      <h1 className="groupHeaders col-12">Apps/Projects</h1>
+      <h1 className="groupHeaders col-12">Portfolio</h1>
       <div className="container-full projectsBody rounded" id="projectsBodyPad">
         <div className="row">
           {trail.map((props, index) => (
