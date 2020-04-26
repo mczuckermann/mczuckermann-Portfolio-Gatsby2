@@ -65,18 +65,13 @@
   font-weight: bold;
 }
 
-#navbar-toggler-button {
-  padding: -10 0 -30 0;
-  margin: -10 0 -30 0;
-}
-
 /* ============= */
 /* MEDIA QUERIES */
 /* ============= */
 
-@media screen and (max-width: 1911px) {
+@media screen and (max-width: 1979px) {
   .headerBody {
-    background-size: 1895px;
+    background-size: 1963px;
   }
 }
 

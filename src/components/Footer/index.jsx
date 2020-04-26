@@ -26,7 +26,7 @@ const Footer = (props) => {
       <animated.div style={fadeIn}>
         <footer>
           <div className="contactMe">Contact Me</div>
-          <div style={{ fontSize: "2.0em" }}>Let's work together!</div>
+          <div style={{ fontSize: "2.0em", color: "#D3D3D3" }}>Let's work together!</div>
           <br />
           <div style={{ fontSize: "1.3em" }}>
             <FooterLink link={"tel:1-217-722-4952"}>+1-217-722-4952</FooterLink>

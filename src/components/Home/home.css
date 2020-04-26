@@ -5,10 +5,10 @@
 .homeBody {
   background-image: url("../../images/deskPhoto2.jpg");
   background-size: cover;
-  margin-bottom: -68px;
-  background-position: 0px -68px;
+  margin-bottom: -80px;
+  background-position: 0px -48px;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: calc(100vh + 33px);
 }
 
 .home-title {
