@@ -8,14 +8,8 @@
   z-index: 10;
 }
 
-.headerEdging {
-  background-color: #151515;
-  height: 3px;
-  width: 100%;
-}
-
-.header {
-  background-image: url("../../images/deskPhoto.jpg");
+.headerBody {
+  background-image: url("../../images/deskPhoto2.jpg");
   background-size: cover;
   font-family: "Abel", sans-serif;
   transition: all 1s ease !important;
@@ -39,7 +33,7 @@
 .changedHeaderColor {
   background: linear-gradient(to right, rgb(191, 194, 196, 0), rgb(78, 67, 92)),
     linear-gradient(to bottom, rgba(68, 133, 123, 0.708), rgb(94, 109, 86, 0.1));
-  /* filter: drop-shadow(16px 16px 20px black); */
+  filter: drop-shadow(16px 16px 20px black);
   transition: all 1s ease !important;
   opacity: 0.98;
 }
@@ -70,16 +64,12 @@
   font-weight: bold;
 }
 
-.changedTogglerColor + .tcon-menu__lines {
-  color: black !important;
-}
-
 /* ============= */
 /* MEDIA QUERIES */
 /* ============= */
 
 @media screen and (max-width: 1333px) {
-  .header {
+  .headerBody {
     background-size: 1333px;
   }
 }
