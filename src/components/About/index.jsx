@@ -28,7 +28,7 @@ const About = (props) => {
 
   return (
     <div ref={props.refAbout} className="container-full aboutBody">
-      <h1 className="groupHeaders col-12">About Me</h1>
+      <h1 className="groupHeaders col-12">About</h1>
       <div className="row aboutMeSet">
         <animated.div className="col-lg-12 col-md-12" style={imageFade}>
           <Img className="headShotImage" alt="Head-Shot" />

@@ -14,8 +14,8 @@ const Header = ({ scrollHeight, onClickFunctions }) => {
 
   const {
     scrollToHomeSection,
-    scrollToAboutSection,
     scrollToProjectSection,
+    scrollToAboutSection,
     scrollToContactSection,
   } = onClickFunctions
 
@@ -33,13 +33,13 @@ const Header = ({ scrollHeight, onClickFunctions }) => {
     handleClose()
     scrollToHomeSection()
   }
-  function handleCloseAndAbout() {
-    handleClose()
-    scrollToAboutSection()
-  }
   function handleCloseAndPortfolio() {
     handleClose()
     scrollToProjectSection()
+  }
+  function handleCloseAndAbout() {
+    handleClose()
+    scrollToAboutSection()
   }
   function handleCloseAndContact() {
     handleClose()
@@ -48,9 +48,8 @@ const Header = ({ scrollHeight, onClickFunctions }) => {
 
   return (
     <animated.div style={fade} id="headerWithEdging">
-      <div className="container-full headerEdging" />
       <Navbar
-        className={classNames("header", {
+        className={classNames("headerBody", {
           changedHeaderColor: scrollHeight !== 0,
         })}
         bg="light"
@@ -72,13 +71,13 @@ const Header = ({ scrollHeight, onClickFunctions }) => {
               scrollHeight={scrollHeight}
             />
             <NavButton
-              name="About"
-              scrollFunction={scrollToAboutSection}
+              name="Portfolio"
+              scrollFunction={scrollToProjectSection}
               scrollHeight={scrollHeight}
             />
             <NavButton
-              name="Portfolio"
-              scrollFunction={scrollToProjectSection}
+              name="About"
+              scrollFunction={scrollToAboutSection}
               scrollHeight={scrollHeight}
             />
             <NavButton
@@ -104,7 +103,7 @@ const Header = ({ scrollHeight, onClickFunctions }) => {
               alt="menu button"
               style={{
                 width: "25px",
-                height: "22px",
+                height: "30px",
               }}
             />
           </Button>
@@ -115,13 +114,12 @@ const Header = ({ scrollHeight, onClickFunctions }) => {
             onClose={handleClose}
           >
             <MenuItem onClick={handleCloseAndHome}>Home</MenuItem>
-            <MenuItem onClick={handleCloseAndAbout}>About</MenuItem>
             <MenuItem onClick={handleCloseAndPortfolio}>Portfolio</MenuItem>
+            <MenuItem onClick={handleCloseAndAbout}>About</MenuItem>
             <MenuItem onClick={handleCloseAndContact}>Contact</MenuItem>
           </Menu>
         </Navbar>
       </Navbar>
-      <div className="container-full headerEdging" />
     </animated.div>
   )
 }

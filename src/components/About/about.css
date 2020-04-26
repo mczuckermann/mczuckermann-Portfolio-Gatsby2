@@ -33,6 +33,7 @@
 .aboutBody {
   background-image: url("../../images/background.jpg") !important;
   width: 100%;
+  height: calc(100vh - 83px);
   overflow: hidden;
   padding: 20px 2px;
 }

@@ -36,21 +36,21 @@ const Index = () => {
   const scrollToAboutSection = () =>
     window.scrollTo({
       left: 0,
-      top: aboutSection.current.offsetTop - 74,
+      top: aboutSection.current.offsetTop - 68,
       behavior: `smooth`,
     })
 
   const scrollToProjectSection = () =>
     window.scrollTo({
       left: 0,
-      top: projectSection.current.offsetTop - 74,
+      top: projectSection.current.offsetTop - 68,
       behavior: `smooth`,
     })
 
   const scrollToContactSection = () =>
     window.scrollTo({
       left: 0,
-      top: contactSection.current.offsetTop - 74,
+      top: contactSection.current.offsetTop - 68,
       behavior: `smooth`,
     })
 
@@ -79,8 +79,8 @@ const Index = () => {
         }}
       />
       <Home refHome={homeSection} />
-      <About refAbout={aboutSection} />
       <Projects refProjects={projectSection} />
+      <About refAbout={aboutSection} />
       <Footer refContact={contactSection} onClick={scrollToHomeSection} />
     </div>
   )
