@@ -11,6 +11,8 @@
 .headerBody {
   background-image: url("../../images/deskPhoto2.jpg");
   background-size: cover;
+  /* background-size: 113.84%; */
+  background-repeat: no-repeat;
   font-family: "Abel", sans-serif;
   transition: all 1s ease !important;
 }
@@ -68,9 +70,9 @@
 /* MEDIA QUERIES */
 /* ============= */
 
-@media screen and (max-width: 1333px) {
+@media screen and (max-width: 1911px) {
   .headerBody {
-    background-size: 1333px;
+    background-size: 1895px;
   }
 }
 
