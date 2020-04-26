@@ -8,8 +8,7 @@ import DemoLineSnippets from "../DemoLineSnippets"
 import SlideAnimation from "../SlideAnimation"
 import Images from "../../images"
 
-const { image1, image2, image3, image4, image5 } = Images
-const images = [image1, image2, image3, image4, image5]
+const images = [...Images]
 
 const Project = ({ props, index }) => {
   const [mouseIn, hoverChange] = useState(false)
