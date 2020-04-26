@@ -11,7 +11,6 @@
 .headerBody {
   background-image: url("../../images/deskPhoto2.jpg");
   background-size: cover;
-  /* background-size: 113.84%; */
   background-repeat: no-repeat;
   font-family: "Abel", sans-serif;
   transition: all 1s ease !important;
@@ -64,6 +63,11 @@
 .navbar-toggler {
   font-size: 8px;
   font-weight: bold;
+}
+
+#navbar-toggler-button {
+  padding: -10 0 -30 0;
+  margin: -10 0 -30 0;
 }
 
 /* ============= */
