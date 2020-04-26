@@ -60,12 +60,12 @@ const Index = () => {
         description="Showcase of accomplishments and projects by Matt Zuckermann"
         image=""
         keywords={[
-          `Programming`,
-          `Full Stack`,
           `Matt Zuckermann`,
+          `Programming`,
+          `Web Development`,
+          `Full Stack`,
           `Front End`,
           `Back End`,
-          `Web Development`,
         ]}
       />
       <Header
