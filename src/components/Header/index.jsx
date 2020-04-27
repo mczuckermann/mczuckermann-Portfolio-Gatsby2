@@ -1,148 +1,58 @@
-import React from "react"
+import React, { useState } from "react"
 import classNames from "classnames"
-import navigator from "../../js/navigator"
-import { Navbar, Nav } from "react-bootstrap"
-import Button from "@material-ui/core/Button"
-import Menu from "@material-ui/core/Menu"
-import MenuItem from "@material-ui/core/MenuItem"
-import HamburgerButton from "../../images/hamburgerButton.png"
+import { makeStyles } from "@material-ui/core/styles"
+import { AppBar, Tabs, Tab } from "@material-ui/core"
 import { useSpring, animated } from "react-spring"
 import "./header.css"
 
-const Header = props => {
-  const [anchorEl, setAnchorEl] = React.useState(null)
+const a11yProps = (index) => {
+  return {
+    id: `simple-tab-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
+  }
+}
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    backgroundColor: theme.palette.background.paper,
+  },
+}))
+
+const Header = ({ scrollHeight, onClickFunctions }) => {
+  const classes = useStyles()
+  const [value, setValue] = useState(0)
   const fade = useSpring({ from: { opacity: 0 }, opacity: 1 })
+  const options = ["Home", "Portfolio", "About", "Contact"]
 
-  function handleClick(event) {
-    setAnchorEl(event.currentTarget)
-  }
-
-  function handleClose() {
-    setAnchorEl(null)
-  }
-
-  function handleCloseAndHome() {
-    handleClose()
-    props.onClickHomeSection()
-  }
-  function handleCloseAndAbout() {
-    handleClose()
-    props.onClickAboutSection()
-  }
-  function handleCloseAndProjects() {
-    handleClose()
-    props.onClickProjectSection()
-  }
-  function handleCloseAndContact() {
-    handleClose()
-    props.onClickContactSection()
+  const handleChange = (event, newValue) => {
+    setValue(newValue)
   }
 
   return (
     <animated.div style={fade} id="headerWithEdging">
-      <div className="container-full headerEdging" />
-      <Navbar
-        className={classNames("header", {
-          changedHeaderColor: props.scrollHeight !== 0,
-        })}
-        bg="light"
-        expand="lg"
-      >
-        <Navbar.Brand
-          id="nameNav"
-          className={classNames("rounded", {
-            nameNavMoved: props.scrollHeight !== 0,
+      <div className={classes.root}>
+        <AppBar
+          position="static"
+          className={classNames("headerBody", {
+            changedHeaderColor: scrollHeight !== 0,
           })}
         >
-          Matt Zuckermann
-        </Navbar.Brand>
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav style={{ float: "right" }} className="mr-auto">
-            <Nav.Link
-              className={classNames("navSubObjects", "rounded", {
-                navSubObjectsHover: !navigator(),
-                navSubObjectsMoved: props.scrollHeight !== 0,
-                navSubObjectsMovedHover: props.scrollHeight !== 0,
-              })}
-              style={{ color: "lightgrey" }}
-              tabIndex="0"
-              onClick={props.onClickHomeSection}
-            >
-              Home
-            </Nav.Link>
-            <Nav.Link
-              className={classNames("navSubObjects", "rounded", {
-                navSubObjectsHover: !navigator(),
-                navSubObjectsMoved: props.scrollHeight !== 0,
-                navSubObjectsMovedHover: props.scrollHeight !== 0,
-              })}
-              style={{ color: "lightgrey" }}
-              tabIndex="0"
-              onClick={props.onClickAboutSection}
-            >
-              About
-            </Nav.Link>
-            <Nav.Link
-              className={classNames("navSubObjects", "rounded", {
-                navSubObjectsHover: !navigator(),
-                navSubObjectsMoved: props.scrollHeight !== 0,
-                navSubObjectsMovedHover: props.scrollHeight !== 0,
-              })}
-              style={{ color: "lightgrey" }}
-              tabIndex="0"
-              onClick={props.onClickProjectSection}
-            >
-              Portfolio
-            </Nav.Link>
-            <Nav.Link
-              className={classNames("navSubObjects", "rounded", {
-                navSubObjectsHover: !navigator(),
-                navSubObjectsMoved: props.scrollHeight !== 0,
-                navSubObjectsMovedHover: props.scrollHeight !== 0,
-              })}
-              style={{ color: "lightgrey" }}
-              tabIndex="0"
-              onClick={props.onClickContactSection}
-            >
-              Contact
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-        <Navbar
-          aria-controls="basic-navbar-nav navbar-toggler"
-          style={{ paddingRight: "15px" }}
-        >
-          <Button
-            id="navbar-toggler-button"
-            style={{ display: "none" }}
-            aria-owns={anchorEl ? "simple-menu" : undefined}
-            aria-haspopup="true"
-            onClick={handleClick}
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            aria-label="simple tabs example"
           >
-            <img
-              src={HamburgerButton}
-              alt="menu button"
-              style={{
-                width: "25px",
-                height: "22px",
-              }}
-            />
-          </Button>
-          <Menu
-            id="simple-menu"
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-          >
-            <MenuItem onClick={handleCloseAndHome}>Home</MenuItem>
-            <MenuItem onClick={handleCloseAndAbout}>About</MenuItem>
-            <MenuItem onClick={handleCloseAndProjects}>Portfolio</MenuItem>
-            <MenuItem onClick={handleCloseAndContact}>Contact</MenuItem>
-          </Menu>
-        </Navbar>
-      </Navbar>
-      <div className="container-full headerEdging" />
+            {options.map((option, index) => (
+              <Tab
+                label={option}
+                {...a11yProps(index)}
+                onClick={() => onClickFunctions[index]()}
+              />
+            ))}
+          </Tabs>
+        </AppBar>
+      </div>
     </animated.div>
   )
 }

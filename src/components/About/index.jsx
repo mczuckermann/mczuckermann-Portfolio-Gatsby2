@@ -4,7 +4,7 @@ import "./about.css"
 import { Waypoint } from "react-waypoint"
 import { useChain, useSpring, animated } from "react-spring"
 
-const About = props => {
+const About = (props) => {
   const [on, toggle] = useState(false)
 
   const slideRef = useRef()
@@ -27,13 +27,13 @@ const About = props => {
   useChain([imageFadeRef, slideRef, textFadeRef])
 
   return (
-    <div ref={props.refabout} className="container-full aboutBody">
-      <h1 className="groupHeaders col-12">About Me</h1>
-      <div className="row aboutMeSet">
-        <animated.div className="col-lg-12 col-md-12" style={imageFade}>
+    <div ref={props.refAbout} className="aboutBody">
+      <h1 className="groupHeaders">About</h1>
+      <div className="aboutMeSet">
+        <animated.div style={imageFade}>
           <Img className="headShotImage" alt="Head-Shot" />
         </animated.div>
-        <div className="col-lg-3 col-md-3 col-sm-3" />
+        <div/>
         <Waypoint
           bottomOffset="20%"
           onEnter={() => {
@@ -41,20 +41,19 @@ const About = props => {
           }}
         />
         <animated.div
-          className="col-lg-6 col-md-12 col-sm-12 bioBackground"
+          className="bioBackground"
           style={textSlide}
         >
           <br />
           <animated.p className="portfolioBio" style={textFade}>
-            Full stack web developer specializing in React, Gatsby, and Node.
-            Recent UC Berkeley Extension coding boot camp grad in full stack web
-            development. Experienced AV technical director with a history in
-            audio engineering and two Bachelor of Arts degrees in music and
-            communication-media studies. Passion for tech platforms and the
-            communities they create.
+            Software Engineer specializing in JavaScript, Python, Java, and
+            SQL/NoSQL databases. UC Berkeley Extension coding program grad in
+            MERN stack. Experienced Linux network support engineer, AV technical
+            director, and a history in audio engineering with two Bachelor of
+            Arts degrees in music and communication-media studies.
           </animated.p>
         </animated.div>
-        <div className="col-lg-3 col-md-3 col-sm-3" />
+        <div/>
       </div>
       <br />
       <br />

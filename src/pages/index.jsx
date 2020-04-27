@@ -6,7 +6,6 @@ import About from "../components/About"
 import Projects from "../components/Projects"
 import Footer from "../components/Footer"
 import "./index.css"
-import "../../node_modules/bootstrap/dist/css/bootstrap.css"
 
 const Index = () => {
   const [scrollHeight, setScrollHeight] = useState(0)
@@ -25,51 +24,63 @@ const Index = () => {
     setScrollHeight(window.scrollY)
   }
 
-  const scrollToHomeSection = () =>
+  const scrollToHomeSection = () => {
     window.scrollTo({
       left: 0,
-      top: homeSection.current.offsetTop - 74,
+      top: homeSection.current.offsetTop - 48,
+      behavior: `smooth`,
+    })
+  }
+
+  const scrollToProjectSection = () =>
+    window.scrollTo({
+      left: 0,
+      top: projectSection.current.offsetTop - 48,
       behavior: `smooth`,
     })
 
   const scrollToAboutSection = () =>
     window.scrollTo({
       left: 0,
-      top: aboutSection.current.offsetTop - 74,
-      behavior: `smooth`,
-    })
-
-  const scrollToProjectSection = () =>
-    window.scrollTo({
-      left: 0,
-      top: projectSection.current.offsetTop - 74,
+      top: aboutSection.current.offsetTop - 48,
       behavior: `smooth`,
     })
 
   const scrollToContactSection = () =>
     window.scrollTo({
       left: 0,
-      top: contactSection.current.offsetTop - 74,
+      top: contactSection.current.offsetTop - 48,
       behavior: `smooth`,
     })
 
   return (
     <div>
       <SEO
-        title="Zuckermann"
-        keywords={[`Programming`, `Full Stack`, `Matt Zuckermann`]}
+        title="Zuckermann | Portfolio"
+        description="Showcase of accomplishments and projects by Matt Zuckermann"
+        image=""
+        keywords={[
+          `Matt Zuckermann`,
+          `Programming`,
+          `Web Development`,
+          `Full Stack`,
+          `Front End`,
+          `Back End`,
+        ]}
       />
       <Header
         scrollHeight={scrollHeight}
-        onClickHomeSection={scrollToHomeSection}
-        onClickAboutSection={scrollToAboutSection}
-        onClickProjectSection={scrollToProjectSection}
-        onClickContactSection={scrollToContactSection}
+        onClickFunctions={[
+          scrollToHomeSection,
+          scrollToProjectSection,
+          scrollToAboutSection,
+          scrollToContactSection,
+        ]}
       />
-      <Home refhome={homeSection} />
-      <About refabout={aboutSection} />
-      <Projects refprojects={projectSection} />
-      <Footer refcontact={contactSection} onClick={scrollToHomeSection} />
+      <Home refHome={homeSection} />
+      <Projects refProjects={projectSection} />
+      <About refAbout={aboutSection} />
+      <Footer refContact={contactSection} onClick={scrollToHomeSection} />
     </div>
   )
 }

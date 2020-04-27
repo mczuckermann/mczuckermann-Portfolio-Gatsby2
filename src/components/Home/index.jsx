@@ -7,9 +7,9 @@ const Home = props => {
   return (
     <div>
       <animated.div
-        ref={props.refhome}
+        ref={props.refHome}
         style={fade}
-        className="container-full homeBody"
+        className="homeBody"
       />
       <div className="home-title">Matt Zuckermann</div>
     </div>
