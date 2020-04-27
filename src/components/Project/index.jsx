@@ -19,10 +19,10 @@ const Project = ({ props, index }) => {
   return (
     <animated.div
       style={props}
-      className="col-xl-6 col-lg-6 col-md-6 hiddenImage"
+      className="hiddenImage"
       key={index}
     >
-      <div className="projectOpaqueBackground rounded">
+      <div className="projectOpaqueBackground">
         <div className="repoImageWrapper">
           <a
             target="_blank"
@@ -32,7 +32,7 @@ const Project = ({ props, index }) => {
             <img
               onMouseEnter={() => hoverChange(true)}
               onMouseLeave={() => hoverChange(false)}
-              className="repoImages rounded"
+              className="repoImages"
               src={images[index]}
               alt={imageInfo[index].appName}
             />

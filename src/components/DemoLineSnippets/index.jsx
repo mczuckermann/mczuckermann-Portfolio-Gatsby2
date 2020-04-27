@@ -2,7 +2,7 @@ import React from "react"
 
 const DemoLineSnippets = props => {
   return (
-    <div className="row rounded demoSnippets">
+    <div className="demoSnippets">
       <div
         style={{
           color: "white",

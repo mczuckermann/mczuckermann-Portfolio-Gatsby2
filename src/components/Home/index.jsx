@@ -9,7 +9,7 @@ const Home = props => {
       <animated.div
         ref={props.refHome}
         style={fade}
-        className="container-full homeBody"
+        className="homeBody"
       />
       <div className="home-title">Matt Zuckermann</div>
     </div>

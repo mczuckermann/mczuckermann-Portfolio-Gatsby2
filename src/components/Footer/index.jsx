@@ -16,7 +16,7 @@ const Footer = (props) => {
   const arrowImages = [darkArrow, lightArrow]
 
   return (
-    <div ref={props.refContact} className="container-full footerBody">
+    <div ref={props.refContact} className="footerBody">
       <Waypoint
         bottomOffset="32%"
         onEnter={() => {
@@ -26,7 +26,9 @@ const Footer = (props) => {
       <animated.div style={fadeIn}>
         <footer>
           <div className="contactMe">Contact Me</div>
-          <div style={{ fontSize: "2.0em", color: "#D3D3D3" }}>Let's work together!</div>
+          <div style={{ fontSize: "2.0em", color: "#D3D3D3" }}>
+            Let's work together!
+          </div>
           <br />
           <div style={{ fontSize: "1.3em" }}>
             <FooterLink link={"tel:1-217-722-4952"}>+1-217-722-4952</FooterLink>
@@ -66,8 +68,8 @@ const Footer = (props) => {
               Business Card
             </FooterLink>
           </div>
-          <div className="container-full">
-            <div className="col-12 footerNoLink copyrightDiv">
+          <div>
+            <div className="footerNoLink copyrightDiv">
               <div>
                 <button
                   className="arrowButton"

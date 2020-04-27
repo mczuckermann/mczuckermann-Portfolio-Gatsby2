@@ -2,7 +2,7 @@ import React from "react"
 
 const DemoLineNYT = props => {
   return (
-    <div className="row rounded demoNYT">
+    <div className="demoNYT">
       <div
         style={{
           color: "white",

@@ -22,7 +22,7 @@ const Projects = (props) => {
   return (
     <div
       ref={props.refProjects}
-      className="container-full projectsBody rounded overflowRow"
+      className="projectsBody"
     >
       <Waypoint
         bottomOffset="82%"
@@ -31,9 +31,9 @@ const Projects = (props) => {
         }}
       />
       <div />
-      <h1 className="groupHeaders col-12">Portfolio</h1>
-      <div className="container-full projectsBody rounded" id="projectsBodyPad">
-        <div className="row">
+      <h1 className="groupHeaders">Portfolio</h1>
+      <div className="projectsBody" id="projectsBodyPad">
+        <div>
           {trail.map((props, index) => (
             <Project props={props} index={index} />
           ))}

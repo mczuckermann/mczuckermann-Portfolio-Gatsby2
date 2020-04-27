@@ -12,7 +12,7 @@ const SlideAnimation = ({
       <animated.div
         onMouseEnter={() => hoverChange(true)}
         onMouseLeave={() => hoverChange(false)}
-        className={`class-${index} slideInDesc rounded`}
+        className={`class-${index} slideInDesc`}
         style={hoverAnimation}
       >
         {imageInfo[index].desc}
