@@ -1,6 +1,9 @@
 import FooterLink from "../FooterLink"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
+import GitHubIcon from "@material-ui/icons/Github"
+import TwitterIcon from "@material-ui/icons/Twitter"
+import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import { useSpring, animated, config } from "react-spring"
 import { Waypoint } from "react-waypoint"
 import darkArrow from "../../images/darkArrowButton.png"
@@ -26,7 +29,10 @@ const Footer = (props) => {
       <animated.div style={fadeIn}>
         <footer>
           <div className="contactMe">Contact Me</div>
-          <div style={{ fontSize: "2.0em", color: "#D3D3D3" }}>
+          <div
+            className="contactMe"
+            style={{ fontSize: "2.0em", color: "#D3D3D3" }}
+          >
             Let's work together!
           </div>
           <br />
@@ -37,16 +43,6 @@ const Footer = (props) => {
               mczuckermann@gmail.com
             </FooterLink>
             <span> || </span>
-            <FooterLink link={"https://twitter.com/mczuckermann"}>
-              @mczuckermann
-            </FooterLink>
-          </div>
-
-          <div style={{ fontSize: "1.3em" }}>
-            <FooterLink link={"https://www.linkedin.com/in/mczuckermann/"}>
-              LinkedIn
-            </FooterLink>
-            <span> || </span>
             <FooterLink
               link={
                 "https://mczuckermann.herokuapp.com/docs/Matt_Zuckermann_Resume.pdf#zoom=115"
@@ -54,11 +50,8 @@ const Footer = (props) => {
             >
               Resume
             </FooterLink>
-            <span> || </span>
-            <FooterLink link={"https://github.com/mczuckermann"}>
-              Github
-            </FooterLink>
           </div>
+
           <div style={{ fontSize: "1.3em" }}>
             <FooterLink
               link={
@@ -66,6 +59,20 @@ const Footer = (props) => {
               }
             >
               Business Card
+            </FooterLink>
+          </div>
+
+          <div style={{ fontSize: "1.3em" }}>
+            <FooterLink link={"https://www.linkedin.com/in/mczuckermann/"}>
+              <LinkedInIcon />
+            </FooterLink>
+            <span> </span>
+            <FooterLink link={"https://twitter.com/mczuckermann"}>
+              <TwitterIcon />
+            </FooterLink>
+            <span> </span>
+            <FooterLink link={"https://github.com/mczuckermann"}>
+              <GitHubIcon />
             </FooterLink>
           </div>
           <div>
@@ -92,7 +99,7 @@ const Footer = (props) => {
                 </div>
               </div>
               <br />
-              <div style={{ fontSize: "0.9em" }}>
+              <div className="contactMe" style={{ fontSize: "0.9em" }}>
                 Copyright ©{new Date().getFullYear()} Matt Zuckermann. All
                 Rights Reserved
               </div>
