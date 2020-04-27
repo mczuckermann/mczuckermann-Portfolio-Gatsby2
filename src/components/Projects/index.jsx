@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import Grid from "@material-ui/core/Grid"
 import { useTrail } from "react-spring"
 import { Waypoint } from "react-waypoint"
 import Project from "../Project"
@@ -20,10 +21,7 @@ const Projects = (props) => {
   stop()
 
   return (
-    <div
-      ref={props.refProjects}
-      className="projectsBody"
-    >
+    <div ref={props.refProjects} className="projectsBody">
       <Waypoint
         bottomOffset="82%"
         onEnter={() => {
@@ -33,11 +31,13 @@ const Projects = (props) => {
       <div />
       <h1 className="groupHeaders">Portfolio</h1>
       <div className="projectsBody" id="projectsBodyPad">
-        <div>
+        <Grid container spacing={4}>
           {trail.map((props, index) => (
-            <Project props={props} index={index} />
+            <Grid item md={6} xs={12}>
+              <Project props={props} index={index} />
+            </Grid>
           ))}
-        </div>
+        </Grid>
       </div>
     </div>
   )

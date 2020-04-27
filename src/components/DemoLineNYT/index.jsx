@@ -7,7 +7,10 @@ const DemoLineNYT = props => {
         style={{
           color: "white",
           fontSize: "16px",
-          paddingLeft: "16px",
+          paddingLeft: "60px",
+          paddingRight: "60px",
+          margin: "0 15vw",
+          lineHeight: "1.3",
           backgroundColor: "rgb(0,0,0,0.2)",
         }}
       >

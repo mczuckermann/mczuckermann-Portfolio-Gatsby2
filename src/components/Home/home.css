@@ -3,16 +3,18 @@
 /* ==== */
 
 .homeBody {
-  background-image: url("../../images/deskPhoto2.jpg");
+  background-image: url("../../images/deskPhoto4.jpg");
   background-size: cover;
-  margin-bottom: -80px;
-  background-position: 0px -48px;
+  height: calc(100vh);
+  height: calc(100vh - 36px);
+  margin-bottom: -12px;
+  background-position: 0px -12px;
   background-repeat: no-repeat;
-  height: calc(100vh + 33px);
 }
 
 .home-title {
   position: absolute;
+  font-family: "Roboto", sans-serif;
   top: 40%;
   left: 50%;
   margin-left: -391.5px;

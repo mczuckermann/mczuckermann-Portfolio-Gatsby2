@@ -1,13 +1,16 @@
 import React from "react"
 
-const DemoLineSnippets = props => {
+const DemoLineSnippets = (props) => {
   return (
     <div className="demoSnippets">
       <div
         style={{
           color: "white",
           fontSize: "16px",
-          paddingLeft: "16px",
+          paddingLeft: "60px",
+          paddingRight: "60px",
+          margin: "0 15vw",
+          lineHeight: "1.3",
           backgroundColor: "rgb(0,0,0,0.2)",
         }}
       >
