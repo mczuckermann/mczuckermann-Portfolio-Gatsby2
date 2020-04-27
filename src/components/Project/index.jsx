@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import GitHubIcon from "@material-ui/icons/Github"
 import { useSpring, animated } from "react-spring"
 import classNames from "classnames"
 import navigator from "../../js/navigator"
@@ -17,12 +18,8 @@ const Project = ({ props, index }) => {
     transform: mouseIn ? "scale(1, 1)" : "scale(0.2,0.2)",
   })
   return (
-    <animated.div
-      style={props}
-      className="col-xl-6 col-lg-6 col-md-6 hiddenImage"
-      key={index}
-    >
-      <div className="projectOpaqueBackground rounded">
+    <animated.div style={props} className="hiddenImage" key={index}>
+      <div className="projectOpaqueBackground">
         <div className="repoImageWrapper">
           <a
             target="_blank"
@@ -32,11 +29,11 @@ const Project = ({ props, index }) => {
             <img
               onMouseEnter={() => hoverChange(true)}
               onMouseLeave={() => hoverChange(false)}
-              className="repoImages rounded"
+              className="repoImages"
               src={images[index]}
               alt={imageInfo[index].appName}
             />
-            {!navigator() ? (
+            {/* {!navigator() ? (
               <SlideAnimation
                 index={index}
                 imageInfo={imageInfo}
@@ -46,7 +43,7 @@ const Project = ({ props, index }) => {
               />
             ) : (
               <div />
-            )}
+            )} */}
           </a>
         </div>
         <div className="repoUrlDiv">
@@ -75,18 +72,18 @@ const Project = ({ props, index }) => {
                 repoUrlLinksHover: !navigator(),
               })}
             >
-              <i className="fab fa-github" />
+              <GitHubIcon />
             </span>
           </a>
           <div className="shortBio">{imageInfo[index].shortBio}</div>
         </div>
-        <div>
+        {/* <div>
           <br />
           {imageInfo[index].appName === "Best Seller Searcher" && (
             <DemoLineNYT />
           )}
           {imageInfo[index].appName === "Snippets." && <DemoLineSnippets />}
-        </div>
+        </div> */}
       </div>
     </animated.div>
   )

@@ -1,6 +1,9 @@
 import FooterLink from "../FooterLink"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
+import GitHubIcon from "@material-ui/icons/Github"
+import TwitterIcon from "@material-ui/icons/Twitter"
+import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import { useSpring, animated, config } from "react-spring"
 import { Waypoint } from "react-waypoint"
 import darkArrow from "../../images/darkArrowButton.png"
@@ -16,7 +19,7 @@ const Footer = (props) => {
   const arrowImages = [darkArrow, lightArrow]
 
   return (
-    <div ref={props.refContact} className="container-full footerBody">
+    <div ref={props.refContact} className="footerBody">
       <Waypoint
         bottomOffset="32%"
         onEnter={() => {
@@ -26,23 +29,18 @@ const Footer = (props) => {
       <animated.div style={fadeIn}>
         <footer>
           <div className="contactMe">Contact Me</div>
-          <div style={{ fontSize: "2.0em" }}>Let's work together!</div>
+          <div
+            className="contactMe"
+            style={{ fontSize: "2.0em", color: "#D3D3D3" }}
+          >
+            Let's work together!
+          </div>
           <br />
           <div style={{ fontSize: "1.3em" }}>
             <FooterLink link={"tel:1-217-722-4952"}>+1-217-722-4952</FooterLink>
             <span> || </span>
             <FooterLink link={"mailto: mczuckermann@gmail.com"}>
               mczuckermann@gmail.com
-            </FooterLink>
-            <span> || </span>
-            <FooterLink link={"https://twitter.com/mczuckermann"}>
-              @mczuckermann
-            </FooterLink>
-          </div>
-
-          <div style={{ fontSize: "1.3em" }}>
-            <FooterLink link={"https://www.linkedin.com/in/mczuckermann/"}>
-              LinkedIn
             </FooterLink>
             <span> || </span>
             <FooterLink
@@ -52,11 +50,8 @@ const Footer = (props) => {
             >
               Resume
             </FooterLink>
-            <span> || </span>
-            <FooterLink link={"https://github.com/mczuckermann"}>
-              Github
-            </FooterLink>
           </div>
+
           <div style={{ fontSize: "1.3em" }}>
             <FooterLink
               link={
@@ -66,8 +61,22 @@ const Footer = (props) => {
               Business Card
             </FooterLink>
           </div>
-          <div className="container-full">
-            <div className="col-12 footerNoLink copyrightDiv">
+
+          <div style={{ fontSize: "1.3em" }}>
+            <FooterLink link={"https://www.linkedin.com/in/mczuckermann/"}>
+              <LinkedInIcon />
+            </FooterLink>
+            <span> </span>
+            <FooterLink link={"https://twitter.com/mczuckermann"}>
+              <TwitterIcon />
+            </FooterLink>
+            <span> </span>
+            <FooterLink link={"https://github.com/mczuckermann"}>
+              <GitHubIcon />
+            </FooterLink>
+          </div>
+          <div>
+            <div className="footerNoLink copyrightDiv">
               <div>
                 <button
                   className="arrowButton"
@@ -90,7 +99,7 @@ const Footer = (props) => {
                 </div>
               </div>
               <br />
-              <div style={{ fontSize: "0.9em" }}>
+              <div className="contactMe" style={{ fontSize: "0.9em" }}>
                 Copyright ©{new Date().getFullYear()} Matt Zuckermann. All
                 Rights Reserved
               </div>

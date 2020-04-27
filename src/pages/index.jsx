@@ -6,7 +6,6 @@ import About from "../components/About"
 import Projects from "../components/Projects"
 import Footer from "../components/Footer"
 import "./index.css"
-import "../../node_modules/bootstrap/dist/css/bootstrap.css"
 
 const Index = () => {
   const [scrollHeight, setScrollHeight] = useState(0)
@@ -28,29 +27,29 @@ const Index = () => {
   const scrollToHomeSection = () => {
     window.scrollTo({
       left: 0,
-      top: homeSection.current.offsetTop - 74,
+      top: homeSection.current.offsetTop - 48,
       behavior: `smooth`,
     })
   }
 
-  const scrollToAboutSection = () =>
-    window.scrollTo({
-      left: 0,
-      top: aboutSection.current.offsetTop - 68,
-      behavior: `smooth`,
-    })
-
   const scrollToProjectSection = () =>
     window.scrollTo({
       left: 0,
-      top: projectSection.current.offsetTop - 68,
+      top: projectSection.current.offsetTop - 48,
+      behavior: `smooth`,
+    })
+
+  const scrollToAboutSection = () =>
+    window.scrollTo({
+      left: 0,
+      top: aboutSection.current.offsetTop - 48,
       behavior: `smooth`,
     })
 
   const scrollToContactSection = () =>
     window.scrollTo({
       left: 0,
-      top: contactSection.current.offsetTop - 68,
+      top: contactSection.current.offsetTop - 48,
       behavior: `smooth`,
     })
 
@@ -61,22 +60,22 @@ const Index = () => {
         description="Showcase of accomplishments and projects by Matt Zuckermann"
         image=""
         keywords={[
-          `Programming`,
-          `Full Stack`,
           `Matt Zuckermann`,
+          `Programming`,
+          `Web Development`,
+          `Full Stack`,
           `Front End`,
           `Back End`,
-          `Web Development`,
         ]}
       />
       <Header
         scrollHeight={scrollHeight}
-        onClickFunctions={{
+        onClickFunctions={[
           scrollToHomeSection,
-          scrollToAboutSection,
           scrollToProjectSection,
+          scrollToAboutSection,
           scrollToContactSection,
-        }}
+        ]}
       />
       <Home refHome={homeSection} />
       <Projects refProjects={projectSection} />
