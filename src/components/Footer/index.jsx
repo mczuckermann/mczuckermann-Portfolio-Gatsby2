@@ -21,7 +21,7 @@ const Footer = (props) => {
   return (
     <div ref={props.refContact} className="footerBody">
       <Waypoint
-        bottomOffset="32%"
+        bottomOffset="20%"
         onEnter={() => {
           if (!on) toggle(true)
         }}
@@ -53,6 +53,23 @@ const Footer = (props) => {
           </div>
 
           <div style={{ fontSize: "1.3em" }}>
+            <FooterLink link={"https://www.linkedin.com/in/mczuckermann/"}>
+              LinkedIn
+              {/* <LinkedInIcon /> */}
+            </FooterLink>
+            <span> || </span>
+            <FooterLink link={"https://twitter.com/mczuckermann"}>
+              Twitter
+              {/* <TwitterIcon /> */}
+            </FooterLink>
+            <span> || </span>
+            <FooterLink link={"https://github.com/mczuckermann"}>
+              GitHub
+              {/* <GitHubIcon /> */}
+            </FooterLink>
+          </div>
+
+          <div style={{ fontSize: "1.3em" }}>
             <FooterLink
               link={
                 "https://mczuckermann.herokuapp.com/docs/Matt-Zuckermann_Business-Card.pdf#zoom=325"
@@ -62,19 +79,6 @@ const Footer = (props) => {
             </FooterLink>
           </div>
 
-          <div style={{ fontSize: "1.3em" }}>
-            {/* <FooterLink link={"https://www.linkedin.com/in/mczuckermann/"}>
-              <LinkedInIcon />
-            </FooterLink>
-            <span> </span>
-            <FooterLink link={"https://twitter.com/mczuckermann"}>
-              <TwitterIcon />
-            </FooterLink>
-            <span> </span>
-            <FooterLink link={"https://github.com/mczuckermann"}>
-              <GitHubIcon />
-            </FooterLink> */}
-          </div>
           <div>
             <div className="footerNoLink copyrightDiv">
               <div>

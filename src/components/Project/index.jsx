@@ -9,8 +9,6 @@ import DemoLineSnippets from "../DemoLineSnippets"
 import SlideAnimation from "../SlideAnimation"
 import Images from "../../images"
 
-const images = [...Images]
-
 const Project = ({ props, index }) => {
   const [mouseIn, hoverChange] = useState(false)
   const hoverAnimation = useSpring({
@@ -30,7 +28,7 @@ const Project = ({ props, index }) => {
               onMouseEnter={() => hoverChange(true)}
               onMouseLeave={() => hoverChange(false)}
               className="repoImages"
-              src={images[index]}
+              src={[...Images][index]}
               alt={imageInfo[index].appName}
             />
             {!navigator() ? (
@@ -72,6 +70,7 @@ const Project = ({ props, index }) => {
                 repoUrlLinksHover: !navigator(),
               })}
             >
+              GitHub
               {/* <GitHubIcon /> */}
             </span>
           </a>
