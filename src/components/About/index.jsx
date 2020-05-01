@@ -33,17 +33,14 @@ const About = (props) => {
         <animated.div style={imageFade}>
           <Img className="headShotImage" alt="Head-Shot" />
         </animated.div>
-        <div/>
+        <div />
         <Waypoint
           bottomOffset="20%"
           onEnter={() => {
             if (!on) toggle(true)
           }}
         />
-        <animated.div
-          className="bioBackground"
-          style={textSlide}
-        >
+        <animated.div className="bioBackground" style={textSlide}>
           <br />
           <animated.p className="portfolioBio" style={textFade}>
             Software Engineer specializing in JavaScript, Python, Java, and
@@ -53,7 +50,7 @@ const About = (props) => {
             Arts degrees in music and communication-media studies.
           </animated.p>
         </animated.div>
-        <div/>
+        <div />
       </div>
       <br />
       <br />
