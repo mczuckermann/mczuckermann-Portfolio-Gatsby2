@@ -1,10 +1,10 @@
 [
   {
-    "appName": "Best Seller Searcher",
-    "deployLink": "https://searcher-mczuckermann.herokuapp.com/",
-    "repoLink": "https://github.com/mczuckermann/BestSellerSearcher",
-    "shortBio": "React, Node, Express, Passport, MongoDB, Mongoose",
-    "desc": "Website that parses The New York Times articles API and allows users to openly share their favorites with others"
+    "appName": "Music Artist Website",
+    "deployLink": "https://joshzuckermann.netlify.com/",
+    "repoLink": "https://github.com/mczuckermann/MusicPortfolioPlayer",
+    "shortBio": "React, Material-UI, Gatsby, GraphQL, Typescript, Jest",
+    "desc": "JAMstack site with a React audio player that showcases the web page of Chicago music artist Josh Zuckermann"
   },
   {
     "appName": "Snippets.",
@@ -14,11 +14,11 @@
     "desc": "Snippets is a personalized user database to store code, displaying it in a neatly colored and formatted manner."
   },
   {
-    "appName": "Music Artist Website",
-    "deployLink": "https://joshzuckermann.netlify.com/",
-    "repoLink": "https://github.com/mczuckermann/MusicPortfolioPlayer",
-    "shortBio": "React, Material-UI, Gatsby, GraphQL, Typescript, Jest",
-    "desc": "JAMstack site with a React audio player that showcases the web page of Chicago music artist Josh Zuckermann"
+    "appName": "Best Seller Searcher",
+    "deployLink": "https://searcher-mczuckermann.herokuapp.com/",
+    "repoLink": "https://github.com/mczuckermann/BestSellerSearcher",
+    "shortBio": "React, Node, Express, Passport, MongoDB, Mongoose",
+    "desc": "Website that parses The New York Times articles API and allows users to openly share their favorites with others"
   },
   {
     "appName": "Store Stock",
