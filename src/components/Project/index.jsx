@@ -33,7 +33,7 @@ const Project = ({ props, index }) => {
               src={images[index]}
               alt={imageInfo[index].appName}
             />
-            {/* {!navigator() ? (
+            {!navigator() ? (
               <SlideAnimation
                 index={index}
                 imageInfo={imageInfo}
@@ -43,7 +43,7 @@ const Project = ({ props, index }) => {
               />
             ) : (
               <div />
-            )} */}
+            )}
           </a>
         </div>
         <div className="repoUrlDiv">
@@ -77,13 +77,13 @@ const Project = ({ props, index }) => {
           </a>
           <div className="shortBio">{imageInfo[index].shortBio}</div>
         </div>
-        {/* <div>
+        <div>
           <br />
           {imageInfo[index].appName === "Best Seller Searcher" && (
             <DemoLineNYT />
           )}
           {imageInfo[index].appName === "Snippets." && <DemoLineSnippets />}
-        </div> */}
+        </div>
       </div>
     </animated.div>
   )

@@ -21,6 +21,7 @@ u {
 }
 
 .repoImageWrapper {
+  position: relative;
   margin: 0px 12%;
 }
 
@@ -80,10 +81,9 @@ a > span:hover {
 }
 
 .slideInDesc {
+  font-family: "Hind";
   position: absolute;
-  bottom: 50%;
-  left: 13%;
-  width: 74%;
+  top: 35%;
   text-align: center;
   padding: 15px;
   font-size: 20px;
@@ -95,7 +95,7 @@ a > span:hover {
 
 .demoNYT,
 .demoSnippets {
-  padding: 0px 130px;
+  padding: 0px 10px;
   text-align: center;
 }
 
@@ -106,21 +106,49 @@ a > span:hover {
 @media screen and (max-width: 1650px) {
   .demoNYT,
   .demoSnippets {
-    padding: 0px 100px 0px 100px;
+    padding: 0px 25px 0px 25px;
   }
 }
 
-@media screen and (max-width: 1599px) {
+/* @media screen and (max-width: 1599px) {
   .demoNYT,
   .demoSnippets {
-    padding: 0px 80px;
+    padding: 0px px;
+  }
+} */
+
+@media screen and (max-width: 1350px) {
+  .demoNYT,
+  .demoSnippets {
+    padding: 0px 20px;
   }
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1305px) {
   .demoNYT,
   .demoSnippets {
-    padding: 0px 45px;
+    padding: 0px 5px;
+  }
+}
+
+@media screen and (max-width: 1305px) {
+  .demoNYT,
+  .demoSnippets {
+    padding: 0px 5px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .demoNYT,
+  .demoSnippets {
+    padding: 0px 5px;
+  }
+}
+
+@media screen and (max-width: 503px) {
+  .demoNYT,
+  .demoSnippets {
+    padding: 0px 5px;
   }
 }
 

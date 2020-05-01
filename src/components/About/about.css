@@ -34,7 +34,7 @@
 .aboutBody {
   background-image: url("../../images/background.jpg") !important;
   width: 100%;
-  height: calc(100vh - 48px);
+  height: calc(100vh - 65px);
   overflow: hidden;
   padding: 20px 2px;
 }
@@ -42,8 +42,8 @@
 .bioBackground {
   background-color: black;
   border-radius: 10px;
-  padding: 0 40px;
-  margin: 0 13vw;
+  padding: 0 30px;
+  margin: 0 300px;
   opacity: 0.7;
   overflow: hidden;
 }
@@ -60,26 +60,32 @@
 /* MEDIA QUERIES */
 /* ============= */
 
-@media screen and (max-width: 503px) {
+@media screen and (max-width: 1280px) {
   .headShotImage {
-    width: 85%;
-  }
-}
-
-@media screen and (max-width: 922px) {
-  .aboutBody {
-    height: 100%;
-  }
-  .portfolioBio {
-    font-size: 1px;
+    width: 40vw;
   }
   .bioBackground {
     margin: 0 3vw;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 922px) {
+  .headShotImage {
+    width: 50vw;
+  }
+  .bioBackground {
+    margin: 0 3vw;
+  }
+}
+
+@media screen and (max-width: 710px) {
   .portfolioBio {
-    font-size: 16px;
+    font-size: 2.8vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .portfolioBio {
+    font-size: 13px;
   }
 }
