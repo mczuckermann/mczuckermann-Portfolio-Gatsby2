@@ -1,9 +1,9 @@
 import FooterLink from "../FooterLink"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
-import GitHubIcon from "@material-ui/icons/Github"
-import TwitterIcon from "@material-ui/icons/Twitter"
-import LinkedInIcon from "@material-ui/icons/LinkedIn"
+// import GitHubIcon from "@material-ui/icons/Github"
+// import TwitterIcon from "@material-ui/icons/Twitter"
+// import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import { useSpring, animated, config } from "react-spring"
 import { Waypoint } from "react-waypoint"
 import darkArrow from "../../images/darkArrowButton.png"
@@ -63,7 +63,7 @@ const Footer = (props) => {
           </div>
 
           <div style={{ fontSize: "1.3em" }}>
-            <FooterLink link={"https://www.linkedin.com/in/mczuckermann/"}>
+            {/* <FooterLink link={"https://www.linkedin.com/in/mczuckermann/"}>
               <LinkedInIcon />
             </FooterLink>
             <span> </span>
@@ -73,7 +73,7 @@ const Footer = (props) => {
             <span> </span>
             <FooterLink link={"https://github.com/mczuckermann"}>
               <GitHubIcon />
-            </FooterLink>
+            </FooterLink> */}
           </div>
           <div>
             <div className="footerNoLink copyrightDiv">
