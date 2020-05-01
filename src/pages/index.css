@@ -10,6 +10,21 @@
 }
 
 body {
-  background-color: black;
+  background: black url("../images/loadingWheel.gif") 47.5vw 43vh no-repeat;
+  background-size: 70px;
   margin: 0;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    background: black url("../images/loadingWheel.gif") 45vw 43vh no-repeat;
+    background-size: 70px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background: black url("../images/loadingWheel.gif") 43.5vw 43vh no-repeat;
+    background-size: 70px;
+  }
 }
