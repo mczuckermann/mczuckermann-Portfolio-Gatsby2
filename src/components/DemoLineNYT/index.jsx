@@ -1,6 +1,6 @@
 import React from "react"
 
-const DemoLineNYT = props => {
+const DemoLineNYT = () => {
   return (
     <div className="demoNYT">
       <div
@@ -9,7 +9,7 @@ const DemoLineNYT = props => {
           fontSize: "16px",
           paddingLeft: "60px",
           paddingRight: "60px",
-          margin: "0 15vw",
+          margin: "0 5vw",
           lineHeight: "1.3",
           backgroundColor: "rgb(0,0,0,0.2)",
         }}
