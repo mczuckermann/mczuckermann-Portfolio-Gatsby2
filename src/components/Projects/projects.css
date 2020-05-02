@@ -22,11 +22,11 @@ u {
 
 .repoImageWrapper {
   position: relative;
-  margin: 0px 12%;
+  margin: 0px 15%;
 }
 
 img.repoImages {
-  width: 70%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   display: block;
