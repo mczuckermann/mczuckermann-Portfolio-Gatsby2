@@ -14,6 +14,9 @@ const Home = (props) => {
       <animated.div style={fade} className="home-title">
         Matt Zuckermann
       </animated.div>
+      <animated.div style={fade} className="arrow">
+        <span />
+      </animated.div>
     </div>
   )
 }

@@ -55,9 +55,6 @@ const About = (props) => {
       <br />
       <br />
       <br />
-      <div className="arrow">
-        <span />
-      </div>
     </div>
   )
 }
