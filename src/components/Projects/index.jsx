@@ -3,7 +3,6 @@ import { useTrail } from "react-spring"
 import { Waypoint } from "react-waypoint"
 import Project from "../Project"
 import "./projects.css"
-import Slide from "@material-ui/core/Slide"
 
 const Projects = (props) => {
   const [on, toggle] = useState(false)
