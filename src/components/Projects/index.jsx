@@ -3,6 +3,7 @@ import { useTrail } from "react-spring"
 import { Waypoint } from "react-waypoint"
 import Project from "../Project"
 import "./projects.css"
+import Slide from "@material-ui/core/Slide"
 
 const Projects = (props) => {
   const [on, toggle] = useState(false)
@@ -15,7 +16,7 @@ const Projects = (props) => {
     transform: on
       ? "scale(1, 1), translate3d(0,0,0,)"
       : "scale(0.8,0.8), translate3d(-8%,0,0)",
-    config: { duration: 1500 / 4 },
+    config: { duration: 5000 / 4 },
   })
   stop()
 
@@ -28,16 +29,17 @@ const Projects = (props) => {
         }}
       />
       <div />
+
       <h1 className="groupHeaders">Portfolio</h1>
-      <div
-        style={{ overflowX: "hidden" }}
-        className="projectsBody"
-        id="projectsBodyPad"
-      >
-        <div className="scrollMenu">
-          {trail.map((props, index) => (
-            <Project props={props} index={index} />
-          ))}
+      <div class="app">
+        <div class="full hide-scroll">
+          <ul class="hs">
+            {trail.map((props, index) => (
+              <li className="item">
+                <Project props={props} index={index} />
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

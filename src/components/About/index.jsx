@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react"
 import Img from "../Image"
 import "./about.css"
 import { Waypoint } from "react-waypoint"
-import { useChain, useSpring, animated } from "react-spring"
+import { useChain, useSpring, animated, config } from "react-spring"
 
 const About = (props) => {
   const [on, toggle] = useState(false)
@@ -11,12 +11,14 @@ const About = (props) => {
   const textSlide = useSpring({
     transform: on ? "translate3d(0,0,0,)" : "translate3d(-149%,0,0)",
     ref: slideRef,
+    config: config.gentle
   })
 
   const textFadeRef = useRef()
   const imageFade = useSpring({
-    opacity: on ? 1 : 0.7,
+    opacity: on ? 1 : 0.15,
     ref: textFadeRef,
+    config: config.molasses
   })
   const imageFadeRef = useRef()
   const textFade = useSpring({
