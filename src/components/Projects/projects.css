@@ -20,6 +20,10 @@ u {
   font-weight: bold;
 }
 
+.demo {
+  color: darkgrey;
+}
+
 .repoImageWrapper {
   position: relative;
   margin: 0px 26%;
@@ -34,6 +38,7 @@ img.repoImages {
 }
 
 .repoUrlDiv {
+  font-family: "Abel";
   text-align: center;
   padding: 10px 0 0 0;
   margin-bottom: 5px;
@@ -69,6 +74,10 @@ a#noDecoration {
   align-content: start;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .app > * {
   grid-column: 2 / -2;
 }
@@ -88,40 +97,19 @@ a#noDecoration {
   margin-right: 20px;
 }
 
-/* .hs {
-  display: grid;
-  grid-gap: calc(var(--gutter) / 2);
-  grid-template-columns: 10px repeat(6, calc(50% - var(--gutter) * 2)) 10px;
-  grid-template-rows: minmax(150px, 1fr);
-  overflow-x: scroll;
-  scroll-snap-type: x proximity;
-  padding-bottom: calc(0.75 * var(--gutter));
-  margin: 20px 30px calc(-0.5 * var(--gutter)) 10px;
-} */
-
 .hs:before {
   content: "";
 }
 
 /* Hide scrollbar */
 .hide-scroll {
-  /* overflow-y: hidden; */
   margin-bottom: calc(-0.1 * var(--gutter));
+  overflow-y: hidden;
 }
-
-/* body {
-  display: grid;
-  place-items: center;
-} */
 
 ul {
   list-style: none;
   padding: 0;
-}
-
-.app {
-  width: 100vw;
-  overflow-y: scroll;
 }
 
 .hs > li,
@@ -142,7 +130,7 @@ ul {
 
 #paddingDivider {
   padding: 0px 4px;
-  color: black;
+  color: white;
 }
 
 .shortBio {
@@ -171,6 +159,7 @@ a > span:hover {
 
 .demoNYT,
 .demoSnippets {
+  font-family: "Abel";
   padding: 0px 10px;
   text-align: center;
 }
