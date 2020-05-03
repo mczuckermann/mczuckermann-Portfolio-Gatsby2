@@ -25,7 +25,7 @@ const DemoLineSnippets = (props) => {
             Snippets.
           </a>
         </i>
-        , use the username "<u>demo@demo.com</u>" with the password "<u>demo</u>
+        , use the username "<span className="demo">demo@demo.com</span>" with the password "<span className="demo">demo</span>
         "
       </div>
     </div>
