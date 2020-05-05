@@ -31,10 +31,6 @@ const Index = () => {
     setScrollHeight(window.scrollY)
   }, [])
 
-  useEffect(() => {
-    setScrollHeight(window.scrollY)
-  }, [window.scrollY])
-
   return (
     <GlobalContext.Provider
       value={{ allRefs, value, setValue, scrollToSection }}
