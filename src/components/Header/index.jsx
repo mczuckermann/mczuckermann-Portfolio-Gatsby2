@@ -32,7 +32,7 @@ const Header = ({ scrollHeight }) => {
         <AppBar
           position="static"
           className={classNames("headerBody", {
-            changedHeaderColor: scrollHeight !== 0,
+            changedHeaderColor: scrollHeight >= 50,
           })}
         >
           <Tabs value={value} aria-label="simple tabs">

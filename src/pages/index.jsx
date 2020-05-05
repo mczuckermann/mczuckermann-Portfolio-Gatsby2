@@ -25,15 +25,15 @@ const Index = () => {
     })
   }
 
-  const changeScrollHeight = () => {
-    setScrollHeight(window.scrollY)
-  }
-
   useEffect(() => {
     window.scrollTo(0, 0)
     window.addEventListener("scroll", setScrollHeight(window.scrollY))
-    changeScrollHeight()
+    setScrollHeight(window.scrollY)
   }, [])
+
+  useEffect(() => {
+    setScrollHeight(window.scrollY)
+  }, [window.scrollY])
 
   return (
     <GlobalContext.Provider
