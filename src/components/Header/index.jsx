@@ -35,7 +35,7 @@ const Header = ({ scrollHeight }) => {
             changedHeaderColor: scrollHeight !== 0,
           })}
         >
-          <Tabs value={value} aria-label="simple tabs example">
+          <Tabs value={value} aria-label="simple tabs">
             {options.map((option, index) => (
               <Tab
                 label={option}

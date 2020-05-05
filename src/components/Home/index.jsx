@@ -4,7 +4,7 @@ import { Waypoint } from "react-waypoint"
 import { GlobalContext } from "../../pages"
 import "./home.css"
 
-const Home = (props) => {
+const Home = () => {
   const { setValue, allRefs } = useContext(GlobalContext)
   const fade = useSpring({
     from: { opacity: 0 },

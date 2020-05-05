@@ -1,6 +1,6 @@
 import React from "react"
 
-const DemoLineSnippets = (props) => {
+const DemoLineSnippets = () => {
   return (
     <div className="demoSnippets">
       <div

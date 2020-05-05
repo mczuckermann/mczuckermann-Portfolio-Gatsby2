@@ -2,11 +2,11 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-const Image = props => (
+const Image = ({ className, id, alt, title }) => (
   <StaticQuery
-    className={props.className}
-    id={props.id}
-    alt={props.alt}
+    className={className}
+    id={id}
+    alt={alt}
     query={graphql`
       query {
         placeholderImage: file(relativePath: { eq: "zuckermannHeadShot.png" }) {
@@ -18,11 +18,11 @@ const Image = props => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <Img
-        className={props.className}
-        alt={props.alt}
-        title={props.title}
+        className={className}
+        alt={alt}
+        title={title}
         fluid={data.placeholderImage.childImageSharp.fluid}
       />
     )}

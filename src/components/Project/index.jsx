@@ -9,7 +9,7 @@ import DemoLineSnippets from "../DemoLineSnippets"
 import SlideAnimation from "../SlideAnimation"
 import Images from "../../images"
 
-const Project = ({ props, index }) => {
+const Project = ({ fade, index }) => {
   const [mouseIn, hoverChange] = useState(false)
   const hoverAnimation = useSpring({
     opacity: mouseIn ? 0.9 : 0,
@@ -17,7 +17,7 @@ const Project = ({ props, index }) => {
   })
   return (
     <React.Fragment className="hiddenImage" key={index}>
-      <animated.div style={props} className="projectOpaqueBackground">
+      <animated.div style={fade} className="projectOpaqueBackground">
         <div>
           <div className="repoImageWrapper">
             <a

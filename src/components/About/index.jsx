@@ -5,7 +5,7 @@ import { Waypoint } from "react-waypoint"
 import { useChain, useSpring, animated, config } from "react-spring"
 import { GlobalContext } from "../../pages"
 
-const About = (props) => {
+const About = () => {
   const [on, toggle] = useState(false)
   const { setValue, allRefs } = useContext(GlobalContext)
   const slideRef = useRef()
