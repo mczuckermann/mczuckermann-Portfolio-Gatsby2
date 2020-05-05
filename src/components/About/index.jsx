@@ -38,9 +38,9 @@ const About = () => {
           onEnter={() => {
             if (!on) toggle(true)
           }}
-          onLeave={() => {
-            if (on) toggle(false)
-          }}
+          // onLeave={() => {
+          //   if (on) toggle(false)
+          // }}
         />
         <Waypoint
           bottomOffset="0%"
