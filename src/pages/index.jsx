@@ -1,33 +1,22 @@
+import "./index.css"
 import React, { useState, useRef, useEffect, createContext } from "react"
 import PropTypes from "prop-types"
 import SEO from "../components/SEO"
 import Header from "../components/Header"
 import Home from "../components/Home"
-import About from "../components/About"
 import Projects from "../components/Projects"
+import About from "../components/About"
 import Footer from "../components/Footer"
-import "./index.css"
 export const GlobalContext = createContext()
 
 const Index = () => {
   const [scrollHeight, setScrollHeight] = useState(0)
-  const [value, setValue] = useState(0)
   const homeSection = useRef(null)
   const projectSection = useRef(null)
   const aboutSection = useRef(null)
   const contactSection = useRef(null)
   const allRefs = [homeSection, projectSection, aboutSection, contactSection]
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-    window.addEventListener("scroll", setScrollHeight(window.scrollY))
-    checkScrollHeight()
-  }, [])
-
-  const checkScrollHeight = () => {
-    setScrollHeight(window.scrollY)
-  }
-
+  const [value, setValue] = useState(0)
   const scrollToSection = (section) => {
     window.scrollTo({
       left: 0,
@@ -36,9 +25,19 @@ const Index = () => {
     })
   }
 
+  const changeScrollHeight = () => {
+    setScrollHeight(window.scrollY)
+  }
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    window.addEventListener("scroll", setScrollHeight(window.scrollY))
+    changeScrollHeight()
+  }, [])
+
   return (
     <GlobalContext.Provider
-      value={{ value, setValue, allRefs, scrollToSection }}
+      value={{ allRefs, value, setValue, scrollToSection }}
     >
       <SEO
         title="Zuckermann | Portfolio"
@@ -54,7 +53,7 @@ const Index = () => {
           `Back End`,
         ]}
       />
-      <Header />
+      <Header scrollHeight={scrollHeight} />
       <Home />
       <Projects />
       <About />
@@ -68,7 +67,7 @@ Footer.propTypes = {
 }
 
 Footer.defaultProps = {
-  siteTitle: `Zuckermann | Portfolio`,
+  siteTitle: ``,
 }
 
 export default Index

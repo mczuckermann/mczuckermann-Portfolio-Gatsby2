@@ -1,14 +1,14 @@
-import FooterLink from "../FooterLink"
 import React, { useState, useContext } from "react"
+import { useSpring, animated, config } from "react-spring"
+import { Waypoint } from "react-waypoint"
+import { GlobalContext } from "../../pages"
+import FooterLink from "../FooterLink"
 import GitHubIcon from "@material-ui/icons/Github"
 import TwitterIcon from "@material-ui/icons/Twitter"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
-import { useSpring, animated, config } from "react-spring"
-import { Waypoint } from "react-waypoint"
 import darkArrow from "../../images/darkArrowButton.png"
 import lightArrow from "../../images/lightArrowButton.png"
 import "./footer.css"
-import { GlobalContext } from "../../pages"
 
 const Footer = () => {
   const [on, toggle] = useState(false)
