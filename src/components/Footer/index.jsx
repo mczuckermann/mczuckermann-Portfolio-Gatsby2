@@ -26,9 +26,9 @@ const Footer = () => {
         onEnter={() => {
           if (!on) toggle(true)
         }}
-        onLeave={() => {
-          if (on) toggle(false)
-        }}
+        // onLeave={() => {
+        //   if (on) toggle(false)
+        // }}
       />
       <Waypoint
         bottomOffset="0%"
@@ -63,26 +63,29 @@ const Footer = () => {
           </div>
 
           <div style={{ fontSize: "1.3em" }}>
+            <FooterLink link={"https://www.linkedin.com/in/mczuckermann/"}>
+              {/* <LinkedInIcon /> */}
+              LinkedIn
+            </FooterLink>
+            <span> || </span>
+            <FooterLink link={"https://twitter.com/mczuckermann"}>
+              {/* <TwitterIcon /> */}
+              Twitter
+            </FooterLink>
+            <span> || </span>
+            <FooterLink link={"https://github.com/mczuckermann"}>
+              {/* <GitHubIcon /> */}
+              GitHub
+            </FooterLink>
+          </div>
+
+          <div style={{ fontSize: "1.3em" }}>
             <FooterLink
               link={
                 "https://mczuckermann.herokuapp.com/docs/Matt-Zuckermann_Business-Card.pdf#zoom=325"
               }
             >
               Business Card
-            </FooterLink>
-          </div>
-
-          <div style={{ fontSize: "1.3em" }}>
-            <FooterLink link={"https://www.linkedin.com/in/mczuckermann/"}>
-              <LinkedInIcon />
-            </FooterLink>
-            <span> </span>
-            <FooterLink link={"https://twitter.com/mczuckermann"}>
-              <TwitterIcon />
-            </FooterLink>
-            <span> </span>
-            <FooterLink link={"https://github.com/mczuckermann"}>
-              <GitHubIcon />
             </FooterLink>
           </div>
 

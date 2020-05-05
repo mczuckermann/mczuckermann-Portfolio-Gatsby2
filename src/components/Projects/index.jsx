@@ -34,9 +34,9 @@ const Projects = () => {
         onEnter={() => {
           if (!on) toggle(true)
         }}
-        onLeave={() => {
-          if (on) toggle(false)
-        }}
+        // onLeave={() => {
+        //   if (on) toggle(false)
+        // }}
       />
       <div />
       <h1 className="groupHeaders">Portfolio</h1>

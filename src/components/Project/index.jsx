@@ -52,22 +52,18 @@ const Project = ({ fade, index }) => {
               rel="noopener noreferrer"
               href={imageInfo[index].deployLink}
             >
-              <span
-                className={classNames("repoUrlLinks", {
-                  repoUrlLinksHover: !navigator(),
-                })}
-              >
-                {imageInfo[index].appName}
-              </span>
+              <span className="repoUrlLinks">{imageInfo[index].appName}</span>
             </a>
             <span id="paddingDivider">|</span>
             <a
               target="_blank"
+              id="noDecoration"
               rel="noopener noreferrer"
               href={imageInfo[index].repoLink}
             >
-              <span>
-                <GitHubIcon style={{ color: "white", paddingTop: "4px" }} />
+              <span className="repoUrlLinks">
+                GitHub
+                {/* <GitHubIcon style={{ color: "white", paddingTop: "4px" }} /> */}
               </span>
             </a>
             <div className="shortBio">{imageInfo[index].shortBio}</div>
