@@ -1,11 +1,13 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import { useTrail } from "react-spring"
 import { Waypoint } from "react-waypoint"
 import Project from "../Project"
 import "./projects.css"
+import { GlobalContext } from "../../pages"
 
-const Projects = (props) => {
+const Projects = () => {
   const [on, toggle] = useState(false)
+  const { setValue, allRefs } = useContext(GlobalContext)
   const [trail, set, stop] = useTrail(4, () => ({
     transform: "scale(0.8, 0.8), translate3d(-8%,0,0)",
     opacity: 0,
@@ -20,15 +22,23 @@ const Projects = (props) => {
   stop()
 
   return (
-    <div ref={props.refProjects} className="projectsBody">
+    <div ref={allRefs[1]} className="projectsBody">
       <Waypoint
-        bottomOffset="82%"
+        bottomOffset="20%"
+        onEnter={() => {
+          setValue(1)
+        }}
+      />
+      <Waypoint
+        bottomOffset="40%"
         onEnter={() => {
           if (!on) toggle(true)
         }}
+        onLeave={() => {
+          if (on) toggle(false)
+        }}
       />
       <div />
-
       <h1 className="groupHeaders">Portfolio</h1>
       <div class="app">
         <div class="full hide-scroll">

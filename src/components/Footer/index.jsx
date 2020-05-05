@@ -1,17 +1,18 @@
 import FooterLink from "../FooterLink"
-import PropTypes from "prop-types"
-import React, { useState } from "react"
-// import GitHubIcon from "@material-ui/icons/Github"
-// import TwitterIcon from "@material-ui/icons/Twitter"
-// import LinkedInIcon from "@material-ui/icons/LinkedIn"
+import React, { useState, useContext } from "react"
+import GitHubIcon from "@material-ui/icons/Github"
+import TwitterIcon from "@material-ui/icons/Twitter"
+import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import { useSpring, animated, config } from "react-spring"
 import { Waypoint } from "react-waypoint"
 import darkArrow from "../../images/darkArrowButton.png"
 import lightArrow from "../../images/lightArrowButton.png"
 import "./footer.css"
+import { GlobalContext } from "../../pages"
 
-const Footer = (props) => {
+const Footer = () => {
   const [on, toggle] = useState(false)
+  const { setValue, allRefs, scrollToSection } = useContext(GlobalContext)
   const fadeIn = useSpring({
     opacity: on ? 1 : 0,
     config: config.molasses,
@@ -19,11 +20,20 @@ const Footer = (props) => {
   const arrowImages = [darkArrow, lightArrow]
 
   return (
-    <div ref={props.refContact} className="footerBody">
+    <div ref={allRefs[3]} className="footerBody">
       <Waypoint
-        bottomOffset="60%"
+        bottomOffset="40%"
         onEnter={() => {
           if (!on) toggle(true)
+        }}
+        onLeave={() => {
+          if (on) toggle(false)
+        }}
+      />
+      <Waypoint
+        bottomOffset="0%"
+        onEnter={() => {
+          setValue(3)
         }}
       />
       <animated.div style={fadeIn}>
@@ -39,7 +49,7 @@ const Footer = (props) => {
           <div style={{ fontSize: "1.3em" }}>
             <FooterLink link={"tel:1-217-722-4952"}>+1-217-722-4952</FooterLink>
             <span> || </span>
-            <FooterLink link={"mailto: mczuckermann@gmail.com"}>
+            <FooterLink link={"mailto:mczuckermann@gmail.com"}>
               mczuckermann@gmail.com
             </FooterLink>
             <span> || </span>
@@ -53,23 +63,6 @@ const Footer = (props) => {
           </div>
 
           <div style={{ fontSize: "1.3em" }}>
-            <FooterLink link={"https://www.linkedin.com/in/mczuckermann/"}>
-              LinkedIn
-              {/* <LinkedInIcon /> */}
-            </FooterLink>
-            <span> || </span>
-            <FooterLink link={"https://twitter.com/mczuckermann"}>
-              Twitter
-              {/* <TwitterIcon /> */}
-            </FooterLink>
-            <span> || </span>
-            <FooterLink link={"https://github.com/mczuckermann"}>
-              GitHub
-              {/* <GitHubIcon /> */}
-            </FooterLink>
-          </div>
-
-          <div style={{ fontSize: "1.3em" }}>
             <FooterLink
               link={
                 "https://mczuckermann.herokuapp.com/docs/Matt-Zuckermann_Business-Card.pdf#zoom=325"
@@ -79,17 +72,31 @@ const Footer = (props) => {
             </FooterLink>
           </div>
 
+          <div style={{ fontSize: "1.3em" }}>
+            <FooterLink link={"https://www.linkedin.com/in/mczuckermann/"}>
+              <LinkedInIcon />
+            </FooterLink>
+            <span> </span>
+            <FooterLink link={"https://twitter.com/mczuckermann"}>
+              <TwitterIcon />
+            </FooterLink>
+            <span> </span>
+            <FooterLink link={"https://github.com/mczuckermann"}>
+              <GitHubIcon />
+            </FooterLink>
+          </div>
+
           <div>
             <div className="footerNoLink copyrightDiv">
               <div>
                 <button
                   className="arrowButton"
-                  onClick={props.onClick}
                   style={{ backgroundColor: "inherit", border: "none" }}
                 >
                   <img
                     className="buttonImage"
                     style={{ width: "4.0em" }}
+                    onClick={() => scrollToSection(allRefs[0])}
                     src={arrowImages[0]}
                     alt="arrow-button"
                   />
@@ -113,14 +120,6 @@ const Footer = (props) => {
       </animated.div>
     </div>
   )
-}
-
-Footer.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Footer.defaultProps = {
-  siteTitle: ``,
 }
 
 export default Footer

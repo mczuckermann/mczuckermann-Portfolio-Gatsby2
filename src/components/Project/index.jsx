@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-// import GitHubIcon from "@material-ui/icons/Github"
+import GitHubIcon from "@material-ui/icons/Github"
 import { useSpring, animated } from "react-spring"
 import classNames from "classnames"
 import navigator from "../../js/navigator"
@@ -66,13 +66,8 @@ const Project = ({ props, index }) => {
               rel="noopener noreferrer"
               href={imageInfo[index].repoLink}
             >
-              <span
-                className={classNames("repoUrlLinks", {
-                  repoUrlLinksHover: !navigator(),
-                })}
-              >
-                GitHub
-                {/* <GitHubIcon /> */}
+              <span>
+                <GitHubIcon style={{ color: "white", paddingTop: "4px" }} />
               </span>
             </a>
             <div className="shortBio">{imageInfo[index].shortBio}</div>
