@@ -10,7 +10,6 @@ import Footer from "../components/Footer"
 export const GlobalContext = createContext()
 
 const Index = () => {
-  const [scrollHeight, setScrollHeight] = useState(0)
   const homeSection = useRef(null)
   const projectSection = useRef(null)
   const aboutSection = useRef(null)
@@ -27,8 +26,6 @@ const Index = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-    window.addEventListener("scroll", setScrollHeight(window.scrollY))
-    setScrollHeight(window.scrollY)
   }, [])
 
   return (
@@ -49,7 +46,7 @@ const Index = () => {
           `Back End`,
         ]}
       />
-      <Header scrollHeight={scrollHeight} />
+      <Header />
       <Home />
       <Projects />
       <About />
@@ -63,7 +60,7 @@ Footer.propTypes = {
 }
 
 Footer.defaultProps = {
-  siteTitle: ``,
+  siteTitle: `Zuckermann | Portfolio`,
 }
 
 export default Index

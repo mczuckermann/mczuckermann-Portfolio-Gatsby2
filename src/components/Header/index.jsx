@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Header = ({ scrollHeight }) => {
+const Header = () => {
   const classes = useStyles()
   const { value, scrollToSection, allRefs } = useContext(GlobalContext)
   const fade = useSpring({ from: { opacity: 0 }, opacity: 1 })
@@ -29,12 +29,7 @@ const Header = ({ scrollHeight }) => {
   return (
     <animated.div style={fade} id="headerWithEdging">
       <div className={classes.root}>
-        <AppBar
-          position="static"
-          className={classNames("headerBody", {
-            changedHeaderColor: scrollHeight >= 50,
-          })}
-        >
+        <AppBar position="sticky" className="headerBody">
           <Tabs value={value} aria-label="simple tabs">
             {options.map((option, index) => (
               <Tab
