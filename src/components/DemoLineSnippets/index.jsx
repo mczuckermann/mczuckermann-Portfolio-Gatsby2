@@ -4,15 +4,7 @@ const DemoLineSnippets = () => {
   return (
     <div className="demoSnippets">
       <div
-        style={{
-          color: "white",
-          fontSize: "16px",
-          paddingLeft: "60px",
-          paddingRight: "60px",
-          margin: "0 5vw",
-          lineHeight: "1.3",
-          backgroundColor: "rgb(0,0,0,0.2)",
-        }}
+        className="demoBody"
       >
         *For a demo version of{" "}
         <i>
