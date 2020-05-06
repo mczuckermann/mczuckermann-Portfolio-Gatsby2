@@ -1,6 +1,6 @@
 [
   {
-    "appName": "Music Artist Website",
+    "appName": "Music Artist Site",
     "deployLink": "https://joshzuckermann.netlify.com/",
     "repoLink": "https://github.com/mczuckermann/MusicPortfolioPlayer",
     "shortBio": "React, Material-UI, Gatsby, GraphQL, Typescript, Jest",
@@ -14,7 +14,7 @@
     "desc": "Snippets is a personalized user database to store code, displaying it in a neatly colored and formatted manner."
   },
   {
-    "appName": "Best Seller Searcher",
+    "appName": "NYT Searcher",
     "deployLink": "https://searcher-mczuckermann.herokuapp.com/",
     "repoLink": "https://github.com/mczuckermann/BestSellerSearcher",
     "shortBio": "React, Node, Express, Passport, MongoDB, Mongoose",
