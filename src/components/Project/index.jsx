@@ -1,6 +1,4 @@
 import React, { useState } from "react"
-// import GitHubIcon from "@material-ui/icons/Github"
-//
 import { useSpring, animated } from "react-spring"
 import navigator from "../../js/navigator"
 import imageInfo from "../../json/imageInfo.json"
@@ -8,6 +6,7 @@ import DemoLineNYT from "../DemoLineNYT"
 import DemoLineSnippets from "../DemoLineSnippets"
 import SlideAnimation from "../SlideAnimation"
 import Images from "../../images"
+import githubIcon from "../../images/github.png"
 
 const Project = ({ fade, index }) => {
   const [mouseIn, hoverChange] = useState(false)
@@ -62,17 +61,14 @@ const Project = ({ fade, index }) => {
               href={imageInfo[index].repoLink}
             >
               <span className="repoUrlLinks">
-                GitHub
-                {/* <GitHubIcon style={{ color: "white", paddingTop: "4px" }} /> */}
+                <img className="projectIcon" src={githubIcon} alt="github" />
               </span>
             </a>
             <div className="shortBio">{imageInfo[index].shortBio}</div>
           </div>
           <div>
             <br />
-            {imageInfo[index].appName === "NYT Searcher" && (
-              <DemoLineNYT />
-            )}
+            {imageInfo[index].appName === "NYT Searcher" && <DemoLineNYT />}
             {imageInfo[index].appName === "Snippets." && <DemoLineSnippets />}
           </div>
         </div>

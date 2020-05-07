@@ -3,9 +3,9 @@ import { useSpring, animated, config } from "react-spring"
 import { Waypoint } from "react-waypoint"
 import { GlobalContext } from "../../pages"
 import FooterLink from "../FooterLink"
-// import GitHubIcon from "@material-ui/icons/Github"
-// import TwitterIcon from "@material-ui/icons/Twitter"
-// import LinkedInIcon from "@material-ui/icons/LinkedIn"
+import twitterIcon from "../../images/twitter.png"
+import linkedinIcon from "../../images/linkedin.png"
+import githubIcon from "../../images/github.png"
 import darkArrow from "../../images/darkArrowButton.png"
 import lightArrow from "../../images/lightArrowButton.png"
 import "./footer.css"
@@ -37,8 +37,10 @@ const Footer = () => {
         }}
       />
       <animated.div style={fadeIn}>
-        <footer>
-          <div className="contactMe">Contact Me</div>
+        <footer className="resizeFooter">
+          <div className="contactMe" style={{ fontSize: "8.0em" }}>
+            Contact Me
+          </div>
           <div
             className="contactMe"
             style={{ fontSize: "2.0em", color: "#D3D3D3" }}
@@ -62,30 +64,27 @@ const Footer = () => {
             </FooterLink>
           </div>
 
-          <div style={{ fontSize: "1.3em" }}>
-            <FooterLink link={"https://www.linkedin.com/in/mczuckermann/"}>
-              {/* <LinkedInIcon /> */}
-              LinkedIn
-            </FooterLink>
-            <span> || </span>
-            <FooterLink link={"https://twitter.com/mczuckermann"}>
-              {/* <TwitterIcon /> */}
-              Twitter
-            </FooterLink>
-            <span> || </span>
-            <FooterLink link={"https://github.com/mczuckermann"}>
-              {/* <GitHubIcon /> */}
-              GitHub
-            </FooterLink>
-          </div>
-
-          <div style={{ fontSize: "1.3em" }}>
+          <div className="footerLinesA" style={{ fontSize: "1.3em" }}>
             <FooterLink
               link={
                 "https://mczuckermann.herokuapp.com/docs/Matt-Zuckermann_Business-Card.pdf#zoom=325"
               }
             >
               Business Card
+            </FooterLink>
+          </div>
+
+          <div className="footerLinesB">
+            <FooterLink link={"https://www.linkedin.com/in/mczuckermann/"}>
+              <img className="iconFooter" src={linkedinIcon} alt="linkedin" />
+            </FooterLink>
+            <span> </span>
+            <FooterLink link={"https://twitter.com/mczuckermann"}>
+              <img style={{ margin: "0px 5px" }} className="iconFooter" src={twitterIcon} alt="twitter" />
+            </FooterLink>
+            <span> </span>
+            <FooterLink link={"https://github.com/mczuckermann"}>
+              <img className="iconFooter" src={githubIcon} alt="github" />
             </FooterLink>
           </div>
 
@@ -98,7 +97,7 @@ const Footer = () => {
                 >
                   <img
                     className="buttonImage"
-                    style={{ width: "4.0em" }}
+                    style={{ width: "5.0em" }}
                     onClick={() => scrollToSection(allRefs[0])}
                     src={arrowImages[0]}
                     alt="arrow-button"
@@ -107,7 +106,7 @@ const Footer = () => {
                 <div
                   id="backToTopText"
                   className="noDecoration"
-                  style={{ fontSize: "1.1em" }}
+                  style={{ fontSize: "1.3em" }}
                 >
                   Back To Top
                 </div>
