@@ -15,7 +15,7 @@
 .groupHeaders {
   font-size: 35px;
   padding-left: 22px;
-  background-color: rgba(0,0,0,0.75);
+  background-color: rgba(0, 0, 0, 0.75);
   color: white;
   text-align: left;
   font-family: "Abel", sans-serif;
@@ -59,12 +59,26 @@
 /* MEDIA QUERIES */
 /* ============= */
 
+/* Excluding anything larger than a height of 900 pixels (iPads and other tablets) */
 @media screen and (max-width: 1280px) {
   .headShotImage {
     width: 40vw;
   }
   .bioBackground {
     margin: 0 3vw;
+  }
+}
+
+/* Exclusive query just for iPads and other tablets */
+@media screen and (max-width: 1280px) and (min-height: 900px) {
+  .headShotImage {
+    width: 55vw;
+  }
+  .bioBackground {
+    margin: 0 6vw;
+  }
+  .portfolioBio {
+    font-size: 3.2vw;
   }
 }
 
@@ -75,7 +89,23 @@
   .bioBackground {
     margin: 0 3vw;
   }
+  .portfolioBio {
+    font-size: 2.8vw;
+  }
 }
+
+@media screen and (max-width: 922px) and (min-height: 900px) {
+  .headShotImage {
+    width: 55vw;
+  }
+  .bioBackground {
+    margin: 0 4vw;
+  }
+  .portfolioBio {
+    font-size: 3.2vw;
+  }
+}
+
 
 @media screen and (max-width: 710px) {
   .portfolioBio {
@@ -85,6 +115,6 @@
 
 @media screen and (max-width: 500px) {
   .portfolioBio {
-    font-size: 13px;
+    font-size: 15px;
   }
 }

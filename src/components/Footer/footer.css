@@ -12,7 +12,7 @@
 .noDecoration,
 .noDecoration:hover {
   color: #d3d3d3;
-  font-family: "Abel";
+  font-family: "Abel", sans-serif;
   text-decoration: none;
 }
 
@@ -21,9 +21,8 @@
 }
 
 .contactMe {
-  font-size: 80px;
   color: #d3d3d3;
-  font-family: Abel;
+  font-family: "Abel", sans-serif;
   font-weight: bold;
 }
 
@@ -43,8 +42,38 @@
   margin-top: 50px;
 }
 
+.iconFooter {
+  width: 1.7em;
+}
+
+.footerLinesA{
+  padding-top: 2px;
+}
+
+.footerLinesB{
+  padding-top: 5px;
+}
+
 footer {
   font-size: 15px;
   padding: 3px 0;
   text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+  .resizeFooter {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 1280px) and (min-height: 900px) {
+  .resizeFooter {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 850px) and (min-height: 900px) {
+  .resizeFooter {
+    font-size: 16px;
+  }
 }
