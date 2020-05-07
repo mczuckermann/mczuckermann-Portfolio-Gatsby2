@@ -29,7 +29,7 @@ u {
   margin: 0px 14%;
 }
 
-img.repoImages {
+.repoImages {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -38,7 +38,7 @@ img.repoImages {
 }
 
 .repoUrlDiv {
-  font-family: "Abel";
+  font-family: "Abel", sans-serif;
   text-align: center;
   padding: 10px 0 0 0;
   margin-bottom: 5px;
@@ -51,6 +51,11 @@ img.repoImages {
   border-radius: 11%;
   padding: 0 3px;
   font-size: 27px;
+}
+
+.projectIcon {
+  width: 25px;
+  margin-top: 2px;
 }
 
 a#noDecoration {
@@ -153,7 +158,7 @@ a > span:hover {
 
 .demoNYT,
 .demoSnippets {
-  font-family: "Abel";
+  font-family: "Abel", sans-serif;
   padding: 0px 10px;
   text-align: center;
 }
@@ -195,6 +200,39 @@ a > span:hover {
   }
 }
 
+@media screen and (max-width: 1200px) and (min-height: 1000px) {
+  ul.hs {
+    grid-template-columns: 20px repeat(4, calc(80% - var(--gutter) * 2)) 20px;
+    margin-top: 50px;
+  }
+  .repoImageWrapper {
+    margin: 0px 7%;
+  }
+  .repoUrlLinks {
+    font-size: 40px;
+  }
+  .shortBio {
+    font-size: 18px;
+  }
+  .projectIcon {
+    width: 30px;
+    margin-top: 2px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .slideInDesc {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 1000px) and (min-height: 1000px) {
+  ul.hs {
+    grid-template-columns: 20px repeat(4, calc(80% - var(--gutter) * 2)) 20px;
+    margin-top: 10px;
+  }
+}
+
 @media screen and (max-width: 960px) {
   .demoNYT,
   .demoSnippets {
@@ -217,6 +255,12 @@ a > span:hover {
   }
 }
 
+@media screen and (min-width: 750px) and (max-height: 750px) {
+  .projectsBody {
+    height: 100%;
+  }
+}
+
 @media screen and (max-width: 503px) {
   .demoNYT,
   .demoSnippets {
@@ -230,7 +274,7 @@ a > span:hover {
     height: 90%;
   }
 
-  li.item {
+  .item {
     height: 92%;
     padding: 15px;
   }
@@ -242,11 +286,8 @@ a > span:hover {
   .repoUrlLinks {
     font-size: 20px;
   }
-}
-
-@media screen and (max-width: 1000px) {
-  .slideInDesc {
-    font-size: 15px;
+  .projectIcon {
+    width: 20px;
   }
 }
 

@@ -97,7 +97,7 @@ const Footer = () => {
                 >
                   <img
                     className="buttonImage"
-                    style={{ width: "5.0em" }}
+                    style={{ width: "4.5em" }}
                     onClick={() => scrollToSection(allRefs[0])}
                     src={arrowImages[0]}
                     alt="arrow-button"
