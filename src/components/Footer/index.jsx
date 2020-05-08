@@ -22,18 +22,13 @@ const Footer = () => {
   return (
     <div ref={allRefs[3]} className="footerBody">
       <Waypoint
-        bottomOffset="40%"
-        onEnter={() => {
-          if (!on) toggle(true)
-        }}
-        // onLeave={() => {
-        //   if (on) toggle(false)
-        // }}
-      />
-      <Waypoint
-        bottomOffset="0%"
+        bottomOffset="50%"
         onEnter={() => {
           setValue(3)
+          if (!on) toggle(true)
+        }}
+        onLeave={() => {
+          if (on) toggle(false)
         }}
       />
       <animated.div style={fadeIn}>
@@ -80,7 +75,12 @@ const Footer = () => {
             </FooterLink>
             <span> </span>
             <FooterLink link={"https://twitter.com/mczuckermann"}>
-              <img style={{ margin: "0px 5px" }} className="iconFooter" src={twitterIcon} alt="twitter" />
+              <img
+                style={{ margin: "0px 5px" }}
+                className="iconFooter"
+                src={twitterIcon}
+                alt="twitter"
+              />
             </FooterLink>
             <span> </span>
             <FooterLink link={"https://github.com/mczuckermann"}>

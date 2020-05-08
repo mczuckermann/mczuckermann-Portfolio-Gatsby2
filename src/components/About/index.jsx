@@ -34,18 +34,13 @@ const About = () => {
       <h1 className="groupHeaders">About</h1>
       <div className="aboutMeSet">
         <Waypoint
-          bottomOffset="40%"
-          onEnter={() => {
-            if (!on) toggle(true)
-          }}
-          // onLeave={() => {
-          //   if (on) toggle(false)
-          // }}
-        />
-        <Waypoint
-          bottomOffset="0%"
+          bottomOffset="50%"
           onEnter={() => {
             setValue(2)
+            if (!on) toggle(true)
+          }}
+          onLeave={() => {
+            if (on) toggle(false)
           }}
         />
         <animated.div style={imageFade}>

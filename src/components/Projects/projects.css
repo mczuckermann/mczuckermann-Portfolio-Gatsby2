@@ -87,7 +87,7 @@ a#noDecoration {
   grid-template-columns: 20px repeat(4, calc(40% - var(--gutter) * 2)) 20px;
   grid-template-rows: minmax(65vh, 1fr);
   overflow-x: scroll;
-  scroll-snap-type: x proximity;
+  scroll-snap-type: none;
   padding-bottom: calc(0.75 * var(--gutter));
 }
 
@@ -103,7 +103,6 @@ ul {
 
 .hs > li,
 .item {
-  scroll-snap-align: center;
   padding: calc(var(--gutter) / 2 * 2);
   display: flex;
   flex-direction: column;
@@ -112,7 +111,7 @@ ul {
 }
 
 .projectsBody {
-  height: calc(100vh - 48px);
+  height: 100vh;
   padding: 5px 0px;
   background-color: rgb(228, 210, 210);
 }

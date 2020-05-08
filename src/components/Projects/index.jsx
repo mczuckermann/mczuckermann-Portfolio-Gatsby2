@@ -24,21 +24,15 @@ const Projects = () => {
   return (
     <div ref={allRefs[1]} className="projectsBody">
       <Waypoint
-        bottomOffset="20%"
+        bottomOffset="50%"
         onEnter={() => {
           setValue(1)
-        }}
-      />
-      <Waypoint
-        bottomOffset="40%"
-        onEnter={() => {
           if (!on) toggle(true)
         }}
-        // onLeave={() => {
-        //   if (on) toggle(false)
-        // }}
+        onLeave={() => {
+          if (on) toggle(false)
+        }}
       />
-      <div />
       <h1 className="groupHeaders">Portfolio</h1>
       <div class="app">
         <div class="full hide-scroll">

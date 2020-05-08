@@ -31,7 +31,6 @@ const Index = () => {
   return (
     <GlobalContext.Provider
       value={{ allRefs, value, setValue, scrollToSection }}
-      style={{ scrollSnapType: "y mandatory", overflowY: "scroll" }}
     >
       <SEO
         title="Zuckermann | Portfolio"
@@ -48,10 +47,20 @@ const Index = () => {
         ]}
       />
       <Header />
-      <Home />
-      <Projects style={{ scrollSnapAlign: "start" }} />
-      <About style={{ scrollSnapAlign: "start" }} />
-      <Footer style={{ scrollSnapAlign: "start" }} />
+      <div className="parent">
+        <section ref={homeSection}>
+          <Home />
+        </section>
+        <section ref={projectSection}>
+          <Projects />
+        </section>
+        <section ref={aboutSection}>
+          <About />
+        </section>
+        <section ref={contactSection}>
+          <Footer />
+        </section>
+      </div>
     </GlobalContext.Provider>
   )
 }

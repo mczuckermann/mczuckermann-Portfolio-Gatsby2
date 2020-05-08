@@ -1,5 +1,4 @@
 import React, { useContext } from "react"
-import classNames from "classnames"
 import { makeStyles } from "@material-ui/core/styles"
 import { AppBar, Tabs, Tab } from "@material-ui/core"
 import { useSpring, animated } from "react-spring"

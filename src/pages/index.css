@@ -18,6 +18,24 @@ body {
   overflow-x: hidden;
 }
 
+.parent {
+  overflow-y: auto;
+  height: calc(100vh - 48px);
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  height: calc(100vh - 48px);
+  scroll-snap-align: start;
+  position: relative;
+}
+
+.lastSection {
+  height: calc(100vh);
+}
+
 @media screen and (max-width: 800px) {
   body {
     background: black url("../images/loadingWheel.gif") 45vw 43vh no-repeat;
