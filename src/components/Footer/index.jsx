@@ -90,7 +90,7 @@ const Footer = () => {
 
           <div>
             <div className="footerNoLink copyrightDiv">
-              <div>
+              {/* <div>
                 <button
                   className="arrowButton"
                   style={{ backgroundColor: "inherit", border: "none" }}
@@ -110,7 +110,7 @@ const Footer = () => {
                 >
                   Back To Top
                 </div>
-              </div>
+              </div> */}
               <br />
               <div className="contactMe" style={{ fontSize: "0.9em" }}>
                 Copyright ©{new Date().getFullYear()} Matt Zuckermann. All
