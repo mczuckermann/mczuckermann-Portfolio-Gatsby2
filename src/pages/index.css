@@ -19,10 +19,10 @@ body {
 }
 
 .parent {
-  overflow-y: auto;
   height: calc(100vh - 48px);
+  overflow-y: auto;
   scroll-snap-type: mandatory;
-  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-points-y: repeat(100vh - 48px);
   scroll-snap-type: y mandatory;
 }
 
@@ -30,10 +30,6 @@ section {
   height: calc(100vh - 48px);
   scroll-snap-align: start;
   position: relative;
-}
-
-.lastSection {
-  height: calc(100vh);
 }
 
 @media screen and (max-width: 800px) {
