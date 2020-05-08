@@ -11,7 +11,7 @@
     "deployLink": "https://snippets-mczuckermann.herokuapp.com/home",
     "repoLink": "https://github.com/mczuckermann/CodeSnippets",
     "shortBio": "Javascript, Handlebars, Node, Express, Passport, MySQL, Sequelize",
-    "desc": "Snippets is a personalized user database to store code, displaying it in a neatly colored and formatted manner."
+    "desc": "Snippets is a personalized user database to store code, displaying it in a colored and formatted manner."
   },
   {
     "appName": "NYT Searcher",
@@ -25,6 +25,6 @@
     "deployLink": "https://www.youtube.com/watch?v=Vufq5RRxQYA",
     "repoLink": "https://github.com/mczuckermann/StoreStockItemGrabber",
     "shortBio": "Javascript, Node, MySQL",
-    "desc": "Store Stock is a Node CLI app that prompts users to make a purchase and keeps track of such purchases on the back end."
+    "desc": "Store Stock is a Node app that prompts users for purchases and tracks such purchases on the backend."
   }
 ]
