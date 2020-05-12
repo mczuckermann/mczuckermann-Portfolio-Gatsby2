@@ -4,7 +4,7 @@
     "deployLink": "https://joshzuckermann.netlify.com/",
     "repoLink": "https://github.com/mczuckermann/MusicPortfolioPlayer",
     "shortBio": "React, Material-UI, Gatsby, GraphQL, Typescript, Jest",
-    "desc": "JAMstack site with a React audio player that showcases the web page of Chicago music artist Josh Zuckermann"
+    "desc": "JAMstack site with a React audio player that showcases the music of Chicago artist Josh Zuckermann"
   },
   {
     "appName": "Snippets.",
@@ -18,7 +18,7 @@
     "deployLink": "https://searcher-mczuckermann.herokuapp.com/",
     "repoLink": "https://github.com/mczuckermann/BestSellerSearcher",
     "shortBio": "React, Node, Express, Passport, MongoDB, Mongoose",
-    "desc": "Website that parses The New York Times articles API and allows users to openly share their favorites with others"
+    "desc": "Website that parses New York Times articles API and allows users to openly share their favorites with others"
   },
   {
     "appName": "Store Stock",

@@ -5,7 +5,9 @@ import { GlobalContext } from "../../pages"
 import "./home.css"
 
 const Home = () => {
-  const { setValue, allRefs } = useContext(GlobalContext)
+  const { allRefs, setRefIndex, minimize, slideTop, sizedBackUp } = useContext(
+    GlobalContext
+  )
   const [on, toggle] = useState(true)
   const fadeInOut = useSpring({
     opacity: on ? 1 : 0.3,
@@ -19,25 +21,38 @@ const Home = () => {
   })
 
   return (
-    <div ref={allRefs[0]}>
-      <Waypoint bottomOffset="0%" onEnter={() => setValue(0)} />
-      <animated.div style={fade} className="homeBody" />
-      <Waypoint
-        bottomOffset="50%"
-        onEnter={() => {
-          if (on) toggle(false)
-        }}
-        onLeave={() => {
-          if (!on) toggle(true)
-        }}
-      />
-      <animated.div style={fadeInOut} className="home-title">
-        Matt Zuckermann
+    <animated.div style={sizedBackUp}>
+      <animated.div style={slideTop}>
+        <animated.div style={fade}>
+          <animated.div ref={allRefs[0]} style={minimize} className="fullWidth">
+            <Waypoint
+              bottomOffset="0%"
+              onEnter={() => {
+                setRefIndex(0)
+              }}
+            />
+            <animated.div className="homeBody" />
+            <Waypoint
+              bottomOffset="50%"
+              onEnter={() => {
+                if (on) toggle(false)
+              }}
+              onLeave={() => {
+                if (!on) toggle(true)
+              }}
+            />
+            <animated.div style={fade}>
+              <animated.div style={fadeInOut} className="home-title">
+                Matt Zuckermann
+              </animated.div>
+            </animated.div>
+            <animated.div className="arrow">
+              <span />
+            </animated.div>
+          </animated.div>
+        </animated.div>
       </animated.div>
-      <animated.div style={fade} className="arrow">
-        <span />
-      </animated.div>
-    </div>
+    </animated.div>
   )
 }
 

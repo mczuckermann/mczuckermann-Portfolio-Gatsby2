@@ -8,26 +8,26 @@ import { GlobalContext } from "../../pages"
 const About = () => {
   const [on, toggle] = useState(false)
   const { setValue, allRefs } = useContext(GlobalContext)
-  const slideRef = useRef()
+  const textSlideRef = useRef()
   const textSlide = useSpring({
     transform: on ? "translate3d(0,0,0,)" : "translate3d(-149%,0,0)",
-    ref: slideRef,
+    ref: textSlideRef,
     config: config.gentle,
   })
 
-  const textFadeRef = useRef()
+  const imageFadeRef = useRef()
   const imageFade = useSpring({
     opacity: on ? 1 : 0.15,
-    ref: textFadeRef,
+    ref: imageFadeRef,
     config: config.molasses,
   })
-  const imageFadeRef = useRef()
+  const textFadeRef = useRef()
   const textFade = useSpring({
     opacity: on ? 1 : 0,
-    ref: imageFadeRef,
+    ref: textFadeRef,
   })
 
-  useChain([imageFadeRef, slideRef, textFadeRef])
+  useChain([imageFadeRef, textSlideRef, textFadeRef], [0, 3, 5])
 
   return (
     <div ref={allRefs[2]} className="aboutBody">

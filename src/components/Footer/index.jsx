@@ -12,7 +12,7 @@ import "./footer.css"
 
 const Footer = () => {
   const [on, toggle] = useState(false)
-  const { setValue, allRefs, scrollToSection } = useContext(GlobalContext)
+  const { allRefs, setRefIndex } = useContext(GlobalContext)
   const fadeIn = useSpring({
     opacity: on ? 1 : 0,
     config: config.molasses,
@@ -24,7 +24,6 @@ const Footer = () => {
       <Waypoint
         bottomOffset="50%"
         onEnter={() => {
-          setValue(3)
           if (!on) toggle(true)
         }}
         onLeave={() => {
@@ -90,7 +89,7 @@ const Footer = () => {
 
           <div>
             <div className="footerNoLink copyrightDiv">
-              {/* <div>
+              <div>
                 <button
                   className="arrowButton"
                   style={{ backgroundColor: "inherit", border: "none" }}
@@ -98,7 +97,9 @@ const Footer = () => {
                   <img
                     className="buttonImage"
                     style={{ width: "4.5em" }}
-                    onClick={() => scrollToSection(allRefs[0])}
+                    onClick={() => {
+                      setRefIndex(0)
+                    }}
                     src={arrowImages[0]}
                     alt="arrow-button"
                   />
@@ -110,7 +111,7 @@ const Footer = () => {
                 >
                   Back To Top
                 </div>
-              </div> */}
+              </div>
               <br />
               <div className="contactMe" style={{ fontSize: "0.9em" }}>
                 Copyright ©{new Date().getFullYear()} Matt Zuckermann. All

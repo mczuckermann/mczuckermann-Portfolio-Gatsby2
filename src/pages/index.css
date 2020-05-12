@@ -10,7 +10,8 @@
 }
 
 body {
-  background: black url("../images/loadingWheel.gif") 47.5vw 43vh no-repeat;
+  background: rgb(53, 47, 47) url("../images/loadingWheel.gif") 47.5vw 43vh
+    no-repeat;
   background-size: 70px;
   margin: 0;
   display: grid;

@@ -19,9 +19,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Header = () => {
+const Header = ({ setValue }) => {
   const classes = useStyles()
-  const { value, scrollToSection, allRefs } = useContext(GlobalContext)
+  const { value, setRefIndex } = useContext(GlobalContext)
   const fade = useSpring({ from: { opacity: 0 }, opacity: 1 })
   const options = ["Home", "Portfolio", "About", "Contact"]
 
@@ -32,9 +32,13 @@ const Header = () => {
           <Tabs value={value} aria-label="simple tabs">
             {options.map((option, index) => (
               <Tab
+                key={`key-${index}`}
                 label={option}
                 {...a11yProps(index)}
-                onClick={() => scrollToSection(allRefs[index])}
+                onClick={() => {
+                  setValue(index)
+                  setRefIndex(index)
+                }}
               />
             ))}
           </Tabs>

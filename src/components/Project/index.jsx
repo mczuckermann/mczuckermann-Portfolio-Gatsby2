@@ -15,7 +15,7 @@ const Project = ({ fade, index }) => {
     transform: mouseIn ? "scale(1, 1)" : "scale(0.2,0.2)",
   })
   return (
-    <React.Fragment className="hiddenImage" key={index}>
+    <React.Fragment key={index}>
       <animated.div style={fade} className="projectOpaqueBackground">
         <div>
           <div className="repoImageWrapper">

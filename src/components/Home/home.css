@@ -11,6 +11,10 @@
   background-repeat: no-repeat;
 }
 
+.fullWidth {
+  width: 100vw;
+}
+
 .home-title {
   position: absolute;
   font-family: "Roboto", sans-serif;
