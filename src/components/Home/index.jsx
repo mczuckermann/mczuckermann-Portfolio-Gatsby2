@@ -9,7 +9,7 @@ const Home = () => {
   const [on, toggle] = useState(true)
   const fadeInOut = useSpring({
     opacity: on ? 1 : 0.3,
-    transform: on ? "scale(1, 1)" : "scale(0.85,0.95)",
+    transform: on ? "scale(1, 1)" : "scale(0.9,0.95)",
     config: config.molasses,
   })
   const fade = useSpring({
@@ -31,8 +31,8 @@ const Home = () => {
           if (!on) toggle(true)
         }}
       />
-      <animated.div style={fadeInOut} className="home-title">
-        Matt Zuckermann
+      <animated.div style={fade} className="home-title">
+        <animated.div style={fadeInOut}>Matt Zuckermann</animated.div>
       </animated.div>
       <animated.div style={fade} className="arrow">
         <span />
