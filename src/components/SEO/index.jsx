@@ -41,7 +41,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           property: `og:image`,
-          content: `https://res.cloudinary.com/mczuckermann/image/upload/v1570704844/SEO-Image.png`,
+          content: `https://res.cloudinary.com/mczuckermann/image/upload/v1589383748/SEO-Thumbnail-Image.png`,
         },
         {
           property: `og:type`,
