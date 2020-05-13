@@ -46,7 +46,6 @@ const Index = () => {
           `Back End`,
         ]}
       />
-      <Header />
       <div className="parent">
         <section ref={homeSection}>
           <Home />
