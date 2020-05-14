@@ -2,7 +2,7 @@
   {
     "appName": "Music Artist Site",
     "deployLink": "https://joshzuckermann.netlify.com/",
-    "repoLink": "https://github.com/mattzuckermann/MusicArtistWebsite",
+    "repoLink": "https://github.com/mattzuckermann/MusicArtistSite",
     "shortBio": "React, Material-UI, Gatsby, GraphQL, Typescript, Jest",
     "desc": "JAMstack site with a React audio player that showcases the web page of Chicago music artist Josh Zuckermann"
   },
@@ -16,14 +16,14 @@
   {
     "appName": "NYT Searcher",
     "deployLink": "https://searcher-mattzuckermann.herokuapp.com/",
-    "repoLink": "https://github.com/mattzuckermann/BestSellerSearcher",
+    "repoLink": "https://github.com/mattzuckermann/NYTsearcher",
     "shortBio": "React, Node, Express, Passport, MongoDB, Mongoose",
     "desc": "Website that parses The New York Times articles API and allows users to openly share their favorites with others"
   },
   {
     "appName": "Store Stock",
     "deployLink": "https://www.youtube.com/watch?v=Vufq5RRxQYA",
-    "repoLink": "https://github.com/mattzuckermann/StoreStockItemGrabber",
+    "repoLink": "https://github.com/mattzuckermann/StoreStock",
     "shortBio": "Javascript, Node, MySQL",
     "desc": "Store Stock is a Node app that prompts users for purchases and tracks such purchases on the backend."
   }
