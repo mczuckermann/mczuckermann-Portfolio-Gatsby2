@@ -3,7 +3,7 @@
   "private": true,
   "description": "Showcase of Accomplishments and Projects by Matt Zuckermann",
   "version": "0.1.0",
-  "author": "Matt Zuckermann <mczuckermann@gmail.com>",
+  "author": "Matt Zuckermann <matt@mattzuckermann.dev>",
   "dependencies": {
     "@material-ui/core": "^4.9.13",
     "@material-ui/styles": "^4.9.13",

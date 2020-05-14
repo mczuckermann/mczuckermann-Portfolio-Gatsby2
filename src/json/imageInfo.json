@@ -2,14 +2,14 @@
   {
     "appName": "Music Artist Site",
     "deployLink": "https://joshzuckermann.netlify.com/",
-    "repoLink": "https://github.com/mattzuckermann/MusicPortfolioPlayer",
+    "repoLink": "https://github.com/mattzuckermann/MusicArtistWebsite",
     "shortBio": "React, Material-UI, Gatsby, GraphQL, Typescript, Jest",
     "desc": "JAMstack site with a React audio player that showcases the web page of Chicago music artist Josh Zuckermann"
   },
   {
     "appName": "Snippets.",
     "deployLink": "https://snippets-mattzuckermann.herokuapp.com/home",
-    "repoLink": "https://github.com/mattzuckermann/CodeSnippets",
+    "repoLink": "https://github.com/mattzuckermann/Snippets.",
     "shortBio": "Javascript, Handlebars, Node, Express, Passport, MySQL, Sequelize",
     "desc": "Snippets is a personalized user database to store code, displaying it in a colored and formatted manner."
   },
