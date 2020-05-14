@@ -10,7 +10,7 @@ const DemoLineNYT = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="demoPassLinks"
-            href="https://searcher-mczuckermann.herokuapp.com/"
+            href="https://searcher-mattzuckermann.herokuapp.com/"
           >
             Best Seller Searcher
           </a>

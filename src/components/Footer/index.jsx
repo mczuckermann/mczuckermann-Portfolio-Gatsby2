@@ -12,7 +12,7 @@ import "./footer.css"
 
 const Footer = () => {
   const [on, toggle] = useState(false)
-  const { setValue, allRefs, scrollToSection } = useContext(GlobalContext)
+  const { setValue, allRefs } = useContext(GlobalContext)
   const fadeIn = useSpring({
     opacity: on ? 1 : 0,
     config: config.molasses,
@@ -46,13 +46,13 @@ const Footer = () => {
           <div style={{ fontSize: "1.3em" }}>
             <FooterLink link={"tel:1-217-722-4952"}>+1-217-722-4952</FooterLink>
             <span> || </span>
-            <FooterLink link={"mailto:mczuckermann@gmail.com"}>
-              mczuckermann@gmail.com
+            <FooterLink link={"mailto:matt@mattzuckermann.dev"}>
+              matt@mattzuckermann.dev
             </FooterLink>
             <span> || </span>
             <FooterLink
               link={
-                "https://mczuckermann.herokuapp.com/docs/Matt_Zuckermann_Resume.pdf#zoom=115"
+                "https://mattzuckermann.herokuapp.com/docs/Matt_Zuckermann_Resume.pdf#zoom=115"
               }
             >
               Resume
@@ -62,7 +62,7 @@ const Footer = () => {
           <div className="footerLinesA" style={{ fontSize: "1.3em" }}>
             <FooterLink
               link={
-                "https://mczuckermann.herokuapp.com/docs/Matt-Zuckermann_Business-Card.pdf#zoom=325"
+                "https://mattzuckermann.herokuapp.com/docs/Matt-Zuckermann_Business-Card.pdf#zoom=325"
               }
             >
               Business Card
@@ -70,11 +70,11 @@ const Footer = () => {
           </div>
 
           <div className="footerLinesB">
-            <FooterLink link={"https://www.linkedin.com/in/mczuckermann/"}>
+            <FooterLink link={"https://www.linkedin.com/in/mattzuckermann/"}>
               <img className="iconFooter" src={linkedinIcon} alt="linkedin" />
             </FooterLink>
             <span> </span>
-            <FooterLink link={"https://twitter.com/mczuckermann"}>
+            <FooterLink link={"https://twitter.com/mattzuckermann"}>
               <img
                 style={{ margin: "0px 5px" }}
                 className="iconFooter"
@@ -83,7 +83,7 @@ const Footer = () => {
               />
             </FooterLink>
             <span> </span>
-            <FooterLink link={"https://github.com/mczuckermann"}>
+            <FooterLink link={"https://github.com/mattzuckermann"}>
               <img className="iconFooter" src={githubIcon} alt="github" />
             </FooterLink>
           </div>
