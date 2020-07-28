@@ -6,8 +6,6 @@ import FooterLink from "../FooterLink"
 import twitterIcon from "../../images/twitter.png"
 import linkedinIcon from "../../images/linkedin.png"
 import githubIcon from "../../images/github.png"
-import darkArrow from "../../images/darkArrowButton.png"
-import lightArrow from "../../images/lightArrowButton.png"
 import "./footer.css"
 
 const Footer = () => {
@@ -17,7 +15,6 @@ const Footer = () => {
     opacity: on ? 1 : 0,
     config: config.molasses,
   })
-  const arrowImages = [darkArrow, lightArrow]
 
   return (
     <div ref={allRefs[3]} className="footerBody">
@@ -52,7 +49,7 @@ const Footer = () => {
             <span> || </span>
             <FooterLink
               link={
-                "https://mattzuckermann.herokuapp.com/docs/Matt_Zuckermann_Resume.pdf#zoom=115"
+                "/resume"
               }
             >
               Resume
@@ -62,7 +59,7 @@ const Footer = () => {
           <div className="footerLinesA" style={{ fontSize: "1.3em" }}>
             <FooterLink
               link={
-                "https://mattzuckermann.herokuapp.com/docs/Matt-Zuckermann_Business-Card.pdf#zoom=325"
+                "/businesscard"
               }
             >
               Business Card
@@ -90,27 +87,7 @@ const Footer = () => {
 
           <div>
             <div className="footerNoLink copyrightDiv">
-              {/* <div>
-                <button
-                  className="arrowButton"
-                  style={{ backgroundColor: "inherit", border: "none" }}
-                >
-                  <img
-                    className="buttonImage"
-                    style={{ width: "4.5em" }}
-                    onClick={() => scrollToSection(allRefs[0])}
-                    src={arrowImages[0]}
-                    alt="arrow-button"
-                  />
-                </button>
-                <div
-                  id="backToTopText"
-                  className="noDecoration"
-                  style={{ fontSize: "1.3em" }}
-                >
-                  Back To Top
-                </div>
-              </div> */}
+
               <br />
               <div className="contactMe" style={{ fontSize: "0.9em" }}>
                 Copyright ©{new Date().getFullYear()} Matt Zuckermann. All
