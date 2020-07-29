@@ -4,11 +4,12 @@ import { Waypoint } from "react-waypoint"
 import Project from "../Project"
 import "./projects.css"
 import { GlobalContext } from "../../pages"
+import imageInfo from "../../js/imageInfo"
 
 const Projects = () => {
   const [on, toggle] = useState(false)
   const { setValue, allRefs } = useContext(GlobalContext)
-  const [trail, set, stop] = useTrail(4, () => ({
+  const [trail, set, stop] = useTrail(imageInfo.length, () => ({
     transform: "scale(0.8, 0.8), translate3d(-8%,0,0)",
     opacity: 0,
   }))
@@ -17,7 +18,7 @@ const Projects = () => {
     transform: on
       ? "scale(1, 1), translate3d(0,0,0,)"
       : "scale(0.8,0.8), translate3d(-8%,0,0)",
-    config: { duration: 6000 / 4 },
+    config: { duration: 6000 / imageInfo.length },
   })
   stop()
 

@@ -1,11 +1,10 @@
 import React, { useState } from "react"
 import { useSpring, animated } from "react-spring"
 import navigator from "../../js/navigator"
-import imageInfo from "../../json/imageInfo.json"
+import imageInfo from "../../js/imageInfo"
 import DemoLineNYT from "../DemoLineNYT"
 import DemoLineSnippets from "../DemoLineSnippets"
 import SlideAnimation from "../SlideAnimation"
-import Images from "../../images"
 import githubIcon from "../../images/github.png"
 
 const Project = ({ fade, index }) => {
@@ -28,7 +27,8 @@ const Project = ({ fade, index }) => {
                 onMouseEnter={() => hoverChange(true)}
                 onMouseLeave={() => hoverChange(false)}
                 className="repoImages"
-                src={[...Images][index]}
+                // src={[...Images][index]}
+                src={imageInfo[index].image}
                 alt={imageInfo[index].appName}
               />
               {!navigator() ? (
