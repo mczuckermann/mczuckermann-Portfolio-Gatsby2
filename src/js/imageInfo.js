@@ -49,7 +49,7 @@ export default [
     repoLink: "https://github.com/mattzuckermann/LiriBot",
     shortBio: "Node, Web APIs",
     desc:
-      "Liri Bot is a Node app that allows user to input varying methods and arguments in the Node CLI to look up various API end points.",
+      "Liri Bot is a Node app that allows user to input varying methods and arguments in the Node CLI to look up various web API end points.",
     image: liriBotImage,
   },
   {
@@ -58,7 +58,7 @@ export default [
     repoLink: "https://github.com/mattzuckermann/StoreStock",
     shortBio: "Node, MySQL",
     desc:
-      "Store Stock is a Node app that prompts users for purchases and tracks such purchases on the backend.",
+      "Store Stock is a Node app that prompts users for purchases and tracks such purchases on a MySQL backend.",
     image: storeStockImage,
   },
 ]
