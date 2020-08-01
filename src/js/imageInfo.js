@@ -26,7 +26,7 @@ export default [
   },
   {
     appName: "NYT Searcher",
-    deployLink: "https://searcher-mattzuckermann.herokuapp.com/",
+    deployLink: "https://nytsearcher.com/",
     repoLink: "https://github.com/mattzuckermann/NYTsearcher",
     shortBio: "React, Node, Express, Passport, MongoDB, Mongoose",
     desc:
@@ -35,7 +35,7 @@ export default [
   },
   {
     appName: "Snippets.",
-    deployLink: "https://snippets-mattzuckermann.herokuapp.com/home",
+    deployLink: "https://codesnippets.app",
     repoLink: "https://github.com/mattzuckermann/Snippets.",
     shortBio:
       "Javascript, Handlebars, Node, Express, Passport, MySQL, Sequelize",

@@ -12,7 +12,7 @@ const DemoLineSnippets = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="demoPassLinks"
-            href="https://searcher-mattzuckermann.herokuapp.com/"
+            href="https://www.codesnippets.app/"
           >
             Snippets.
           </a>
