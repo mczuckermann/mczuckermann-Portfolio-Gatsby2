@@ -10,9 +10,9 @@ const DemoLineNYT = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="demoPassLinks"
-            href="https://searcher-mattzuckermann.herokuapp.com/"
+            href="https://www.nytsearcher.com/"
           >
-            Best Seller Searcher
+            NYT Searcher
           </a>
         </i>
         , use the username "<span className="demo">demo@demo.com</span>" with
