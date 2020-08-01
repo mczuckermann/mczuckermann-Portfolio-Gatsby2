@@ -35,7 +35,7 @@ export default [
   },
   {
     appName: "Snippets.",
-    deployLink: "https://codesnippets.app",
+    deployLink: "https://www.codesnippets.app",
     repoLink: "https://github.com/mattzuckermann/Snippets.",
     shortBio:
       "Javascript, Handlebars, Node, Express, Passport, MySQL, Sequelize",
