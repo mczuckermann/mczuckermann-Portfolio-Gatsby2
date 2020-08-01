@@ -6,7 +6,7 @@ const Resume = () => {
     <GoogleDocsViewer
       width="100vw"
       height="100vh"
-      fileUrl="https://res.cloudinary.com/joshzuckermann-netlify-com/image/upload/v1595947522/Matt_Zuckermann_Resume.pdf"
+      fileUrl="https://res.cloudinary.com/joshzuckermann-netlify-com/image/upload/v1596239918/Matt_Zuckermann_Resume.pdf"
     />
   )
 }
