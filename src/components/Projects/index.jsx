@@ -18,7 +18,7 @@ const Projects = () => {
     transform: on
       ? "scale(1, 1), translate3d(0,0,0,)"
       : "scale(0.8,0.8), translate3d(-8%,0,0)",
-    config: { duration: 6000 / imageInfo.length },
+    config: { duration: (imageInfo.length * 1000) / imageInfo.length },
   })
   stop()
 
@@ -35,9 +35,9 @@ const Projects = () => {
         }}
       />
       <h1 className="groupHeaders">Portfolio</h1>
-      <div class="app">
-        <div class="full hide-scroll">
-          <ul class="hs">
+      <div className="app">
+        <div className="full hide-scroll">
+          <ul className="hs">
             {trail.map((fade, index) => (
               <li className="item">
                 <Project fade={fade} index={index} />

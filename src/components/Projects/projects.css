@@ -3,7 +3,7 @@
 /* ======== */
 
 :root {
-  --projects-array-length: 6;
+  --projects-array-length: 5;
 }
 
 .hiddenImage {
@@ -88,7 +88,9 @@ a#noDecoration {
 .hs {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 20px repeat(var(--projects-array-length), calc(40% - var(--gutter) * 2)) 20px;
+  grid-template-columns:
+    20px repeat(var(--projects-array-length), calc(40% - var(--gutter) * 2))
+    20px;
   grid-template-rows: minmax(65vh, 1fr);
   overflow-x: scroll;
   scroll-snap-type: none;
@@ -115,7 +117,7 @@ ul {
 }
 
 .projectsBody {
-  height: 100vh;
+  height: calc(100vh - 48px);
   padding: 5px 0px;
   background-color: rgb(228, 210, 210);
 }
@@ -193,7 +195,9 @@ a > span:hover {
     margin: 0px 20%;
   }
   .hs {
-    grid-template-columns: 20px repeat(var(--projects-array-length), calc(45% - var(--gutter) * 2)) 20px;
+    grid-template-columns:
+      20px repeat(var(--projects-array-length), calc(45% - var(--gutter) * 2))
+      20px;
   }
 }
 
@@ -205,7 +209,9 @@ a > span:hover {
 
 @media screen and (max-width: 1200px) and (min-height: 1000px) {
   ul.hs {
-    grid-template-columns: 20px repeat(var(--projects-array-length), calc(80% - var(--gutter) * 2)) 20px;
+    grid-template-columns:
+      20px repeat(var(--projects-array-length), calc(80% - var(--gutter) * 2))
+      20px;
     margin-top: 50px;
   }
   .repoImageWrapper {
@@ -231,7 +237,9 @@ a > span:hover {
 
 @media screen and (max-width: 1000px) and (min-height: 1000px) {
   ul.hs {
-    grid-template-columns: 20px repeat(var(--projects-array-length), calc(80% - var(--gutter) * 2)) 20px;
+    grid-template-columns:
+      20px repeat(var(--projects-array-length), calc(80% - var(--gutter) * 2))
+      20px;
     margin-top: 10px;
   }
 }
@@ -245,7 +253,9 @@ a > span:hover {
     margin: 0px 7%;
   }
   .hs {
-    grid-template-columns: 20px repeat(var(--projects-array-length), calc(60% - var(--gutter) * 2)) 20px;
+    grid-template-columns:
+      20px repeat(var(--projects-array-length), calc(60% - var(--gutter) * 2))
+      20px;
   }
 }
 
@@ -254,7 +264,9 @@ a > span:hover {
     margin: 0px 3%;
   }
   .hs {
-    grid-template-columns: 20px repeat(var(--projects-array-length), calc(70% - var(--gutter) * 2)) 20px;
+    grid-template-columns:
+      20px repeat(var(--projects-array-length), calc(70% - var(--gutter) * 2))
+      20px;
   }
 }
 
@@ -270,7 +282,9 @@ a > span:hover {
     padding: 0px 5px;
   }
   ul.hs {
-    grid-template-columns: 20px repeat(var(--projects-array-length), calc(80% - var(--gutter) * 2)) 20px;
+    grid-template-columns:
+      20px repeat(var(--projects-array-length), calc(80% - var(--gutter) * 2))
+      20px;
     margin-top: 0px !important;
   }
   .projectOpaqueBackground {
