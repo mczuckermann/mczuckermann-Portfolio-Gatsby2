@@ -12,24 +12,20 @@
 body {
   background: black url("../images/loadingWheel.gif") 47.5vw 43vh no-repeat;
   background-size: 70px;
+  height: 100%;
   margin: 0;
   display: grid;
   place-items: center;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .parent {
-  height: calc(100vh - 48px);
-  height: 100vh;
-  overflow-y: auto;
-  scroll-snap-type: mandatory;
-  scroll-snap-points-y: repeat(100vh - 48px);
-  scroll-snap-type: y mandatory;
+  height: 100vh - 48px;
 }
 
 section {
-  height: 100vh;
-  scroll-snap-align: start;
+  height: calc(100vh - 48px);
   position: relative;
 }
 

@@ -5,8 +5,8 @@
 .homeBody {
   background-image: url("../../images/deskPhoto.jpg");
   background-size: cover;
-  height: calc(100vh + 12px);
-  background-position: 0px -12px;
+  height: calc(100vh - 48px);
+  background-position: 0px 0px;
   background-repeat: no-repeat;
 }
 
