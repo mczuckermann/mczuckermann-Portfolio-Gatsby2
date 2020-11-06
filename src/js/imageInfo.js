@@ -1,5 +1,4 @@
 const jzMusicImage = require("../images/jzMusicPortfolio.jpg")
-const useThisImage = require("../images/usethis.jpg")
 const bestSellerSearcherImage = require("../images/bestSellerSearcher.jpg")
 const codesnippetsImage = require("../images/codesnippetsScreenShot.jpg")
 const liriBotImage = require("../images/liribotCodeScreenShot.jpg")
@@ -14,15 +13,6 @@ export default [
     desc:
       "JAMstack site with a React audio player that showcases the web page of Chicago music artist Josh Zuckermann",
     image: jzMusicImage,
-  },
-  {
-    appName: "useThis",
-    deployLink: "https://usethis.dev/",
-    repoLink: "https://github.com/mattzuckermann/usethis",
-    shortBio: "React, Material-UI, Next.js, Apollo, GraphQL, MongoDB, Jest",
-    desc:
-      "Site for developers to practice and master the use of the 'this' keyword in JavaScript",
-    image: useThisImage,
   },
   {
     appName: "NYT Searcher",
