@@ -73,7 +73,13 @@ function SEO({ description, lang, meta, keywords, title }) {
             : []
         )
         .concat(meta)}
-    />
+    >
+      {/* Safari polyfill to implement smooth scroll */}
+      <script
+        defer
+        src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+      ></script>
+    </Helmet>
   )
 }
 
