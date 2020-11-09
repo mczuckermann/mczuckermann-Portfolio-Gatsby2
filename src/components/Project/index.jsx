@@ -27,7 +27,6 @@ const Project = ({ fade, index }) => {
                 onMouseEnter={() => hoverChange(true)}
                 onMouseLeave={() => hoverChange(false)}
                 className="repoImages"
-                // src={[...Images][index]}
                 src={imageInfo[index].image}
                 alt={imageInfo[index].appName}
               />
