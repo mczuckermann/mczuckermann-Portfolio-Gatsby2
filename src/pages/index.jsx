@@ -17,7 +17,7 @@ const Index = () => {
   const contactSection = useRef(null)
   const allRefs = [homeSection, projectSection, aboutSection, contactSection]
   const [value, setValue] = useState(0)
-  const [refIndex, setRefIndex] = useState(1)
+  const [refIndex, setRefIndex] = useState(0)
 
   const scrollToSection = throttle(
     (section) => {
