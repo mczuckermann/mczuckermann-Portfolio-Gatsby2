@@ -39,7 +39,7 @@ const Projects = () => {
         <div className="full hide-scroll">
           <ul className="hs">
             {trail.map((fade, index) => (
-              <li className="item">
+              <li className="item" key={`key-${index}`}>
                 <Project fade={fade} index={index} />
               </li>
             ))}
