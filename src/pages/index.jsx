@@ -1,5 +1,6 @@
 import "./index.css"
 import React, { useState, useRef, useEffect, createContext } from "react"
+import { throttle } from "lodash"
 import PropTypes from "prop-types"
 import SEO from "../components/SEO"
 import Header from "../components/Header"
@@ -16,15 +17,19 @@ const Index = () => {
   const contactSection = useRef(null)
   const allRefs = [homeSection, projectSection, aboutSection, contactSection]
   const [value, setValue] = useState(0)
-  const [refIndex, setRefIndex] = useState(0)
+  const [refIndex, setRefIndex] = useState(1)
 
-  const scrollToSection = (section) => {
-    window.scrollTo({
-      left: 0,
-      top: section.current.offsetTop - 48,
-      behavior: "smooth",
-    })
-  }
+  const scrollToSection = throttle(
+    (section) => {
+      window.scrollTo({
+        left: 0,
+        top: section.current.offsetTop - 48,
+        behavior: "smooth",
+      })
+    },
+    1000,
+    { trailing: false }
+  )
 
   const keyDownListenerFunction = (e) => {
     if (refIndex !== 0 && e.key === "ArrowUp") {
