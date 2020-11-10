@@ -17,50 +17,63 @@ const Index = () => {
   const contactSection = useRef(null)
   const allRefs = [homeSection, projectSection, aboutSection, contactSection]
   const [value, setValue] = useState(0)
-  const [refIndex, setRefIndex] = useState(0)
 
-  const scrollToSection = throttle(
-    (section) => {
-      window.scrollTo({
-        left: 0,
-        top: section.current.offsetTop - 48,
-        behavior: "smooth",
-      })
+  const [refIndex, _setRefIndex] = useState(0)
+  const refIndexRef = useRef(refIndex)
+  const setRefIndex = (data) => {
+    refIndexRef.current = data
+    _setRefIndex(data)
+  }
+
+  const scrollToSection = (section) => {
+    window.scrollTo({
+      left: 0,
+      top: section.current.offsetTop - 48,
+      behavior: "smooth",
+    })
+  }
+
+  const keyDownListenerFunction = throttle(
+    (e) => {
+      if (refIndexRef.current !== 0 && e.key === "ArrowUp") {
+        setRefIndex(refIndexRef.current - 1)
+      } else if (
+        refIndexRef.current !== allRefs.length - 1 &&
+        e.key === "ArrowDown"
+      ) {
+        setRefIndex(refIndexRef.current + 1)
+      }
     },
-    1000,
+    500,
     { trailing: false }
   )
 
-  const keyDownListenerFunction = (e) => {
-    if (refIndex !== 0 && e.key === "ArrowUp") {
-      setRefIndex(refIndex - 1)
-    } else if (refIndex !== allRefs.length - 1 && e.key === "ArrowDown") {
-      setRefIndex(refIndex + 1)
-    }
-  }
-
-  const mouseListenerFunction = (e) => {
-    if (e.wheelDelta > 0 && refIndex !== 0) {
-      setRefIndex(refIndex - 1)
-    } else if (e.wheelDelta < 0 && refIndex !== allRefs.length - 1) {
-      setRefIndex(refIndex + 1)
-    }
-  }
+  const mouseListenerFunction = throttle(
+    (e) => {
+      if (e.wheelDelta > 0 && refIndexRef.current !== 0) {
+        setRefIndex(refIndexRef.current - 1)
+      } else if (
+        e.wheelDelta < 0 &&
+        refIndexRef.current !== allRefs.length - 1
+      ) {
+        setRefIndex(refIndexRef.current + 1)
+      }
+    },
+    1500,
+    { trailing: false }
+  )
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     window.addEventListener("keydown", keyDownListenerFunction)
     window.addEventListener("mousewheel", mouseListenerFunction)
     return () => {
       window.removeEventListener("keydown", keyDownListenerFunction)
       window.removeEventListener("mousewheel", mouseListenerFunction)
     }
-  }, [keyDownListenerFunction, mouseListenerFunction])
+  }, [])
 
   useEffect(() => scrollToSection(allRefs[refIndex]), [refIndex])
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
 
   return (
     <GlobalContext.Provider
