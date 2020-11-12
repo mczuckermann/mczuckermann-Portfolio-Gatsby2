@@ -1,13 +1,16 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useEffect, useRef, useContext } from "react"
 import { useTrail } from "react-spring"
 import { Waypoint } from "react-waypoint"
 import Project from "../Project"
+import NetflixScrollButton from "../NetflixScrollButton"
 import "./projects.css"
 import { GlobalContext } from "../../pages"
 import imageInfo from "../../js/imageInfo"
 
 const Projects = () => {
+  const arrowRef = useRef(null)
   const [on, toggle] = useState(false)
+  const [scrollLeft, setScrollLeft] = useState(0)
   const { setValue, allRefs } = useContext(GlobalContext)
   const [trail, set, stop] = useTrail(imageInfo.length, () => ({
     transform: "scale(0.8, 0.8), translate3d(-8%,0,0)",
@@ -21,6 +24,13 @@ const Projects = () => {
     config: { duration: (imageInfo.length * 1000) / imageInfo.length },
   })
   stop()
+
+  useEffect(() => {
+    arrowRef.current.scrollTo({
+      left: scrollLeft,
+      behavior: "smooth",
+    })
+  }, [scrollLeft])
 
   return (
     <div ref={allRefs[1]} className="projectsBody">
@@ -37,7 +47,23 @@ const Projects = () => {
       <h1 className="groupHeaders">Portfolio</h1>
       <div className="app">
         <div className="full hide-scroll">
-          <ul className="hs">
+          {scrollLeft > 0 && (
+            <NetflixScrollButton
+              arrowRef={arrowRef}
+              orientation="left"
+              scrollLeft={scrollLeft}
+              setScrollLeft={setScrollLeft}
+            />
+          )}
+          {scrollLeft <= arrowRef.current?.scrollWidth - window.innerWidth && (
+            <NetflixScrollButton
+              arrowRef={arrowRef}
+              orientation="right"
+              scrollLeft={scrollLeft}
+              setScrollLeft={setScrollLeft}
+            />
+          )}
+          <ul ref={arrowRef} className="hs" style={{ position: "relative" }}>
             {trail.map((fade, index) => (
               <li className="item" key={`key-${index}`}>
                 <Project fade={fade} index={index} />

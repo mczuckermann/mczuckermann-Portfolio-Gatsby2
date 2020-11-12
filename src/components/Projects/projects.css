@@ -3,7 +3,7 @@
 /* ======== */
 
 :root {
-  --projects-array-length: 5;
+  --projects-array-length: 6;
 }
 
 .projectOpaqueBackground {
@@ -81,16 +81,21 @@ a#noDecoration {
   grid-column: 1 / -1;
 }
 
+.hide-scroll {
+  overflow-x: hidden;
+}
+
 .hs {
   display: grid;
   grid-gap: 20px;
   grid-template-columns:
-    20px repeat(var(--projects-array-length), calc(40% - var(--gutter) * 2))
+    20px repeat(var(--projects-array-length), calc(47% - var(--gutter) * 2))
     20px;
   grid-template-rows: minmax(65vh, 1fr);
-  overflow-x: scroll;
-  scroll-snap-type: none;
+  overflow-x: hidden;
+  scroll-snap-type: x proximity;
   padding-bottom: calc(0.75 * var(--gutter));
+  height: 100%;
 }
 
 .hs:before,
@@ -99,12 +104,14 @@ a#noDecoration {
 }
 
 ul {
+  overflow-x: hidden;
   list-style: none;
   padding: 0;
 }
 
 .hs > li,
 .item {
+  scroll-snap-align: center;
   padding: calc(var(--gutter) / 2 * 2);
   display: flex;
   flex-direction: column;
