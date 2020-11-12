@@ -11,6 +11,7 @@ const Projects = () => {
   const arrowRef = useRef(null)
   const [on, toggle] = useState(false)
   const [scrollLeft, setScrollLeft] = useState(0)
+  const [windowWidth, setWindowWidth] = useState(null)
   const { setValue, allRefs } = useContext(GlobalContext)
   const [trail, set, stop] = useTrail(imageInfo.length, () => ({
     transform: "scale(0.8, 0.8), translate3d(-8%,0,0)",
@@ -24,6 +25,17 @@ const Projects = () => {
     config: { duration: (imageInfo.length * 1000) / imageInfo.length },
   })
   stop()
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth)
+    window.addEventListener("resize", () => {
+      setWindowWidth(window.innerWidth)
+    })
+    return () =>
+      window.removeEventListener("resize", () => {
+        setWindowWidth(window.innerWidth)
+      })
+  }, [])
 
   useEffect(() => {
     arrowRef.current.scrollTo({
@@ -53,14 +65,16 @@ const Projects = () => {
               orientation="left"
               scrollLeft={scrollLeft}
               setScrollLeft={setScrollLeft}
+              windowWidth={windowWidth}
             />
           )}
-          {scrollLeft <= arrowRef.current?.scrollWidth - window.innerWidth && (
+          {scrollLeft <= arrowRef.current?.scrollWidth - windowWidth && (
             <NetflixScrollButton
               arrowRef={arrowRef}
               orientation="right"
               scrollLeft={scrollLeft}
               setScrollLeft={setScrollLeft}
+              windowWidth={windowWidth}
             />
           )}
           <ul ref={arrowRef} className="hs" style={{ position: "relative" }}>

@@ -27,21 +27,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const NetflixScrollButton = ({ arrowRef, orientation, setScrollLeft }) => {
+const NetflixScrollButton = ({
+  arrowRef,
+  orientation,
+  setScrollLeft,
+  windowWidth,
+}) => {
   const classes = useStyles()
   const [buttonHover, setButtonHover] = useState(false)
   const [scrollDistance, setScrollDistance] = useState(0)
-  const [windowWidth, setWindowWidth] = useState(null)
-
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      setWindowWidth(window.innerWidth)
-    })
-    return () =>
-      window.removeEventListener("resize", () => {
-        setWindowWidth(window.innerWidth)
-      })
-  }, [])
 
   useEffect(() => {
     if (window.innerWidth > 1000) setScrollDistance(450)
