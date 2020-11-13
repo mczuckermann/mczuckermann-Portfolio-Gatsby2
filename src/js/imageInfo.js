@@ -16,15 +16,6 @@ export default [
     image: jzMusicImage,
   },
   {
-    appName: "useThis",
-    deployLink: "https://usethis.dev/",
-    repoLink: "https://github.com/mattzuckermann/usethis",
-    shortBio: "React, Material-UI, Next.js, Apollo, GraphQL, MongoDB, Jest",
-    desc:
-      "Site for developers to practice and master the use of the 'this' keyword in JavaScript",
-    image: useThisImage,
-  },
-  {
     appName: "NYT Searcher",
     deployLink: "https://www.nytsearcher.com/",
     repoLink: "https://github.com/mattzuckermann/NYTsearcher",
