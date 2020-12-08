@@ -51,7 +51,6 @@ const NetflixScrollButton = ({
         [classes.buttonHover]: buttonHover,
         [classes.buttonNonHover]: !buttonHover,
       })}
-      // style={{ height: "50%" }}
       onMouseEnter={() => setButtonHover(true)}
       onMouseLeave={() => setButtonHover(false)}
       onClick={() =>
