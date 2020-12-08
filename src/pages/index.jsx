@@ -25,6 +25,13 @@ const Index = () => {
     _setRefIndex(data)
   }
 
+  const [startY, _setStartY] = useState(0)
+  const startYRef = useRef(startY)
+  const setStartY = (data) => {
+    startYRef.current = data
+    _setStartY(data)
+  }
+
   const scrollToSection = (section) => {
     window.scrollTo({
       left: 0,
@@ -63,13 +70,41 @@ const Index = () => {
     { trailing: false }
   )
 
+  const touchStartListenerFunction = throttle(
+    (e) => {
+      setStartY(e.touches[0].clientY)
+    },
+    500,
+    { trailing: false }
+  )
+
+  const touchEndListenerFunction = throttle(
+    (e) => {
+      const endY = e.changedTouches[0].clientY
+      if (endY > startYRef.current && refIndexRef.current !== 0) {
+        setRefIndex(refIndexRef.current - 1)
+      } else if (
+        endY < startYRef.current &&
+        refIndexRef.current !== allRefs.length - 1
+      ) {
+        setRefIndex(refIndexRef.current + 1)
+      }
+    },
+    500,
+    { trailing: false }
+  )
+
   useEffect(() => {
     window.scrollTo(0, 0)
     window.addEventListener("keydown", keyDownListenerFunction)
     window.addEventListener("mousewheel", mouseListenerFunction)
+    window.addEventListener("touchstart", touchStartListenerFunction)
+    window.addEventListener("touchend", touchEndListenerFunction)
     return () => {
       window.removeEventListener("keydown", keyDownListenerFunction)
       window.removeEventListener("mousewheel", mouseListenerFunction)
+      window.removeEventListener("touchstart", touchStartListenerFunction)
+      window.removeEventListener("touchend", touchEndListenerFunction)
     }
   }, [])
 
@@ -82,8 +117,8 @@ const Index = () => {
         value,
         setValue,
         scrollToSection,
-        setRefIndex,
         refIndex,
+        setRefIndex,
       }}
     >
       <SEO
