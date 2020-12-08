@@ -82,7 +82,7 @@ a#noDecoration {
 }
 
 .hide-scroll {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .hs {
