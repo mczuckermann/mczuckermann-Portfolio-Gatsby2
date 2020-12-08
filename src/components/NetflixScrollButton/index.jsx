@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
+import { GlobalContext } from "../../pages"
 import { makeStyles } from "@material-ui/core/styles"
 import classNames from "classnames"
 import leftArrow from "../../images/leftArrow.png"
@@ -27,21 +28,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const NetflixScrollButton = ({
-  arrowRef,
-  orientation,
-  setScrollLeft,
-  windowWidth,
-}) => {
+const NetflixScrollButton = ({ orientation }) => {
   const classes = useStyles()
+  const { arrowRef, setScrollLeft, scrollDistance } = useContext(GlobalContext)
   const [buttonHover, setButtonHover] = useState(false)
-  const [scrollDistance, setScrollDistance] = useState(0)
-
-  useEffect(() => {
-    if (window.innerWidth > 1000) setScrollDistance(450)
-    else if (window.innerWidth > 400) setScrollDistance(385)
-    else setScrollDistance(300)
-  }, [windowWidth])
 
   return (
     <div

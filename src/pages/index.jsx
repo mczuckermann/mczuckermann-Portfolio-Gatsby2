@@ -11,6 +11,10 @@ import Footer from "../components/Footer"
 export const GlobalContext = createContext()
 
 const Index = () => {
+  const [windowWidth, setWindowWidth] = useState(0)
+  const arrowRef = useRef(null)
+  const [scrollLeft, setScrollLeft] = useState(0)
+
   const homeSection = useRef(null)
   const projectSection = useRef(null)
   const aboutSection = useRef(null)
@@ -23,6 +27,13 @@ const Index = () => {
   const setRefIndex = (data) => {
     refIndexRef.current = data
     _setRefIndex(data)
+  }
+
+  const [scrollDistance, _setScrollDistance] = useState(0)
+  const scrollDistanceRef = useRef(scrollDistance)
+  const setScrollDistance = (data) => {
+    scrollDistanceRef.current = data
+    _setScrollDistance(data)
   }
 
   const [startY, _setStartY] = useState(0)
@@ -49,6 +60,10 @@ const Index = () => {
         e.key === "ArrowDown"
       ) {
         setRefIndex(refIndexRef.current + 1)
+      } else if (refIndexRef.current === 1 && e.key === "ArrowLeft") {
+        setScrollLeft(arrowRef.current.scrollLeft - scrollDistanceRef.current)
+      } else if (refIndexRef.current === 1 && e.key === "ArrowRight") {
+        setScrollLeft(arrowRef.current.scrollLeft + scrollDistanceRef.current)
       }
     },
     500,
@@ -96,17 +111,38 @@ const Index = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0)
+    setWindowWidth(window.innerWidth)
+    console.log("window.innerWidth", window.innerWidth)
+    console.log("windowWidth", windowWidth)
+
     window.addEventListener("keydown", keyDownListenerFunction)
     window.addEventListener("mousewheel", mouseListenerFunction)
     window.addEventListener("touchstart", touchStartListenerFunction)
     window.addEventListener("touchend", touchEndListenerFunction)
+    window.addEventListener("resize", () => setWindowWidth(window.innerWidth))
     return () => {
       window.removeEventListener("keydown", keyDownListenerFunction)
       window.removeEventListener("mousewheel", mouseListenerFunction)
       window.removeEventListener("touchstart", touchStartListenerFunction)
       window.removeEventListener("touchend", touchEndListenerFunction)
+      window.removeEventListener("resize", () =>
+        setWindowWidth(window.innerWidth)
+      )
     }
   }, [])
+
+  useEffect(() => {
+    if (window.innerWidth > 1000) setScrollDistance(450)
+    else if (window.innerWidth > 400) setScrollDistance(385)
+    else setScrollDistance(300)
+  }, [windowWidth])
+
+  useEffect(() => {
+    arrowRef.current.scrollTo({
+      left: scrollLeft,
+      behavior: "smooth",
+    })
+  }, [scrollLeft])
 
   useEffect(() => scrollToSection(allRefs[refIndex]), [refIndex])
 
@@ -119,6 +155,11 @@ const Index = () => {
         scrollToSection,
         refIndex,
         setRefIndex,
+        arrowRef,
+        scrollLeft,
+        setScrollLeft,
+        windowWidth,
+        scrollDistance,
       }}
     >
       <SEO

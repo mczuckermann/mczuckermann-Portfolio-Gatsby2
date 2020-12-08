@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useContext } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import { useTrail } from "react-spring"
 import { Waypoint } from "react-waypoint"
 import Project from "../Project"
@@ -8,11 +8,10 @@ import { GlobalContext } from "../../pages"
 import imageInfo from "../../js/imageInfo"
 
 const Projects = () => {
-  const arrowRef = useRef(null)
   const [on, toggle] = useState(false)
-  const [scrollLeft, setScrollLeft] = useState(0)
-  const [windowWidth, setWindowWidth] = useState(null)
-  const { setValue, allRefs } = useContext(GlobalContext)
+  const { setValue, allRefs, scrollLeft, arrowRef, windowWidth } = useContext(
+    GlobalContext
+  )
   const [trail, set, stop] = useTrail(imageInfo.length, () => ({
     transform: "scale(0.8, 0.8), translate3d(-8%,0,0)",
     opacity: 0,
@@ -25,24 +24,6 @@ const Projects = () => {
     config: { duration: (imageInfo.length * 1000) / imageInfo.length },
   })
   stop()
-
-  useEffect(() => {
-    setWindowWidth(window.innerWidth)
-    window.addEventListener("resize", () => {
-      setWindowWidth(window.innerWidth)
-    })
-    return () =>
-      window.removeEventListener("resize", () => {
-        setWindowWidth(window.innerWidth)
-      })
-  }, [])
-
-  useEffect(() => {
-    arrowRef.current.scrollTo({
-      left: scrollLeft,
-      behavior: "smooth",
-    })
-  }, [scrollLeft])
 
   return (
     <div ref={allRefs[1]} className="projectsBody">
@@ -60,22 +41,10 @@ const Projects = () => {
       <div className="app">
         <div className="full hide-scroll">
           {scrollLeft > 0 && (
-            <NetflixScrollButton
-              arrowRef={arrowRef}
-              orientation="left"
-              scrollLeft={scrollLeft}
-              setScrollLeft={setScrollLeft}
-              windowWidth={windowWidth}
-            />
+            <NetflixScrollButton orientation="left" scrollLeft={scrollLeft} />
           )}
           {scrollLeft <= arrowRef.current?.scrollWidth - windowWidth && (
-            <NetflixScrollButton
-              arrowRef={arrowRef}
-              orientation="right"
-              scrollLeft={scrollLeft}
-              setScrollLeft={setScrollLeft}
-              windowWidth={windowWidth}
-            />
+            <NetflixScrollButton orientation="right" scrollLeft={scrollLeft} />
           )}
           <ul ref={arrowRef} className="hs" style={{ position: "relative" }}>
             {trail.map((fade, index) => (
