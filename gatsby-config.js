@@ -25,7 +25,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-favicon`,
       options: {
-        logo: `./src/images/font-awesome_user-circle.png`,
+        logo: `./src/images/icons/font-awesome_user-circle.png`,
       },
     },
     {
@@ -37,7 +37,7 @@ module.exports = {
         background_color: `#effffc`,
         theme_color: `#9e94a8`,
         display: `minimal-ui`,
-        icon: `src/images/font-awesome_user-circle.png`,
+        icon: `src/images/icons/font-awesome_user-circle.png`,
       },
     },
   ],

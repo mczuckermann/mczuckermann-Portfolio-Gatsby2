@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useState, useContext } from "react"
 import { GlobalContext } from "../../pages"
 import { makeStyles } from "@material-ui/core/styles"
 import classNames from "classnames"
-import leftArrow from "../../images/leftArrow.png"
-import rightArrow from "../../images/rightArrow.png"
+import leftArrow from "../../images/icons/leftArrow.png"
+import rightArrow from "../../images/icons/rightArrow.png"
 
 const useStyles = makeStyles((theme) => ({
   netflixButton: {

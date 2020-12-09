@@ -5,7 +5,7 @@ import imageInfo from "../../js/imageInfo"
 import DemoLineNYT from "../DemoLineNYT"
 import DemoLineSnippets from "../DemoLineSnippets"
 import SlideAnimation from "../SlideAnimation"
-import githubIcon from "../../images/github.png"
+import githubIcon from "../../images/icons/github.png"
 
 const Project = ({ fade, index }) => {
   const [mouseIn, hoverChange] = useState(false)

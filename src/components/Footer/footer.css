@@ -35,7 +35,7 @@
 }
 
 .arrowButton:hover > .buttonImage {
-  content: url("../../images/lightArrowButton.png");
+  content: url("../../images/icons/lightArrowButton.png");
 }
 
 .copyrightDiv {
