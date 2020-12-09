@@ -3,7 +3,7 @@
 /* ======== */
 
 :root {
-  --projects-array-length: 5;
+  --projects-array-length: 6;
 }
 
 .projectOpaqueBackground {
@@ -199,7 +199,7 @@ a > span:hover {
   }
   .hs {
     grid-template-columns:
-      20px repeat(var(--projects-array-length), calc(45% - var(--gutter) * 2))
+      20px repeat(var(--projects-array-length), calc(47% - var(--gutter) * 2))
       20px;
   }
 }

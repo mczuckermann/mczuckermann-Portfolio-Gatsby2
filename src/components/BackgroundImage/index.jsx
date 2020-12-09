@@ -12,7 +12,7 @@ const BackgroundSection = ({ className, children }) => {
         desktop: file(relativePath: { eq: "backgrounds/deskPhoto.jpg" }) {
           childImageSharp {
             fluid(quality: 100) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
@@ -28,7 +28,9 @@ const BackgroundSection = ({ className, children }) => {
       Tag="section"
       className={className}
       fluid={imageData}
-      backgroundColor={`#000000`}
+      fadeIn={true}
+      loading="eager"
+      //   backgroundColor={`#000000`}
       onLoad={() => setBackgroundIsLoaded(true)}
     >
       {children}

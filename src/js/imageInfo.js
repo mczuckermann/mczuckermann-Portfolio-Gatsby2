@@ -1,18 +1,27 @@
-const jzMusicImage = require("../images/jzMusicPortfolio.jpg")
-const useThisImage = require("../images/usethis.jpg")
-const bestSellerSearcherImage = require("../images/bestSellerSearcher.jpg")
-const codesnippetsImage = require("../images/codesnippetsScreenShot.jpg")
-const liriBotImage = require("../images/liribotCodeScreenShot.jpg")
-const storeStockImage = require("../images/storestockItemGrabberScreenShot.jpg")
+const jzMusicImage = require("../images/projects/joshzuckermann.jpg")
+const useThisImage = require("../images/projects/usethis.jpg")
+const bestSellerSearcherImage = require("../images/projects/nytsearcher.jpg")
+const codesnippetsImage = require("../images/projects/codesnippets.jpg")
+const liriBotImage = require("../images/projects/liribot.jpg")
+const storeStockImage = require("../images/projects/storestock.jpg")
 
 export default [
+  {
+    appName: "useThis",
+    deployLink: "https://usethis.dev/",
+    repoLink: "https://github.com/mattzuckermann/usethis",
+    shortBio: "NextJS, TypeScript, React, Apollo, GraphQL, MongoDB, Mongoose",
+    desc:
+      "Site for web developers to practice and master the use of the 'this' keyword in various JavaScript contexts",
+    image: useThisImage,
+  },
   {
     appName: "Music Artist Site",
     deployLink: "https://joshzuckermann.com/",
     repoLink: "https://github.com/mattzuckermann/MusicArtistSite",
     shortBio: "React, Material-UI, Gatsby, GraphQL, Typescript, Contentful",
     desc:
-      "JAMstack site with a React audio player that showcases the web page of Chicago music artist Josh Zuckermann",
+      "JAMstack site with reverse engineered Spotify audio player and webhook to auto-compile site from CMS",
     image: jzMusicImage,
   },
   {
@@ -21,7 +30,7 @@ export default [
     repoLink: "https://github.com/mattzuckermann/NYTsearcher",
     shortBio: "React, Node, Express, Passport, MongoDB, Mongoose",
     desc:
-      "Website that parses The New York Times articles API and allows users to openly share their favorites with others",
+      "Website that parses The New York Times articles API and allows users to share their favorites with others",
     image: bestSellerSearcherImage,
   },
   {
@@ -40,7 +49,7 @@ export default [
     repoLink: "https://github.com/mattzuckermann/LiriBot",
     shortBio: "Node, Web APIs",
     desc:
-      "Liri Bot is a Node app that allows user to input varying methods and arguments in the Node CLI to look up various web API end points.",
+      "Node app that inputs varying methods and arguments in the Node CLI to look up various web API end points.",
     image: liriBotImage,
   },
   {
