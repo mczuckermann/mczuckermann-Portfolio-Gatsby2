@@ -26,7 +26,7 @@ const Header = () => {
   const options = ["Home", "Portfolio", "About", "Contact"]
 
   return (
-    <animated.div style={fade} id="headerWithEdging">
+    <animated.header style={fade} id="headerWithEdging">
       <div className={classes.root}>
         <AppBar position="sticky" className="headerBody">
           <Tabs value={value} aria-label="simple tabs">
@@ -43,7 +43,7 @@ const Header = () => {
           </Tabs>
         </AppBar>
       </div>
-    </animated.div>
+    </animated.header>
   )
 }
 

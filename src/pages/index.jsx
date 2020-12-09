@@ -180,7 +180,7 @@ const Index = () => {
         ]}
       />
       <Header />
-      <div className="parent">
+      <main className="parent">
         <section ref={homeSection}>
           <BackgroundImage className="homeBody">
             <Home />
@@ -195,7 +195,7 @@ const Index = () => {
         <section ref={contactSection}>
           <Footer />
         </section>
-      </div>
+      </main>
     </GlobalContext.Provider>
   )
 }

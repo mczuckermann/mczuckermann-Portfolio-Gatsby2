@@ -20,7 +20,7 @@ const Footer = () => {
   const arrowImages = [darkArrow, lightArrow]
 
   return (
-    <div ref={allRefs[3]} className="footerBody">
+    <footer ref={allRefs[3]} className="footerBody">
       <Waypoint
         bottomOffset="50%"
         onEnter={() => {
@@ -32,7 +32,7 @@ const Footer = () => {
         }}
       />
       <animated.div style={fadeIn}>
-        <footer className="resizeFooter">
+        <div className="resizeFooter">
           <div className="contactMe" style={{ fontSize: "8.0em" }}>
             Contact Me
           </div>
@@ -107,9 +107,9 @@ const Footer = () => {
               </div>
             </div>
           </div>
-        </footer>
+        </div>
       </animated.div>
-    </div>
+    </footer>
   )
 }
 
