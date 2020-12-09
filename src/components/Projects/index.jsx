@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useState, useContext } from "react"
 import { useTrail } from "react-spring"
 import { Waypoint } from "react-waypoint"
 import Project from "../Project"
