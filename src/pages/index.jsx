@@ -133,9 +133,9 @@ const Index = () => {
   }, [])
 
   useEffect(() => {
-    if (window.innerWidth > 1000) setScrollDistance(450)
-    else if (window.innerWidth > 400) setScrollDistance(385)
-    else setScrollDistance(300)
+    if (windowWidth <= 565) setScrollDistance(windowWidth * 0.95)
+    else if (windowWidth <= 1305) setScrollDistance(windowWidth * 0.85)
+    else setScrollDistance(windowWidth * 0.5)
   }, [windowWidth])
 
   useEffect(() => {

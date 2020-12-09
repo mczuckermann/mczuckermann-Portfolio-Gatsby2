@@ -4,6 +4,7 @@
 
 :root {
   --projects-array-length: 6;
+  --gutter: 20px;
 }
 
 .projectOpaqueBackground {
@@ -62,10 +63,6 @@ a#noDecoration {
   text-decoration: none;
 }
 
-:root {
-  --gutter: 20px;
-}
-
 .app {
   display: grid;
   grid-gap: var(--gutter) 0;
@@ -87,13 +84,13 @@ a#noDecoration {
 
 .hs {
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 30px;
   grid-template-columns:
-    20px repeat(var(--projects-array-length), calc(47% - var(--gutter) * 2))
+    20px repeat(var(--projects-array-length), calc(53% - var(--gutter) * 2))
     20px;
   grid-template-rows: minmax(65vh, 1fr);
   overflow-x: hidden;
-  scroll-snap-type: x proximity;
+  scroll-snap-type: x mandatory;
   padding-bottom: calc(0.75 * var(--gutter));
   height: 100%;
 }
@@ -154,7 +151,7 @@ a > span:hover {
   width: 100%;
   font-family: "Hind";
   position: absolute;
-  top: 25%;
+  top: 35%;
   text-align: center;
   padding: 15px;
   font-size: 20px;
@@ -199,7 +196,7 @@ a > span:hover {
   }
   .hs {
     grid-template-columns:
-      20px repeat(var(--projects-array-length), calc(47% - var(--gutter) * 2))
+      20px repeat(var(--projects-array-length), calc(80% - var(--gutter) * 2))
       20px;
   }
 }
@@ -232,12 +229,6 @@ a > span:hover {
   }
 }
 
-@media screen and (max-width: 1000px) {
-  .slideInDesc {
-    font-size: 15px;
-  }
-}
-
 @media screen and (max-width: 1000px) and (min-height: 1000px) {
   ul.hs {
     grid-template-columns:
@@ -257,7 +248,7 @@ a > span:hover {
   }
   .hs {
     grid-template-columns:
-      20px repeat(var(--projects-array-length), calc(60% - var(--gutter) * 2))
+      20px repeat(var(--projects-array-length), calc(75% - var(--gutter) * 2))
       20px;
   }
 }
@@ -268,7 +259,7 @@ a > span:hover {
   }
   .hs {
     grid-template-columns:
-      20px repeat(var(--projects-array-length), calc(70% - var(--gutter) * 2))
+      20px repeat(var(--projects-array-length), calc(90% - var(--gutter) * 2))
       20px;
   }
 }
@@ -279,6 +270,14 @@ a > span:hover {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .slideInDesc {
+    font-size: 14px;
+    top: 15%;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+
 @media screen and (max-width: 503px) {
   .demoNYT,
   .demoSnippets {
@@ -286,7 +285,7 @@ a > span:hover {
   }
   ul.hs {
     grid-template-columns:
-      20px repeat(var(--projects-array-length), calc(80% - var(--gutter) * 2))
+      20px repeat(var(--projects-array-length), calc(88% - var(--gutter) * 2))
       20px;
     margin-top: 0px !important;
   }
