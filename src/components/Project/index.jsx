@@ -39,7 +39,7 @@ const Project = ({ fade, index }) => {
                   animated={animated}
                 />
               ) : (
-                <div />
+                <div className="slideInDesc">{imageInfo[index].desc}</div>
               )}
             </a>
           </div>
