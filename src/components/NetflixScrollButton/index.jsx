@@ -30,7 +30,9 @@ const useStyles = makeStyles((theme) => ({
 
 const NetflixScrollButton = ({ orientation }) => {
   const classes = useStyles()
-  const { arrowRef, setScrollLeft, scrollDistance } = useContext(GlobalContext)
+  const { arrowRef, setScrollLeft, scrollDistance, windowWidth } = useContext(
+    GlobalContext
+  )
   const [buttonHover, setButtonHover] = useState(false)
 
   return (
@@ -59,7 +61,7 @@ const NetflixScrollButton = ({ orientation }) => {
         <img
           alt="arrow-button"
           style={{
-            width: "70px",
+            width: windowWidth > 650 ? "90px" : "60px",
             verticalAlign: "middle",
           }}
           src={orientation === "left" ? leftArrow : rightArrow}
