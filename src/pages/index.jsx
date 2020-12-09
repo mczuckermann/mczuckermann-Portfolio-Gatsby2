@@ -21,9 +21,10 @@ const Index = () => {
   const aboutSection = useRef(null)
   const contactSection = useRef(null)
   const allRefs = [homeSection, projectSection, aboutSection, contactSection]
+
   const [value, setValue] = useState(0)
 
-  const [backgroundIsLoaded, setBackgroundIsLoaded] = useState(0)
+  const [backgroundIsLoaded, setBackgroundIsLoaded] = useState(false)
 
   const [refIndex, _setRefIndex] = useState(0)
   const refIndexRef = useRef(refIndex)
@@ -113,7 +114,6 @@ const Index = () => {
   )
 
   useEffect(() => {
-    window.scrollTo(0, 0)
     setWindowWidth(window.innerWidth)
 
     window.addEventListener("keydown", keyDownListenerFunction)
