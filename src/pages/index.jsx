@@ -4,6 +4,7 @@ import { throttle } from "lodash"
 import PropTypes from "prop-types"
 import SEO from "../components/SEO"
 import Header from "../components/Header"
+import BackgroundImage from "../components/BackgroundImage"
 import Home from "../components/Home"
 import Projects from "../components/Projects"
 import About from "../components/About"
@@ -21,6 +22,8 @@ const Index = () => {
   const contactSection = useRef(null)
   const allRefs = [homeSection, projectSection, aboutSection, contactSection]
   const [value, setValue] = useState(0)
+
+  const [backgroundIsLoaded, setBackgroundIsLoaded] = useState(0)
 
   const [refIndex, _setRefIndex] = useState(0)
   const refIndexRef = useRef(refIndex)
@@ -112,8 +115,6 @@ const Index = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
     setWindowWidth(window.innerWidth)
-    console.log("window.innerWidth", window.innerWidth)
-    console.log("windowWidth", windowWidth)
 
     window.addEventListener("keydown", keyDownListenerFunction)
     window.addEventListener("mousewheel", mouseListenerFunction)
@@ -160,6 +161,8 @@ const Index = () => {
         setScrollLeft,
         windowWidth,
         scrollDistance,
+        backgroundIsLoaded,
+        setBackgroundIsLoaded,
       }}
     >
       <SEO
@@ -179,7 +182,9 @@ const Index = () => {
       <Header />
       <div className="parent">
         <section ref={homeSection}>
-          <Home />
+          <BackgroundImage className="homeBody">
+            <Home />
+          </BackgroundImage>
         </section>
         <section ref={projectSection}>
           <Projects />
