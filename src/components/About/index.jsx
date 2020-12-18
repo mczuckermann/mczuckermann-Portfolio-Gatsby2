@@ -50,11 +50,10 @@ const About = () => {
         <animated.div className="bioBackground" style={textSlide}>
           <br />
           <animated.p className="portfolioBio" style={textFade}>
-            Software Engineer specializing in JavaScript, Python, Java, and
-            SQL/NoSQL databases. UC Berkeley Extension coding program grad in
-            MERN stack. Experienced Linux network support engineer, AV technical
-            director, and a history in audio engineering with two Bachelor of
-            Arts degrees in music and communication-media studies.
+            Full-stack developer specializing in TypeScript, React, JamStack,
+            and SQL / NoSQL databases. UC Berkeley Extension coding program
+            grad. Experienced JAM / MERN / LAMP stack developer, AV technical
+            director, and audio engineer.
           </animated.p>
         </animated.div>
         <div />

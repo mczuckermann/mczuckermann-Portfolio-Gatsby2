@@ -53,10 +53,6 @@ const Footer = () => {
             <FooterLink link={"/resume"}>Resume</FooterLink>
           </div>
 
-          <div className="footerLinesA" style={{ fontSize: "1.3em" }}>
-            <FooterLink link={"/businesscard"}>Business Card</FooterLink>
-          </div>
-
           <div className="footerLinesB">
             <FooterLink link={"https://www.linkedin.com/in/mattzuckermann/"}>
               <img className="iconFooter" src={linkedinIcon} alt="linkedin" />
@@ -83,11 +79,11 @@ const Footer = () => {
                 <button
                   className="arrowButton"
                   style={{ backgroundColor: "inherit", border: "none" }}
+                  onClick={() => setRefIndex(0)}
                 >
                   <img
                     className="buttonImage"
                     style={{ width: "4.5em" }}
-                    onClick={() => setRefIndex(0)}
                     src={arrowImages[0]}
                     alt="arrow-button"
                   />
