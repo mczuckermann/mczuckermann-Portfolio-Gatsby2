@@ -1,5 +1,6 @@
 import "./index.css"
 import React, { useState, useRef, useEffect, createContext } from "react"
+import { useLocalStorage } from "../hooks/useLocalStorage"
 import { throttle } from "lodash"
 import PropTypes from "prop-types"
 import SEO from "../components/SEO"
@@ -22,16 +23,15 @@ const Index = () => {
   const contactSection = useRef(null)
   const allRefs = [homeSection, projectSection, aboutSection, contactSection]
 
-  const [value, setValue] = useState(0)
-
   const [backgroundIsLoaded, setBackgroundIsLoaded] = useState(false)
 
-  const [refIndex, _setRefIndex] = useState(0)
+  const [refIndex, _setRefIndex] = useLocalStorage("refIndex", 0)
   const refIndexRef = useRef(refIndex)
   const setRefIndex = (data) => {
     refIndexRef.current = data
     _setRefIndex(data)
   }
+  const [value, setValue] = useState(refIndex)
 
   const [scrollDistance, _setScrollDistance] = useState(0)
   const scrollDistanceRef = useRef(scrollDistance)
@@ -145,7 +145,9 @@ const Index = () => {
     })
   }, [scrollLeft])
 
-  useEffect(() => scrollToSection(allRefs[refIndex]), [refIndex])
+  useEffect(() => {
+    scrollToSection(allRefs[refIndex])
+  }, [refIndex])
 
   return (
     <GlobalContext.Provider
@@ -180,6 +182,15 @@ const Index = () => {
         ]}
       />
       <Header />
+      <div
+        style={{
+          zIndex: 9,
+          position: "sticky",
+          top: 0,
+          height: "48px",
+          backgroundColor: "black",
+        }}
+      />
       <main className="parent">
         <section ref={homeSection}>
           <BackgroundImage className="homeBody">
