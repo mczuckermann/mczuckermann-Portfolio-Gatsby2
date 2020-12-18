@@ -182,15 +182,6 @@ const Index = () => {
         ]}
       />
       <Header />
-      <div
-        style={{
-          zIndex: 9,
-          position: "sticky",
-          top: 0,
-          height: "48px",
-          backgroundColor: "black",
-        }}
-      />
       <main className="parent">
         <section ref={homeSection}>
           <BackgroundImage className="homeBody">

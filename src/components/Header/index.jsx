@@ -31,8 +31,8 @@ const Header = () => {
   const options = ["Home", "Portfolio", "About", "Contact"]
 
   return (
-    <animated.header style={fade} id="headerWithEdging">
-      <div className={classes.root}>
+    <header id="headerWithEdging">
+      <animated.div style={fade} className={classes.root}>
         <AppBar position="sticky" className="headerBody">
           <Tabs value={value} aria-label="simple tabs">
             {options.map((option, index) => (
@@ -47,8 +47,8 @@ const Header = () => {
             ))}
           </Tabs>
         </AppBar>
-      </div>
-    </animated.header>
+      </animated.div>
+    </header>
   )
 }
 
