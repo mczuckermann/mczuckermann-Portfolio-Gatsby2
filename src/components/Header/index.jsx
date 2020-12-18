@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import { AppBar, Tabs, Tab } from "@material-ui/core"
-import { useSpring, animated } from "react-spring"
+import { useSpring, animated, config } from "react-spring"
 import { GlobalContext } from "../../pages"
 import "./header.css"
 
@@ -21,8 +21,13 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
   const classes = useStyles()
-  const { value, setRefIndex } = useContext(GlobalContext)
-  const fade = useSpring({ from: { opacity: 0 }, opacity: 1 })
+  const { value, refIndex, setRefIndex, backgroundIsLoaded } = useContext(
+    GlobalContext
+  )
+  const fade = useSpring({
+    opacity: backgroundIsLoaded ? 1 : 0,
+    config: refIndex === 0 ? config.molasses : { duration: 300 },
+  })
   const options = ["Home", "Portfolio", "About", "Contact"]
 
   return (

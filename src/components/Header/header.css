@@ -3,6 +3,7 @@
 /* ====== */
 
 #headerWithEdging {
+  height: 48px;
   position: sticky;
   top: 0px;
   z-index: 10;
