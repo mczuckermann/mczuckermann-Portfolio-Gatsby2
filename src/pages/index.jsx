@@ -1,6 +1,6 @@
 import "./index.css"
 import React, { useState, useRef, useEffect, createContext } from "react"
-import { useLocalStorage } from "../hooks/useLocalStorage"
+import { useSessionStorage } from "../hooks/useSessionStorage"
 import { throttle } from "lodash"
 import PropTypes from "prop-types"
 import SEO from "../components/SEO"
@@ -25,7 +25,7 @@ const Index = () => {
 
   const [backgroundIsLoaded, setBackgroundIsLoaded] = useState(false)
 
-  const [refIndex, _setRefIndex] = useLocalStorage("refIndex", 0)
+  const [refIndex, _setRefIndex] = useSessionStorage("refIndex", 0)
   const refIndexRef = useRef(refIndex)
   const setRefIndex = (data) => {
     refIndexRef.current = data
