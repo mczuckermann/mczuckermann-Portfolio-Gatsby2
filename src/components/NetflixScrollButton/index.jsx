@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react"
 import { GlobalContext } from "../../pages"
 import { makeStyles } from "@material-ui/core/styles"
+import { useSpring, animated } from "react-spring"
 import classNames from "classnames"
 import leftArrow from "../../images/icons/leftArrow.png"
 import rightArrow from "../../images/icons/rightArrow.png"
@@ -35,9 +36,16 @@ const NetflixScrollButton = ({ orientation }) => {
     GlobalContext
   )
   const [buttonHover, setButtonHover] = useState(false)
+  const [buttonIsLoaded, setButtonIsLoaded] = useState(false)
+
+  const fadeIn = useSpring({
+    opacity: buttonIsLoaded ? 1 : 0,
+    config: { duration: 300 },
+  })
 
   return (
-    <button
+    <animated.button
+      style={fadeIn}
       className={classNames([classes.netflixButton], {
         [classes.orientationLeft]: orientation === "left",
         [classes.orientationRight]: orientation === "right",
@@ -65,10 +73,11 @@ const NetflixScrollButton = ({ orientation }) => {
             width: windowWidth > 650 ? "90px" : "60px",
             verticalAlign: "middle",
           }}
+          onLoad={() => setButtonIsLoaded(true)}
           src={orientation === "left" ? leftArrow : rightArrow}
         ></img>
       </div>
-    </button>
+    </animated.button>
   )
 }
 

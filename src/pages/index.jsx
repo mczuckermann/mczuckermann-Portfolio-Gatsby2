@@ -15,7 +15,7 @@ export const GlobalContext = createContext()
 const Index = () => {
   const [windowWidth, setWindowWidth] = useState(0)
   const arrowRef = useRef(null)
-  const [scrollLeft, setScrollLeft] = useState(0)
+  const [scrollLeft, setScrollLeft] = useSessionStorage("scrollLeft", 0)
 
   const homeSection = useRef(null)
   const projectSection = useRef(null)
