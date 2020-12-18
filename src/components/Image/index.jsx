@@ -12,7 +12,7 @@ const Image = ({ className, id, alt, title }) => (
         placeholderImage: file(relativePath: { eq: "zuckermannHeadShot.png" }) {
           childImageSharp {
             fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid_tracedSVG
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
