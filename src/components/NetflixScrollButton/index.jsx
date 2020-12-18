@@ -7,6 +7,7 @@ import rightArrow from "../../images/icons/rightArrow.png"
 
 const useStyles = makeStyles((theme) => ({
   netflixButton: {
+    border: "2px dashed white",
     position: "absolute",
     zIndex: "10",
     cursor: "pointer",
@@ -36,7 +37,7 @@ const NetflixScrollButton = ({ orientation }) => {
   const [buttonHover, setButtonHover] = useState(false)
 
   return (
-    <div
+    <button
       className={classNames([classes.netflixButton], {
         [classes.orientationLeft]: orientation === "left",
         [classes.orientationRight]: orientation === "right",
@@ -67,7 +68,7 @@ const NetflixScrollButton = ({ orientation }) => {
           src={orientation === "left" ? leftArrow : rightArrow}
         ></img>
       </div>
-    </div>
+    </button>
   )
 }
 
