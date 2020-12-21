@@ -12,7 +12,7 @@ import About from "../components/About"
 import Footer from "../components/Footer"
 export const GlobalContext = createContext()
 
-const Index = () => {
+const App = () => {
   const [windowWidth, setWindowWidth] = useState(0)
   const arrowRef = useRef(null)
   const [scrollLeft, setScrollLeft] = useSessionStorage("scrollLeft", 0)
@@ -23,7 +23,12 @@ const Index = () => {
   const contactSection = useRef(null)
   const allRefs = [homeSection, projectSection, aboutSection, contactSection]
 
-  const [backgroundIsLoaded, setBackgroundIsLoaded] = useState(false)
+  const [backgroundIsLoaded, _setBackgroundIsLoaded] = useState(false)
+  const backgroundIsLoadedRef = useRef(backgroundIsLoaded)
+  const setBackgroundIsLoaded = (data) => {
+    backgroundIsLoadedRef.current = data
+    _setBackgroundIsLoaded(data)
+  }
 
   const [refIndex, _setRefIndex] = useSessionStorage("refIndex", 0)
   const refIndexRef = useRef(refIndex)
@@ -47,6 +52,13 @@ const Index = () => {
     _setStartY(data)
   }
 
+  const [scrollButtonDown, _setScrollButtonDown] = useState(false)
+  const scrollButtonDownRef = useRef(scrollButtonDown)
+  const setScrollButtonDown = (data) => {
+    scrollButtonDownRef.current = data
+    _setScrollButtonDown(data)
+  }
+
   const scrollToSection = (section) => {
     window.scrollTo({
       left: 0,
@@ -57,17 +69,21 @@ const Index = () => {
 
   const keyDownListenerFunction = throttle(
     (e) => {
-      if (refIndexRef.current !== 0 && e.key === "ArrowUp") {
-        setRefIndex(refIndexRef.current - 1)
-      } else if (
-        refIndexRef.current !== allRefs.length - 1 &&
-        e.key === "ArrowDown"
-      ) {
-        setRefIndex(refIndexRef.current + 1)
-      } else if (refIndexRef.current === 1 && e.key === "ArrowLeft") {
-        setScrollLeft(arrowRef.current.scrollLeft - scrollDistanceRef.current)
-      } else if (refIndexRef.current === 1 && e.key === "ArrowRight") {
-        setScrollLeft(arrowRef.current.scrollLeft + scrollDistanceRef.current)
+      if (refIndexRef.current === 0 && !backgroundIsLoadedRef.current) {
+        return
+      } else {
+        if (refIndexRef.current !== 0 && e.key === "ArrowUp") {
+          setRefIndex(refIndexRef.current - 1)
+        } else if (
+          refIndexRef.current !== allRefs.length - 1 &&
+          e.key === "ArrowDown"
+        ) {
+          setRefIndex(refIndexRef.current + 1)
+        } else if (refIndexRef.current === 1 && e.key === "ArrowLeft") {
+          setScrollLeft(arrowRef.current.scrollLeft - scrollDistanceRef.current)
+        } else if (refIndexRef.current === 1 && e.key === "ArrowRight") {
+          setScrollLeft(arrowRef.current.scrollLeft + scrollDistanceRef.current)
+        }
       }
     },
     500,
@@ -76,13 +92,17 @@ const Index = () => {
 
   const mouseListenerFunction = throttle(
     (e) => {
-      if (e.wheelDelta > 0 && refIndexRef.current !== 0) {
-        setRefIndex(refIndexRef.current - 1)
-      } else if (
-        e.wheelDelta < 0 &&
-        refIndexRef.current !== allRefs.length - 1
-      ) {
-        setRefIndex(refIndexRef.current + 1)
+      if (refIndexRef.current === 0 && !backgroundIsLoadedRef.current) {
+        return
+      } else {
+        if (e.wheelDelta > 0 && refIndexRef.current !== 0) {
+          setRefIndex(refIndexRef.current - 1)
+        } else if (
+          e.wheelDelta < 0 &&
+          refIndexRef.current !== allRefs.length - 1
+        ) {
+          setRefIndex(refIndexRef.current + 1)
+        }
       }
     },
     1500,
@@ -91,7 +111,16 @@ const Index = () => {
 
   const touchStartListenerFunction = throttle(
     (e) => {
-      setStartY(e.touches[0].clientY)
+      if (refIndexRef.current === 0 && !backgroundIsLoadedRef.current) {
+        return
+      } else {
+        if (e.target.id === "netflix-button") {
+          setScrollButtonDown(true)
+          return
+        } else {
+          setStartY(e.touches[0].clientY)
+        }
+      }
     },
     500,
     { trailing: false }
@@ -99,14 +128,23 @@ const Index = () => {
 
   const touchEndListenerFunction = throttle(
     (e) => {
-      const endY = e.changedTouches[0].clientY
-      if (endY > startYRef.current && refIndexRef.current !== 0) {
-        setRefIndex(refIndexRef.current - 1)
-      } else if (
-        endY < startYRef.current &&
-        refIndexRef.current !== allRefs.length - 1
-      ) {
-        setRefIndex(refIndexRef.current + 1)
+      if (refIndexRef.current === 0 && !backgroundIsLoadedRef.current) {
+        return
+      } else {
+        if (scrollButtonDownRef.current) {
+          setScrollButtonDown(false)
+          return
+        } else {
+          const endY = e.changedTouches[0].clientY
+          if (endY > startYRef.current && refIndexRef.current !== 0) {
+            setRefIndex(refIndexRef.current - 1)
+          } else if (
+            endY < startYRef.current &&
+            refIndexRef.current !== allRefs.length - 1
+          ) {
+            setRefIndex(refIndexRef.current + 1)
+          }
+        }
       }
     },
     500,
@@ -133,8 +171,9 @@ const Index = () => {
   }, [])
 
   useEffect(() => {
-    if (windowWidth <= 565) setScrollDistance(windowWidth * 0.95)
-    else if (windowWidth <= 1305) setScrollDistance(windowWidth * 0.85)
+    if (windowWidth <= 500) setScrollDistance(windowWidth * 0.86)
+    else if (windowWidth <= 1000) setScrollDistance(windowWidth * 0.883)
+    else if (windowWidth <= 1305) setScrollDistance(windowWidth * 0.75)
     else setScrollDistance(windowWidth * 0.5)
   }, [windowWidth])
 
@@ -210,4 +249,4 @@ Footer.defaultProps = {
   siteTitle: `Zuckermann | Portfolio`,
 }
 
-export default Index
+export default App

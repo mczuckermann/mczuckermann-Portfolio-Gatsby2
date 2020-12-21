@@ -26,6 +26,7 @@ const Header = () => {
   )
   const fade = useSpring({
     opacity: backgroundIsLoaded ? 1 : 0,
+    display: backgroundIsLoaded ? "inline-flex" : "none",
     config: refIndex === 0 ? config.molasses : { duration: 300 },
   })
   const options = ["Home", "Portfolio", "About", "Contact"]

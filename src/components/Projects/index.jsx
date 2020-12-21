@@ -40,10 +40,10 @@ const Projects = () => {
       <h1 className="groupHeaders">Portfolio</h1>
       <div className="app">
         <div className="full hide-scroll">
-          {scrollLeft > 0 && (
+          {scrollLeft > 50 && (
             <NetflixScrollButton orientation="left" scrollLeft={scrollLeft} />
           )}
-          {scrollLeft <= arrowRef.current?.scrollWidth - windowWidth && (
+          {scrollLeft <= arrowRef.current?.scrollWidth - windowWidth - 50 && (
             <NetflixScrollButton orientation="right" scrollLeft={scrollLeft} />
           )}
           <ul ref={arrowRef} className="hs" style={{ position: "relative" }}>

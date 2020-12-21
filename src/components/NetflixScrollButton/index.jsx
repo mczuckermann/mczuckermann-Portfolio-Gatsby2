@@ -45,6 +45,7 @@ const NetflixScrollButton = ({ orientation }) => {
 
   return (
     <animated.button
+      id="netflix-button"
       style={fadeIn}
       className={classNames([classes.netflixButton], {
         [classes.orientationLeft]: orientation === "left",
@@ -68,9 +69,11 @@ const NetflixScrollButton = ({ orientation }) => {
         }}
       >
         <img
+          id="netflix-button"
           alt="arrow-button"
           style={{
-            width: windowWidth > 650 ? "90px" : "60px",
+            width:
+              windowWidth > 650 ? "90px" : windowWidth > 450 ? "60px" : "50px",
             verticalAlign: "middle",
           }}
           onLoad={() => setButtonIsLoaded(true)}
