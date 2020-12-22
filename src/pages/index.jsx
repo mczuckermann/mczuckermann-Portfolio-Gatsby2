@@ -95,12 +95,9 @@ const App = () => {
       if (refIndexRef.current === 0 && !backgroundIsLoadedRef.current) {
         return
       } else {
-        if (e.wheelDelta > 0 && refIndexRef.current !== 0) {
+        if (e.deltaY < 0 && refIndexRef.current !== 0) {
           setRefIndex(refIndexRef.current - 1)
-        } else if (
-          e.wheelDelta < 0 &&
-          refIndexRef.current !== allRefs.length - 1
-        ) {
+        } else if (e.deltaY > 0 && refIndexRef.current !== allRefs.length - 1) {
           setRefIndex(refIndexRef.current + 1)
         }
       }
@@ -155,7 +152,7 @@ const App = () => {
     setWindowWidth(window.innerWidth)
 
     window.addEventListener("keydown", keyDownListenerFunction)
-    window.addEventListener("mousewheel", mouseListenerFunction)
+    window.addEventListener("wheel", mouseListenerFunction)
     window.addEventListener("touchstart", touchStartListenerFunction)
     window.addEventListener("touchend", touchEndListenerFunction)
     window.addEventListener("resize", () => setWindowWidth(window.innerWidth))
