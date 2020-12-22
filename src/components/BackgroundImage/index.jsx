@@ -5,7 +5,6 @@ import BackgroundImage from "gatsby-background-image"
 
 const BackgroundSection = ({ className, children }) => {
   const { setBackgroundIsLoaded } = useContext(GlobalContext)
-  const [state, setState] = useState(false)
   const data = useStaticQuery(
     graphql`
       query {

@@ -9,10 +9,14 @@ import rightArrow from "../../images/icons/rightArrow.png"
 const useStyles = makeStyles((theme) => ({
   netflixButton: {
     border: "2px dashed white",
+    borderRadius: "3px",
     position: "absolute",
     zIndex: "10",
     cursor: "pointer",
-    top: "40%",
+    top: "35%",
+    "@media(max-width: 550px)": {
+      top: "25%",
+    },
   },
   orientationLeft: {
     left: "0px",

@@ -22,7 +22,7 @@ const Home = () => {
       <Waypoint bottomOffset="0%" onEnter={() => setValue(0)} />
       <animated.div style={fade} className="homeBody" />
       <Waypoint
-        bottomOffset="50%"
+        bottomOffset="80%"
         onEnter={() => {
           if (on) toggle(false)
         }}

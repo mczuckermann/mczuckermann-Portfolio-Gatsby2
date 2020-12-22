@@ -22,7 +22,7 @@ const Footer = () => {
   return (
     <footer ref={allRefs[3]} className="footerBody">
       <Waypoint
-        bottomOffset="50%"
+        bottomOffset="0%"
         onEnter={() => {
           setValue(3)
           if (!on) toggle(true)
@@ -31,7 +31,7 @@ const Footer = () => {
           if (on) toggle(false)
         }}
       />
-      <animated.div style={fadeIn}>
+      <animated.div className="flexBody" style={fadeIn}>
         <div className="resizeFooter">
           <div className="contactMe" style={{ fontSize: "8.0em" }}>
             Contact Me

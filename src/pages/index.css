@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow: hidden;
+}
+
 body {
   background: black;
   margin: 0;

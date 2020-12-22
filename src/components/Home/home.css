@@ -11,16 +11,19 @@
 
 .home-title {
   position: absolute;
-  font-family: "Roboto", sans-serif;
-  top: 36.6%;
+  display: flex;
+  justify-content: center;
+  top: 45%;
   left: 50%;
-  margin-left: -391.5px;
-  color: white;
+  transform: translate(-50%, -50%);
+  font-family: "Roboto", sans-serif;
   font-size: 75px;
   text-transform: uppercase;
-  padding: 2.37333333vw 2.37333333vw;
+  color: white;
+  margin: 0px;
+  padding: 2.5vw;
+  border-radius: 8px;
   background-color: rgb(0, 0, 0, 0.8);
-  border-radius: 2%;
 }
 
 /* ============= */
@@ -29,17 +32,12 @@
 
 @media screen and (max-width: 925px) {
   .home-title {
-    top: 40%;
-    left: 58%;
     font-size: 65px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .home-title {
-    top: 40%;
-    left: 85%;
-    margin-left: -75vw;
     font-size: 8vw;
   }
 }
@@ -50,7 +48,7 @@
 
 .arrow {
   position: absolute;
-  top: 85%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -82,5 +80,36 @@
   100% {
     opacity: 0;
     transform: rotate(45deg) translate(20px, 20px);
+  }
+}
+
+/* ============= */
+/* MEDIA QUERIES */
+/* ============= */
+
+@media screen and (max-width: 1594px) {
+  .home-title {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 1304px) {
+  .home-title {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1104px) {
+  .home-title {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .home-title {
+    top: 40%;
+  }
+  .arrow {
+    top: 55%;
   }
 }

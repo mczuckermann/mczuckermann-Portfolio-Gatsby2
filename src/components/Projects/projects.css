@@ -9,11 +9,11 @@
 
 .projectOpaqueBackground {
   padding: 30px 0px;
-  margin: 30px 0 30px 0;
   height: 100%;
   background: linear-gradient(to right, rgba(206, 222, 232, 0), rgb(17, 7, 29)),
     linear-gradient(to bottom, rgb(191, 194, 196, 0), rgb(75, 71, 80));
   opacity: 0.8;
+  border-radius: 8px;
 }
 
 u {
@@ -45,18 +45,23 @@ u {
   margin-bottom: 5px;
 }
 
+.repoLinks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .repoUrlLinks {
   text-decoration: none;
   -webkit-text-stroke: 0.9px white;
   color: rgb(164, 194, 187);
   border-radius: 11%;
-  padding: 0 3px;
+  padding: 0 7px;
   font-size: 27px;
 }
 
 .projectIcon {
   width: 25px;
-  margin-top: 2px;
 }
 
 a#noDecoration {
@@ -68,6 +73,9 @@ a#noDecoration {
   grid-gap: var(--gutter) 0;
   grid-template-columns: var(--gutter) 1fr var(--gutter);
   align-content: start;
+  height: 85%;
+  display: flex;
+  align-items: center;
 }
 
 .app > * {
@@ -76,6 +84,7 @@ a#noDecoration {
 
 .app > .full {
   grid-column: 1 / -1;
+  position: relative;
 }
 
 .hide-scroll {
@@ -91,8 +100,6 @@ a#noDecoration {
   grid-template-rows: minmax(65vh, 1fr);
   overflow-x: hidden;
   scroll-snap-type: x mandatory;
-  padding-bottom: calc(0.75 * var(--gutter));
-  height: 100%;
 }
 
 .hs:before,
@@ -109,7 +116,7 @@ ul {
 .hs > li,
 .item {
   scroll-snap-align: center;
-  padding: calc(var(--gutter) / 2 * 2);
+  padding: var(--gutter);
   display: flex;
   flex-direction: column;
   background: rgb(53, 51, 51);
@@ -129,7 +136,6 @@ ul {
   padding-right: 60px;
   margin: 0 5vw;
   line-height: 1.3;
-  background-color: rgb(0, 0, 0, 0.2);
 }
 
 #paddingDivider {
@@ -166,6 +172,10 @@ a > span:hover {
   font-family: "Abel", sans-serif;
   padding: 0px 10px;
   text-align: center;
+}
+
+img.repoImages {
+  border-radius: 8px;
 }
 
 /* ============= */
@@ -273,7 +283,7 @@ a > span:hover {
 @media screen and (max-width: 600px) {
   .slideInDesc {
     font-size: 14px;
-    top: 15%;
+    top: 20%;
     background-color: rgba(0, 0, 0, 0.8);
   }
 }
@@ -289,12 +299,9 @@ a > span:hover {
       20px;
     margin-top: 0px !important;
   }
-  .projectOpaqueBackground {
-    height: 90%;
-  }
 
   .item {
-    height: 92%;
+    height: 87%;
     padding: 15px;
   }
   .demoBody {
@@ -308,10 +315,22 @@ a > span:hover {
   .projectIcon {
     width: 20px;
   }
+  .app {
+    height: 78%;
+  }
 }
 
 @media screen and (max-width: 381px) {
   img.repoImages {
     width: 100%;
+  }
+  .slideInDesc {
+    top: 10%;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .slideInDesc {
+    top: 0%;
   }
 }

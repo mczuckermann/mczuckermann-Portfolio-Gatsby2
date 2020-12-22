@@ -4,9 +4,15 @@
 
 .footerBody {
   height: calc(100vh - 48px);
-  padding-top: 20vh;
   background-color: rgb(0, 0, 0);
   color: white;
+}
+
+.flexBody {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .noDecoration,
@@ -63,6 +69,9 @@ footer {
 @media screen and (max-width: 500px) {
   .resizeFooter {
     font-size: 8px;
+  }
+  .flexBody {
+    height: 80%;
   }
 }
 

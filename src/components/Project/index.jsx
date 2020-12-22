@@ -44,29 +44,40 @@ const Project = ({ fade, index }) => {
             </a>
           </div>
           <div className="repoUrlDiv">
-            <a
-              id="noDecoration"
-              target="_blank"
-              rel="noopener noreferrer"
-              href={imageInfo[index].deployLink}
-            >
-              <span className="repoUrlLinks">{imageInfo[index].appName}</span>
-            </a>
-            <span id="paddingDivider">|</span>
-            <a
-              target="_blank"
-              id="noDecoration"
-              rel="noopener noreferrer"
-              href={imageInfo[index].repoLink}
-            >
-              <span className="repoUrlLinks">
-                <img className="projectIcon" src={githubIcon} alt="github" />
+            <div className="repoLinks">
+              <span>
+                <a
+                  id="noDecoration"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={imageInfo[index].deployLink}
+                >
+                  <span className="repoUrlLinks">
+                    {imageInfo[index].appName}
+                  </span>
+                </a>
               </span>
-            </a>
+              <span id="paddingDivider">|</span>
+              <span>
+                <a
+                  target="_blank"
+                  id="noDecoration"
+                  rel="noopener noreferrer"
+                  href={imageInfo[index].repoLink}
+                >
+                  <span className="repoUrlLinks">
+                    <img
+                      className="projectIcon"
+                      src={githubIcon}
+                      alt="github"
+                    />
+                  </span>
+                </a>
+              </span>
+            </div>
             <div className="shortBio">{imageInfo[index].shortBio}</div>
           </div>
           <div>
-            <br />
             {imageInfo[index].appName === "NYT Searcher" && <DemoLineNYT />}
             {imageInfo[index].appName === "Snippets." && <DemoLineSnippets />}
           </div>

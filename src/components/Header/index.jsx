@@ -34,7 +34,7 @@ const Header = () => {
   return (
     <header id="headerWithEdging">
       <animated.div style={fade} className={classes.root}>
-        <AppBar position="sticky" className="headerBody">
+        <AppBar position="fixed" className="headerBody">
           <Tabs value={value} aria-label="simple tabs">
             {options.map((option, index) => (
               <Tab
