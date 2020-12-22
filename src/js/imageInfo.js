@@ -12,7 +12,7 @@ export default [
     repoLink: "https://github.com/mattzuckermann/usethis",
     shortBio: "NextJS, TypeScript, React, Apollo, GraphQL, MongoDB, Mongoose",
     desc:
-      "Site for web developers to practice and master the use of the 'this' keyword in various JavaScript contexts",
+      "JAMstack app for developers in mastering the use of the “this” keyword in various contexts of JavaScript ",
     image: useThisImage,
   },
   {
