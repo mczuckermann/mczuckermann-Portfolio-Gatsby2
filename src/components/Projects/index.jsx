@@ -30,7 +30,7 @@ const Projects = () => {
       <Waypoint
         bottomOffset="50%"
         onEnter={() => {
-          setValue(1)
+          // setValue(1)
           if (!on) toggle(true)
         }}
         onLeave={() => {

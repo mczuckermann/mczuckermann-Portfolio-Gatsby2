@@ -18,6 +18,19 @@ const useStyles = makeStyles((theme) => ({
       top: "25%",
     },
   },
+  netflixButtonImage: {
+    width: "90px",
+    verticalAlign: "middle",
+    "@media(orientation: landscape) and (max-height: 550px)": {
+      width: "50px",
+    },
+    "@media(max-width: 650px)": {
+      width: "60px",
+    },
+    "@media(max-width: 450px)": {
+      width: "50px",
+    },
+  },
   orientationLeft: {
     left: "0px",
     right: "",
@@ -74,12 +87,8 @@ const NetflixScrollButton = ({ orientation }) => {
       >
         <img
           id="netflix-button"
+          className={classes.netflixButtonImage}
           alt="arrow-button"
-          style={{
-            width:
-              windowWidth > 650 ? "90px" : windowWidth > 450 ? "60px" : "50px",
-            verticalAlign: "middle",
-          }}
           onLoad={() => setButtonIsLoaded(true)}
           src={orientation === "left" ? leftArrow : rightArrow}
         ></img>

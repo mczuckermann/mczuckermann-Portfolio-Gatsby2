@@ -77,7 +77,7 @@ const Project = ({ fade, index }) => {
             </div>
             <div className="shortBio">{imageInfo[index].shortBio}</div>
           </div>
-          <div>
+          <div className="demoDiv">
             {imageInfo[index].appName === "NYT Searcher" && <DemoLineNYT />}
             {imageInfo[index].appName === "Snippets." && <DemoLineSnippets />}
           </div>

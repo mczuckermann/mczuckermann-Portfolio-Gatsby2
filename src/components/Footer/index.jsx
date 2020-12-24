@@ -15,16 +15,16 @@ const Footer = () => {
   const { setValue, setRefIndex, allRefs } = useContext(GlobalContext)
   const fadeIn = useSpring({
     opacity: on ? 1 : 0,
-    config: config.molasses,
+    config: on ? config.molasses : { duration: 300 },
   })
   const arrowImages = [darkArrow, lightArrow]
 
   return (
     <footer ref={allRefs[3]} className="footerBody">
       <Waypoint
-        bottomOffset="0%"
+        bottomOffset="80%"
         onEnter={() => {
-          setValue(3)
+          // setValue(3)
           if (!on) toggle(true)
         }}
         onLeave={() => {
@@ -83,18 +83,18 @@ const Footer = () => {
                 >
                   <img
                     className="buttonImage"
-                    style={{ width: "4.5em" }}
-                    src={arrowImages[0]}
+                    style={{ width: "2.5em" }}
+                    src={arrowImages[1]}
                     alt="arrow-button"
                   />
+                  <div
+                    id="backToTopText"
+                    className="noDecoration"
+                    style={{ fontSize: "1.3em" }}
+                  >
+                    Back To Top
+                  </div>
                 </button>
-                <div
-                  id="backToTopText"
-                  className="noDecoration"
-                  style={{ fontSize: "1.3em" }}
-                >
-                  Back To Top
-                </div>
               </div>
               <br />
               <div className="contactMe" style={{ fontSize: "0.9em" }}>

@@ -8,17 +8,14 @@
 }
 
 .projectOpaqueBackground {
+  display: flex;
+  align-items: center;
   padding: 30px 0px;
   height: 100%;
   background: linear-gradient(to right, rgba(206, 222, 232, 0), rgb(17, 7, 29)),
     linear-gradient(to bottom, rgb(191, 194, 196, 0), rgb(75, 71, 80));
   opacity: 0.8;
   border-radius: 8px;
-}
-
-u {
-  color: darkgrey;
-  font-weight: bold;
 }
 
 .demo {
@@ -332,5 +329,46 @@ img.repoImages {
 @media screen and (max-width: 330px) {
   .slideInDesc {
     top: 0%;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-height: 550px) {
+  .app {
+    height: 75%;
+  }
+  ul.hs {
+    --gutter: 10px;
+    grid-template-columns:
+      20px repeat(var(--projects-array-length), calc(45% - var(--gutter) * 2))
+      20px;
+  }
+  .slideInDesc {
+    top: 28%;
+    font-size: 10px;
+  }
+  .projectOpaqueBackground {
+    padding: 10px 0px;
+  }
+  .repoUrlDiv,
+  .demoDiv {
+    display: none;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-height: 420px) {
+  .slideInDesc {
+    top: 26%;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-height: 380px) {
+  .slideInDesc {
+    top: 23%;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-height: 350px) {
+  .slideInDesc {
+    top: 21%;
   }
 }

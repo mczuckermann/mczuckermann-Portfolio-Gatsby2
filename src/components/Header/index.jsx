@@ -15,7 +15,7 @@ const a11yProps = (index) => {
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: "black",
   },
 }))
 
@@ -33,22 +33,25 @@ const Header = () => {
 
   return (
     <header id="headerWithEdging">
-      <animated.div style={fade} className={classes.root}>
+      <div className={classes.root}>
         <AppBar position="fixed" className="headerBody">
-          <Tabs value={value} aria-label="simple tabs">
-            {options.map((option, index) => (
-              <Tab
-                key={option}
-                label={option}
-                {...a11yProps(index)}
-                onClick={() => {
-                  setRefIndex(index)
-                }}
-              />
-            ))}
-          </Tabs>
+          <div id="headerBackground" />
+          <animated.div style={fade}>
+            <Tabs value={value} aria-label="simple tabs">
+              {options.map((option, index) => (
+                <Tab
+                  key={option}
+                  label={option}
+                  {...a11yProps(index)}
+                  onClick={() => {
+                    setRefIndex(index)
+                  }}
+                />
+              ))}
+            </Tabs>
+          </animated.div>
         </AppBar>
-      </animated.div>
+      </div>
     </header>
   )
 }

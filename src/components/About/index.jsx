@@ -9,26 +9,34 @@ import { GlobalContext } from "../../pages"
 const About = () => {
   const [on, toggle] = useState(false)
   const { setValue, allRefs } = useContext(GlobalContext)
-  const slideRef = useRef()
-  const textSlide = useSpring({
-    transform: on ? "translate3d(0,0,0,)" : "translate3d(149%,0,0)",
-    ref: slideRef,
-    config: config.gentle,
-  })
 
-  const textFadeRef = useRef()
+  const imageFadeRef = useRef(null)
   const imageFade = useSpring({
     opacity: on ? 1 : 0.15,
+    ref: imageFadeRef,
+    config: { duration: 300 },
+  })
+  const slideRef = useRef(null)
+  const textSlide = useSpring({
+    transform: on ? "translate3d(0,0,0,)" : "translate3d(100vw,0,0)",
+    ref: slideRef,
+    config: config.fast,
+  })
+  const textFadeRef = useRef(null)
+  const textFade = useSpring({
+    opacity: on ? 1 : 0,
     ref: textFadeRef,
     config: config.molasses,
   })
-  const imageFadeRef = useRef()
-  const textFade = useSpring({
-    opacity: on ? 1 : 0,
-    ref: imageFadeRef,
-  })
 
-  useChain([imageFadeRef, slideRef, textFadeRef])
+  useChain(
+    [
+      { current: imageFadeRef.current },
+      { current: slideRef.current },
+      { current: textFadeRef.current },
+    ],
+    on ? [0, 0.3, 0.7] : [0, 0, 0]
+  )
 
   return (
     <div ref={allRefs[2]} className="aboutBody">
@@ -37,7 +45,7 @@ const About = () => {
         <Waypoint
           bottomOffset="0%"
           onEnter={() => {
-            setValue(2)
+            // setValue(2)
             if (!on) toggle(true)
           }}
           onLeave={() => {
@@ -51,31 +59,27 @@ const About = () => {
             justifyContent: "center",
             alignItems: "center",
           }}
-          spacing={1}
+          spacing={0}
         >
-          <Grid
-            container
-            style={{ justifyContent: "center" }}
-            item
-            xl={12}
-            lg={6}
-            md={12}
-            xs={12}
-            spacing={10}
-          >
-            <animated.div style={imageFade}>
+          <Grid item xl={12} lg={6} md={12} sm={6} xs={12}>
+            <animated.div
+              style={{
+                ...imageFade,
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
               <Img className="headShotImage" alt="Head-Shot" />
             </animated.div>
           </Grid>
           <Grid
-            container
-            style={{ justifyContent: "center", alignItems: "center" }}
             item
+            className="bioWrapper"
             xl={12}
             lg={6}
             md={12}
+            sm={6}
             xs={12}
-            spacing={3}
           >
             <animated.div className="bioBackground" style={textSlide}>
               <animated.p className="portfolioBio" style={textFade}>

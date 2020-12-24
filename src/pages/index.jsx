@@ -2,6 +2,7 @@ import "./index.css"
 import React, { useState, useRef, useEffect, createContext } from "react"
 import { useSessionStorage } from "../hooks/useSessionStorage"
 import { throttle } from "lodash"
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles"
 import PropTypes from "prop-types"
 import SEO from "../components/SEO"
 import Header from "../components/Header"
@@ -12,8 +13,21 @@ import About from "../components/About"
 import Footer from "../components/Footer"
 export const GlobalContext = createContext()
 
+const theme = createMuiTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 630,
+      md: 750,
+      lg: 1475,
+      xl: 1920,
+    },
+  },
+})
+
 const App = () => {
   const [windowWidth, setWindowWidth] = useState(0)
+  const [windowHeight, setWindowHeight] = useState(0)
   const arrowRef = useRef(null)
   const [scrollLeft, setScrollLeft] = useSessionStorage("scrollLeft", 0)
 
@@ -36,7 +50,7 @@ const App = () => {
     refIndexRef.current = data
     _setRefIndex(data)
   }
-  const [value, setValue] = useState(refIndex)
+  const [value, setValue] = useState(0 || null)
 
   const [scrollDistance, _setScrollDistance] = useState(0)
   const scrollDistanceRef = useRef(scrollDistance)
@@ -150,29 +164,41 @@ const App = () => {
 
   useEffect(() => {
     setWindowWidth(window.innerWidth)
+    setWindowHeight(window.innerHeight)
 
     window.addEventListener("keydown", keyDownListenerFunction)
     window.addEventListener("wheel", mouseListenerFunction)
     window.addEventListener("touchstart", touchStartListenerFunction)
     window.addEventListener("touchend", touchEndListenerFunction)
-    window.addEventListener("resize", () => setWindowWidth(window.innerWidth))
+    window.addEventListener("resize", () => {
+      setWindowWidth(window.innerWidth)
+      setWindowHeight(window.innerHeight)
+    })
     return () => {
       window.removeEventListener("keydown", keyDownListenerFunction)
       window.removeEventListener("mousewheel", mouseListenerFunction)
       window.removeEventListener("touchstart", touchStartListenerFunction)
       window.removeEventListener("touchend", touchEndListenerFunction)
-      window.removeEventListener("resize", () =>
+      window.removeEventListener("resize", () => {
         setWindowWidth(window.innerWidth)
-      )
+        setWindowHeight(window.innerHeight)
+      })
     }
   }, [])
 
   useEffect(() => {
-    if (windowWidth <= 500) setScrollDistance(windowWidth * 0.86)
+    window.scrollTo({
+      left: 0,
+      top: allRefs[refIndex].current.offsetTop - 48,
+    })
+
+    if (windowWidth <= 850 && windowHeight <= 550)
+      setScrollDistance(windowWidth * 0.48)
+    else if (windowWidth <= 500) setScrollDistance(windowWidth * 0.86)
     else if (windowWidth <= 1000) setScrollDistance(windowWidth * 0.883)
     else if (windowWidth <= 1305) setScrollDistance(windowWidth * 0.75)
     else setScrollDistance(windowWidth * 0.5)
-  }, [windowWidth])
+  }, [windowWidth, windowHeight])
 
   useEffect(() => {
     arrowRef.current.scrollTo({
@@ -183,58 +209,61 @@ const App = () => {
 
   useEffect(() => {
     scrollToSection(allRefs[refIndex])
+    setTimeout(() => setValue(refIndex), 300)
   }, [refIndex])
 
   return (
-    <GlobalContext.Provider
-      value={{
-        allRefs,
-        value,
-        setValue,
-        scrollToSection,
-        refIndex,
-        setRefIndex,
-        arrowRef,
-        scrollLeft,
-        setScrollLeft,
-        windowWidth,
-        scrollDistance,
-        backgroundIsLoaded,
-        setBackgroundIsLoaded,
-      }}
-    >
-      <SEO
-        title="Zuckermann | Portfolio"
-        description="Showcase of accomplishments and projects by Matt Zuckermann"
-        image=""
-        keywords={[
-          `Matt Zuckermann`,
-          `Programming`,
-          `Web Developer`,
-          `Software Engineer`,
-          `Full Stack`,
-          `Front End`,
-          `Back End`,
-        ]}
-      />
-      <Header />
-      <main className="parent">
-        <section ref={homeSection}>
-          <BackgroundImage className="homeBody">
-            <Home />
-          </BackgroundImage>
-        </section>
-        <section ref={projectSection}>
-          <Projects />
-        </section>
-        <section ref={aboutSection}>
-          <About />
-        </section>
-        <section ref={contactSection}>
-          <Footer />
-        </section>
-      </main>
-    </GlobalContext.Provider>
+    <MuiThemeProvider theme={theme}>
+      <GlobalContext.Provider
+        value={{
+          allRefs,
+          value,
+          setValue,
+          scrollToSection,
+          refIndex,
+          setRefIndex,
+          arrowRef,
+          scrollLeft,
+          setScrollLeft,
+          windowWidth,
+          scrollDistance,
+          backgroundIsLoaded,
+          setBackgroundIsLoaded,
+        }}
+      >
+        <SEO
+          title="Zuckermann | Portfolio"
+          description="Showcase of accomplishments and projects by Matt Zuckermann"
+          image=""
+          keywords={[
+            `Matt Zuckermann`,
+            `Programming`,
+            `Web Developer`,
+            `Software Engineer`,
+            `Full Stack`,
+            `Front End`,
+            `Back End`,
+          ]}
+        />
+        <Header />
+        <main className="parent">
+          <section ref={homeSection}>
+            <BackgroundImage className="homeBody">
+              <Home />
+            </BackgroundImage>
+          </section>
+          <section ref={projectSection}>
+            <Projects />
+          </section>
+          <section ref={aboutSection}>
+            <About />
+          </section>
+          <section ref={contactSection}>
+            <Footer />
+          </section>
+        </main>
+      </GlobalContext.Provider>
+    </MuiThemeProvider>
   )
 }
 

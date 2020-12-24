@@ -12,7 +12,7 @@ export default [
     repoLink: "https://github.com/mattzuckermann/usethis",
     shortBio: "NextJS, TypeScript, React, Apollo, GraphQL, MongoDB, Mongoose",
     desc:
-      "JAMstack app for developers in mastering the use of the “this” keyword in various contexts of JavaScript ",
+      "JAMstack app for developers in mastering the use of the “this” keyword in various JavaScript contexts",
     image: useThisImage,
   },
   {
@@ -49,7 +49,7 @@ export default [
     repoLink: "https://github.com/mattzuckermann/LiriBot",
     shortBio: "Node, Web APIs",
     desc:
-      "Node app that inputs varying methods and arguments in the Node CLI to look up various web API end points.",
+      "Node app that inputs varying methods and arguments from Node CLI to look up various web API end points.",
     image: liriBotImage,
   },
   {
@@ -58,7 +58,7 @@ export default [
     repoLink: "https://github.com/mattzuckermann/StoreStock",
     shortBio: "Node, MySQL",
     desc:
-      "Store Stock is a Node app that prompts users for purchases and tracks such purchases on a MySQL backend.",
+      "Node app that prompts users with items for sale and tracks made purchases using a MySQL database.",
     image: storeStockImage,
   },
 ]

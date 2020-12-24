@@ -55,31 +55,24 @@
 
 .arrow span {
   display: block;
-  width: 15px;
-  height: 15px;
+  width: 25px;
+  height: 25px;
   border-bottom: 5px solid #eaf2f2;
   border-right: 5px solid #eaf2f2;
   transform: rotate(45deg);
-  margin: -10px;
-  animation: animate 1.7s infinite;
-}
-.arrow span:nth-child(2) {
-  animation-delay: -0.2s;
-}
-.arrow span:nth-child(3) {
-  animation-delay: -0.4s;
+  animation: animate 2s infinite;
 }
 @keyframes animate {
   0% {
     opacity: 0;
-    transform: rotate(45deg) translate(-20px, -20px);
+    transform: rotate(45deg) translate(-30px, -30px);
   }
   50% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: rotate(45deg) translate(20px, 20px);
+    transform: rotate(45deg) translate(40px, 40px);
   }
 }
 
@@ -101,7 +94,7 @@
 
 @media screen and (max-width: 1104px) {
   .home-title {
-    width: 85%;
+    width: 86%;
   }
 }
 
@@ -111,5 +104,36 @@
   }
   .arrow {
     top: 55%;
+  }
+  .arrow span {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-height: 550px) and (max-width: 850px) {
+  .arrow {
+    top: 75%;
+  }
+  .arrow span {
+    width: 15px;
+    height: 15px;
+  }
+  @keyframes animate {
+    0% {
+      opacity: 0;
+      transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: rotate(45deg) translate(20px, 20px);
+    }
+  }
+  .home-title {
+    font-size: 6vw;
+    width: 75%;
   }
 }
