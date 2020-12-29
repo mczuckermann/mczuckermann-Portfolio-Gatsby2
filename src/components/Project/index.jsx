@@ -81,6 +81,17 @@ const Project = ({ fade, index }) => {
             </div>
             <div className="shortBio">{imageInfo[index].shortBio}</div>
           </div>
+          {imageInfo[index].extraHeight === 1 && (
+            <div>
+              <br />
+            </div>
+          )}
+          {imageInfo[index].extraHeight === 2 && (
+            <div>
+              <br />
+              <br />
+            </div>
+          )}
           <div className="demoDiv">
             {imageInfo[index].appName === "NYT Searcher" && <DemoLineNYT />}
             {imageInfo[index].appName === "Snippets." && <DemoLineSnippets />}
