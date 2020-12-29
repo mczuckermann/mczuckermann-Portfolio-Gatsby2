@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     cursor: "pointer",
     top: "35%",
     "@media(max-width: 550px)": {
-      top: "25%",
+      top: "23%",
     },
   },
   netflixButtonImage: {
@@ -49,9 +49,7 @@ const useStyles = makeStyles((theme) => ({
 
 const NetflixScrollButton = ({ orientation }) => {
   const classes = useStyles()
-  const { arrowRef, setScrollLeft, scrollDistance, windowWidth } = useContext(
-    GlobalContext
-  )
+  const { arrowRef, setScrollLeft, scrollDistance } = useContext(GlobalContext)
   const [buttonHover, setButtonHover] = useState(false)
   const [buttonIsLoaded, setButtonIsLoaded] = useState(false)
 
@@ -62,7 +60,6 @@ const NetflixScrollButton = ({ orientation }) => {
 
   return (
     <animated.button
-      id="netflix-button"
       style={fadeIn}
       className={classNames([classes.netflixButton], {
         [classes.orientationLeft]: orientation === "left",
@@ -86,7 +83,6 @@ const NetflixScrollButton = ({ orientation }) => {
         }}
       >
         <img
-          id="netflix-button"
           className={classes.netflixButtonImage}
           alt="arrow-button"
           onLoad={() => setButtonIsLoaded(true)}

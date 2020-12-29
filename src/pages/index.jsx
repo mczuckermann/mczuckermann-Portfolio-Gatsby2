@@ -50,7 +50,7 @@ const App = () => {
     refIndexRef.current = data
     _setRefIndex(data)
   }
-  const [value, setValue] = useState(0 || null)
+  const [value, setValue] = useState(0)
 
   const [scrollDistance, _setScrollDistance] = useState(0)
   const scrollDistanceRef = useRef(scrollDistance)
@@ -125,7 +125,7 @@ const App = () => {
       if (refIndexRef.current === 0 && !backgroundIsLoadedRef.current) {
         return
       } else {
-        if (e.target.id === "netflix-button") {
+        if (e.target.className === "makeStyles-netflixButtonImage-3") {
           setScrollButtonDown(true)
           return
         } else {
@@ -163,6 +163,16 @@ const App = () => {
   )
 
   useEffect(() => {
+    // disable react-dev-tools for this project
+    if (typeof window.__REACT_DEVTOOLS_GLOBAL_HOOK__ === "object") {
+      for (let [key, value] of Object.entries(
+        window.__REACT_DEVTOOLS_GLOBAL_HOOK__
+      )) {
+        window.__REACT_DEVTOOLS_GLOBAL_HOOK__[key] =
+          typeof value == "function" ? () => {} : null
+      }
+    }
+
     setWindowWidth(window.innerWidth)
     setWindowHeight(window.innerHeight)
 

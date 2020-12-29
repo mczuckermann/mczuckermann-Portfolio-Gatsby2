@@ -23,13 +23,17 @@ const Project = ({ fade, index }) => {
               rel="noopener noreferrer"
               href={imageInfo[index].deployLink}
             >
-              <img
+              <div
+                role="button"
                 onMouseEnter={() => hoverChange(true)}
                 onMouseLeave={() => hoverChange(false)}
-                className="repoImages"
-                src={imageInfo[index].image}
-                alt={imageInfo[index].appName}
-              />
+              >
+                <img
+                  className="repoImages"
+                  src={imageInfo[index].image}
+                  alt={imageInfo[index].appName}
+                />
+              </div>
               {!navigator() ? (
                 <SlideAnimation
                   index={index}
@@ -47,7 +51,7 @@ const Project = ({ fade, index }) => {
             <div className="repoLinks">
               <span>
                 <a
-                  id="noDecoration"
+                  className="noDecorationButton"
                   target="_blank"
                   rel="noopener noreferrer"
                   href={imageInfo[index].deployLink}
@@ -61,7 +65,7 @@ const Project = ({ fade, index }) => {
               <span>
                 <a
                   target="_blank"
-                  id="noDecoration"
+                  className="noDecorationButton"
                   rel="noopener noreferrer"
                   href={imageInfo[index].repoLink}
                 >

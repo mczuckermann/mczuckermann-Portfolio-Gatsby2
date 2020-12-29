@@ -5,14 +5,14 @@ import { GlobalContext } from "../../pages"
 import "./home.css"
 
 const Home = () => {
-  const { setValue, allRefs, backgroundIsLoaded } = useContext(GlobalContext)
+  const { allRefs, backgroundIsLoaded } = useContext(GlobalContext)
   const [on, toggle] = useState(true)
   const fadeInOut = useSpring({
     opacity: backgroundIsLoaded && on ? 1 : 0,
     transform:
       backgroundIsLoaded && on
-        ? "scale(1, 1) transform: translate(-50%, -50%);"
-        : "scale(0.9,0.95) transform: translate(-50%, -50%);",
+        ? "scale(1, 1) transform: translate(-50%, -50%)"
+        : "scale(0.9,0.95) transform: translate(-50%, -50%)",
     config: on ? config.molasses : { duration: 100 },
   })
   const fade = useSpring({

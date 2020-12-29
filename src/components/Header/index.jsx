@@ -5,13 +5,6 @@ import { useSpring, animated, config } from "react-spring"
 import { GlobalContext } from "../../pages"
 import "./header.css"
 
-const a11yProps = (index) => {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
-  }
-}
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -42,7 +35,6 @@ const Header = () => {
                 <Tab
                   key={option}
                   label={option}
-                  {...a11yProps(index)}
                   onClick={() => {
                     setRefIndex(index)
                   }}

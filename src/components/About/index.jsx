@@ -8,7 +8,7 @@ import { GlobalContext } from "../../pages"
 
 const About = () => {
   const [on, toggle] = useState(false)
-  const { setValue, allRefs } = useContext(GlobalContext)
+  const { allRefs } = useContext(GlobalContext)
 
   const imageFadeRef = useRef(null)
   const imageFade = useSpring({

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react"
+import React, { useContext } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { GlobalContext } from "../../pages"
 import BackgroundImage from "gatsby-background-image"

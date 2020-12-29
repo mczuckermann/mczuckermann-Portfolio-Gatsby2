@@ -9,7 +9,7 @@ import imageInfo from "../../js/imageInfo"
 
 const Projects = () => {
   const [on, toggle] = useState(false)
-  const { setValue, allRefs, scrollLeft, arrowRef, windowWidth } = useContext(
+  const { allRefs, scrollLeft, arrowRef, windowWidth } = useContext(
     GlobalContext
   )
   const [trail, set, stop] = useTrail(imageInfo.length, () => ({

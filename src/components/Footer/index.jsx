@@ -12,7 +12,7 @@ import "./footer.css"
 
 const Footer = () => {
   const [on, toggle] = useState(false)
-  const { setValue, setRefIndex, allRefs } = useContext(GlobalContext)
+  const { setRefIndex, allRefs } = useContext(GlobalContext)
   const fadeIn = useSpring({
     opacity: on ? 1 : 0,
     config: on ? config.molasses : { duration: 300 },
