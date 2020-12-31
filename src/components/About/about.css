@@ -27,7 +27,7 @@
 }
 
 .aboutBody {
-  background-image: url("../../images/backgrounds/background.jpg") !important;
+  background-image: url("../../images/backgrounds/background.webp") !important;
   height: calc(100vh - 48px);
   padding: 5px 0px;
 }

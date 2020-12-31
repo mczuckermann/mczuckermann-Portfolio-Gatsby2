@@ -9,7 +9,9 @@ const Image = ({ className, id, alt, title }) => (
     alt={alt}
     query={graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "zuckermannHeadShot.png" }) {
+        placeholderImage: file(
+          relativePath: { eq: "zuckermannHeadShot.webp" }
+        ) {
           childImageSharp {
             fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid_withWebp

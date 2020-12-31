@@ -37,7 +37,7 @@
 }
 
 .arrowButton:hover > .buttonImage {
-  content: url("../../images/icons/darkArrowButton.png");
+  content: url("../../images/icons/darkArrowButton.webp");
 }
 .arrowButton:hover > #backToTopText {
   color: #2e2b32;

@@ -1,9 +1,9 @@
-const jzMusicImage = require("../images/projects/joshzuckermann.jpg")
-const useThisImage = require("../images/projects/usethis.jpg")
-const bestSellerSearcherImage = require("../images/projects/nytsearcher.jpg")
-const codesnippetsImage = require("../images/projects/codesnippets.jpg")
-const liriBotImage = require("../images/projects/liribot.jpg")
-const storeStockImage = require("../images/projects/storestock.jpg")
+const jzMusicImage = require("../images/projects/joshzuckermann.webp")
+const useThisImage = require("../images/projects/usethis.webp")
+const bestSellerSearcherImage = require("../images/projects/nytsearcher.webp")
+const codesnippetsImage = require("../images/projects/codesnippets.webp")
+const liriBotImage = require("../images/projects/liribot.webp")
+const storeStockImage = require("../images/projects/storestock.webp")
 
 export default [
   {

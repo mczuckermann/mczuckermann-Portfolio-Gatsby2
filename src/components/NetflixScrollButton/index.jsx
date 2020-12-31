@@ -3,8 +3,8 @@ import { GlobalContext } from "../../pages"
 import { makeStyles } from "@material-ui/core/styles"
 import { useSpring, animated } from "react-spring"
 import classNames from "classnames"
-import leftArrow from "../../images/icons/leftArrow.png"
-import rightArrow from "../../images/icons/rightArrow.png"
+import leftArrow from "../../images/icons/leftArrow.webp"
+import rightArrow from "../../images/icons/rightArrow.webp"
 
 const useStyles = makeStyles((theme) => ({
   netflixButton: {
