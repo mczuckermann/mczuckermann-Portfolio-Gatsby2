@@ -125,7 +125,10 @@ const App = () => {
       if (refIndexRef.current === 0 && !backgroundIsLoadedRef.current) {
         return
       } else {
-        if (e.target.className === "makeStyles-netflixButtonImage-3") {
+        if (
+          /makeStyles-netflixButtonImage-[0-9]*/i.test(e.target.className) ||
+          /^jss[0-9]*/i.test(e.target.className)
+        ) {
           setScrollButtonDown(true)
           return
         } else {
