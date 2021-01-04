@@ -3,9 +3,7 @@ import { useSpring, animated, config } from "react-spring"
 import { Waypoint } from "react-waypoint"
 import { GlobalContext } from "../../pages"
 import FooterLink from "../FooterLink"
-import twitterIcon from "../../images/icons/twitter.webp"
-import linkedinIcon from "../../images/icons/linkedin.webp"
-import githubIcon from "../../images/icons/github.webp"
+import { socialInfo, personalInfo } from "../../js/footerLinks"
 import "./footer.css"
 
 const Footer = () => {
@@ -33,33 +31,22 @@ const Footer = () => {
             Contact Me
           </h2>
           <nav style={{ fontSize: "1.8em" }}>
-            <FooterLink
-              title="+1 (217) 722-4952"
-              className="noDecoration"
-              link={"tel:1-217-722-4952"}
-            >
-              {windowWidth >= 500 ? "+1 (217) 722-4952" : "Cell"}
-            </FooterLink>
-            <FooterLink
-              className="noDecoration"
-              link={"mailto:matt@mattzuckermann.dev"}
-            >
-              matt@mattzuckermann.dev
-            </FooterLink>
-            <FooterLink className="noDecoration" link={"/resume"}>
-              Resume
-            </FooterLink>
+            {personalInfo.map(({ link, children, title }) => {
+              return (
+                <FooterLink title={title} className="noDecoration" link={link}>
+                  {children(windowWidth)}
+                </FooterLink>
+              )
+            })}
           </nav>
           <nav>
-            <FooterLink link={"https://www.linkedin.com/in/mattzuckermann/"}>
-              <img src={linkedinIcon} alt="linkedin" />
-            </FooterLink>
-            <FooterLink link={"https://twitter.com/mattzuckermann"}>
-              <img src={twitterIcon} alt="twitter" />
-            </FooterLink>
-            <FooterLink link={"https://github.com/mattzuckermann"}>
-              <img src={githubIcon} alt="github" />
-            </FooterLink>
+            {socialInfo.map(({ link, src, alt }) => {
+              return (
+                <FooterLink link={link}>
+                  <img src={src} alt={alt} />
+                </FooterLink>
+              )
+            })}
           </nav>
           <button
             className="noDecoration"
