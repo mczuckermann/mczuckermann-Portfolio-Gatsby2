@@ -18,9 +18,10 @@ const About = () => {
   })
   const slideRef = useRef(null)
   const textSlide = useSpring({
-    transform: on ? "translate3d(0,0,0,)" : "translate3d(100vw,0,0)",
+    transform: on ? "translate3d(0,0,0)" : "translate3d(50vw,0,0)",
+    opacity: on ? 1 : 0,
     ref: slideRef,
-    config: config.fast,
+    config: { tension: 160, friction: 30 },
   })
   const textFadeRef = useRef(null)
   const textFade = useSpring({
@@ -35,7 +36,7 @@ const About = () => {
       { current: slideRef.current },
       { current: textFadeRef.current },
     ],
-    on ? [0, 0.3, 0.7] : [0, 0, 0]
+    on ? [0, 0.2, 0.6] : [0, 0, 0]
   )
 
   return (
@@ -45,7 +46,6 @@ const About = () => {
         <Waypoint
           bottomOffset="0%"
           onEnter={() => {
-            // setValue(2)
             if (!on) toggle(true)
           }}
           onLeave={() => {
