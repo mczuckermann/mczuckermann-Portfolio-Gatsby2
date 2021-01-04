@@ -2,10 +2,33 @@
 /* FOOTER */
 /* ====== */
 
+h2 {
+  margin: 40px 0px;
+}
+
+p,
+nav {
+  margin: 25px;
+}
+
+a + a {
+  margin-left: 50px;
+}
+
+a > img {
+  width: 5em;
+}
+
 .footerBody {
+  display: flex;
+  justify-content: center;
   height: calc(100vh - 48px);
   background-color: rgb(0, 0, 0);
   color: white;
+}
+
+.resizeFooter {
+  font-size: "15px";
 }
 
 .flexBody {
@@ -15,44 +38,22 @@
   justify-content: center;
 }
 
-.noDecoration,
-.noDecoration:hover {
+.noDecoration {
   color: #d3d3d3;
+  padding: 5px;
   font-family: "Abel", sans-serif;
   text-decoration: none;
+  background-image: linear-gradient(180deg, transparent 70%, #f50157 0);
 }
 
-.footerNoLink {
-  color: lightgrey;
+.noDecoration:hover {
+  color: black;
+  background-image: linear-gradient(180deg, transparent 0%, #f50157 0);
 }
 
 .contactMe {
   color: #d3d3d3;
   font-family: "Abel", sans-serif;
-  font-weight: bold;
-}
-
-#backToTopText {
-  color: white;
-}
-
-.arrowButton:hover > .buttonImage {
-  content: url("../../images/icons/darkArrowButton.webp");
-}
-.arrowButton:hover > #backToTopText {
-  color: #2e2b32;
-}
-
-.copyrightDiv {
-  margin-top: 50px;
-}
-
-.iconFooter {
-  width: 1.7em;
-}
-
-.footerLinesB {
-  padding-top: 5px;
 }
 
 footer {
@@ -61,9 +62,33 @@ footer {
   text-align: center;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 885px) {
+  .resizeFooter {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .resizeFooter {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 615px) {
   .resizeFooter {
     font-size: 8px;
+  }
+  a + a {
+    margin-left: 30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .resizeFooter {
+    font-size: 9px;
+  }
+  a + a {
+    margin-left: 15px;
   }
   .flexBody {
     height: 80%;
