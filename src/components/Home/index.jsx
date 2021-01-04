@@ -3,6 +3,7 @@ import { useSpring, animated, config } from "react-spring"
 import { Waypoint } from "react-waypoint"
 import { GlobalContext } from "../../pages"
 import "./home.css"
+// import loadingWheel from "../../images/icons/loadingWheel.webm"
 
 const Home = () => {
   const { allRefs, backgroundIsLoaded } = useContext(GlobalContext)
@@ -22,7 +23,6 @@ const Home = () => {
 
   return (
     <div ref={allRefs[0]}>
-      {/* <Waypoint bottomOffset="0%" onEnter={() => setValue(0)} /> */}
       <animated.div style={fade} className="homeBody" />
       <Waypoint
         bottomOffset="40%"
