@@ -28,7 +28,7 @@ a > img {
 }
 
 .resizeFooter {
-  font-size: "15px";
+  font-size: 14px;
 }
 
 .flexBody {
@@ -85,7 +85,7 @@ footer {
 
 @media screen and (max-width: 500px) {
   .resizeFooter {
-    font-size: 9px;
+    font-size: 8px;
   }
   a + a {
     margin-left: 15px;
