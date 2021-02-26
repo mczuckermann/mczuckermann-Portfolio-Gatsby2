@@ -46,7 +46,6 @@ const Header = () => {
           <animated.div>
             <Tabs value={value} aria-label="simple tabs">
               {trail.map((fade, index) => {
-                console.log(options)
                 return (
                   <animated.div style={fade}>
                     <Tab
