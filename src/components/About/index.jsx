@@ -83,10 +83,10 @@ const About = () => {
           >
             <animated.div className="bioBackground" style={textSlide}>
               <animated.p className="portfolioBio" style={textFade}>
-                Full-stack developer specializing in TypeScript, React,
-                JamStack, and SQL / NoSQL databases. UC Berkeley Extension
-                coding program grad. Experienced JAM / MERN / LAMP stack
-                developer, AV technical director, and audio engineer.
+                Full-stack developer specializing in React, TypeScript, Gatsby,
+                Next.js, and AWS. UC Berkeley Extension coding boot camp grad.
+                Experienced JAM / MERN / LAMP stack developer, AV technical
+                director, and audio engineer.
               </animated.p>
             </animated.div>
           </Grid>
